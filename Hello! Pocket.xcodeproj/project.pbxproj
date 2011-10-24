@@ -80,11 +80,8 @@
 		933E502F14546CF7004467AC /* Hello! Pocket */ = {
 			isa = PBXGroup;
 			children = (
-				933E503B14546CF7004467AC /* MainStoryboard.storyboard */,
-				933E503E14546CF7004467AC /* HPMasterViewController.h */,
-				933E503F14546CF7004467AC /* HPMasterViewController.m */,
-				933E504114546CF7004467AC /* HPDetailViewController.h */,
-				933E504214546CF7004467AC /* HPDetailViewController.m */,
+				933E50491455280E004467AC /* Classes */,
+				933E504D1455288C004467AC /* Storyboards */,
 				933E503014546CF7004467AC /* Supporting Files */,
 			);
 			path = "Hello! Pocket";
@@ -101,6 +98,49 @@
 				933E503714546CF7004467AC /* Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		933E50491455280E004467AC /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				933E504A14552829004467AC /* Controllers */,
+				933E504B1455285A004467AC /* Models */,
+				933E504C14552862004467AC /* Views */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		933E504A14552829004467AC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				933E503E14546CF7004467AC /* HPMasterViewController.h */,
+				933E503F14546CF7004467AC /* HPMasterViewController.m */,
+				933E504114546CF7004467AC /* HPDetailViewController.h */,
+				933E504214546CF7004467AC /* HPDetailViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		933E504B1455285A004467AC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		933E504C14552862004467AC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		933E504D1455288C004467AC /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				933E503B14546CF7004467AC /* MainStoryboard.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
