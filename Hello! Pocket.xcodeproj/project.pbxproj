@@ -1,0 +1,288 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		933E502A14546CF7004467AC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 933E502914546CF7004467AC /* UIKit.framework */; };
+		933E502C14546CF7004467AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 933E502B14546CF7004467AC /* Foundation.framework */; };
+		933E502E14546CF7004467AC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 933E502D14546CF7004467AC /* CoreGraphics.framework */; };
+		933E503414546CF7004467AC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 933E503214546CF7004467AC /* InfoPlist.strings */; };
+		933E503614546CF7004467AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E503514546CF7004467AC /* main.m */; };
+		933E503A14546CF7004467AC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E503914546CF7004467AC /* AppDelegate.m */; };
+		933E503D14546CF7004467AC /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 933E503B14546CF7004467AC /* MainStoryboard.storyboard */; };
+		933E504014546CF7004467AC /* HPMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E503F14546CF7004467AC /* HPMasterViewController.m */; };
+		933E504314546CF7004467AC /* HPDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E504214546CF7004467AC /* HPDetailViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		933E502514546CF7004467AC /* Hello! Pocket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hello! Pocket.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		933E502914546CF7004467AC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		933E502B14546CF7004467AC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		933E502D14546CF7004467AC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		933E503114546CF7004467AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		933E503314546CF7004467AC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		933E503514546CF7004467AC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = main.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		933E503714546CF7004467AC /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		933E503814546CF7004467AC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		933E503914546CF7004467AC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		933E503C14546CF7004467AC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		933E503E14546CF7004467AC /* HPMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = HPMasterViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		933E503F14546CF7004467AC /* HPMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = HPMasterViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		933E504114546CF7004467AC /* HPDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = HPDetailViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		933E504214546CF7004467AC /* HPDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = HPDetailViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		933E502214546CF7004467AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				933E502A14546CF7004467AC /* UIKit.framework in Frameworks */,
+				933E502C14546CF7004467AC /* Foundation.framework in Frameworks */,
+				933E502E14546CF7004467AC /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		933E501A14546CF6004467AC = {
+			isa = PBXGroup;
+			children = (
+				933E502F14546CF7004467AC /* Hello! Pocket */,
+				933E502814546CF7004467AC /* Frameworks */,
+				933E502614546CF7004467AC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		933E502614546CF7004467AC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				933E502514546CF7004467AC /* Hello! Pocket.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		933E502814546CF7004467AC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				933E502914546CF7004467AC /* UIKit.framework */,
+				933E502B14546CF7004467AC /* Foundation.framework */,
+				933E502D14546CF7004467AC /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		933E502F14546CF7004467AC /* Hello! Pocket */ = {
+			isa = PBXGroup;
+			children = (
+				933E503B14546CF7004467AC /* MainStoryboard.storyboard */,
+				933E503E14546CF7004467AC /* HPMasterViewController.h */,
+				933E503F14546CF7004467AC /* HPMasterViewController.m */,
+				933E504114546CF7004467AC /* HPDetailViewController.h */,
+				933E504214546CF7004467AC /* HPDetailViewController.m */,
+				933E503014546CF7004467AC /* Supporting Files */,
+			);
+			path = "Hello! Pocket";
+			sourceTree = "<group>";
+		};
+		933E503014546CF7004467AC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				933E503814546CF7004467AC /* AppDelegate.h */,
+				933E503914546CF7004467AC /* AppDelegate.m */,
+				933E503114546CF7004467AC /* Info.plist */,
+				933E503214546CF7004467AC /* InfoPlist.strings */,
+				933E503514546CF7004467AC /* main.m */,
+				933E503714546CF7004467AC /* Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		933E502414546CF7004467AC /* Hello! Pocket */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 933E504614546CF7004467AC /* Build configuration list for PBXNativeTarget "Hello! Pocket" */;
+			buildPhases = (
+				933E502114546CF7004467AC /* Sources */,
+				933E502214546CF7004467AC /* Frameworks */,
+				933E502314546CF7004467AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Hello! Pocket";
+			productName = "Hello! Pocket";
+			productReference = 933E502514546CF7004467AC /* Hello! Pocket.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		933E501C14546CF6004467AC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "Revyver, Inc.";
+			};
+			buildConfigurationList = 933E501F14546CF6004467AC /* Build configuration list for PBXProject "Hello! Pocket" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 933E501A14546CF6004467AC;
+			productRefGroup = 933E502614546CF7004467AC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				933E502414546CF7004467AC /* Hello! Pocket */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		933E502314546CF7004467AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				933E503414546CF7004467AC /* InfoPlist.strings in Resources */,
+				933E503D14546CF7004467AC /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		933E502114546CF7004467AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				933E503614546CF7004467AC /* main.m in Sources */,
+				933E503A14546CF7004467AC /* AppDelegate.m in Sources */,
+				933E504014546CF7004467AC /* HPMasterViewController.m in Sources */,
+				933E504314546CF7004467AC /* HPDetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		933E503214546CF7004467AC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				933E503314546CF7004467AC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		933E503B14546CF7004467AC /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				933E503C14546CF7004467AC /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		933E504414546CF7004467AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		933E504514546CF7004467AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		933E504714546CF7004467AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Hello! Pocket/Prefix.pch";
+				INFOPLIST_FILE = "Hello! Pocket/Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		933E504814546CF7004467AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Hello! Pocket/Prefix.pch";
+				INFOPLIST_FILE = "Hello! Pocket/Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		933E501F14546CF6004467AC /* Build configuration list for PBXProject "Hello! Pocket" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				933E504414546CF7004467AC /* Debug */,
+				933E504514546CF7004467AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		933E504614546CF7004467AC /* Build configuration list for PBXNativeTarget "Hello! Pocket" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				933E504714546CF7004467AC /* Debug */,
+				933E504814546CF7004467AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 933E501C14546CF6004467AC /* Project object */;
+}
