@@ -17,6 +17,7 @@
 		933E504014546CF7004467AC /* HPMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E503F14546CF7004467AC /* HPMasterViewController.m */; };
 		933E504314546CF7004467AC /* HPDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E504214546CF7004467AC /* HPDetailViewController.m */; };
 		933E50971458661F004467AC /* HPArtistTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E50961458661E004467AC /* HPArtistTableViewController.m */; };
+		933E50A2145875B0004467AC /* Artist.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E50A0145875B0004467AC /* Artist.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		933E504214546CF7004467AC /* HPDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = HPDetailViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		933E50951458661E004467AC /* HPArtistTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPArtistTableViewController.h; sourceTree = "<group>"; };
 		933E50961458661E004467AC /* HPArtistTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPArtistTableViewController.m; sourceTree = "<group>"; };
+		933E50A0145875B0004467AC /* Artist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Artist.m; sourceTree = "<group>"; };
+		933E50A1145875B0004467AC /* Artist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Artist.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +132,8 @@
 		933E504B1455285A004467AC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				933E50A0145875B0004467AC /* Artist.m */,
+				933E50A1145875B0004467AC /* Artist.h */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 				933E504014546CF7004467AC /* HPMasterViewController.m in Sources */,
 				933E504314546CF7004467AC /* HPDetailViewController.m in Sources */,
 				933E50971458661F004467AC /* HPArtistTableViewController.m in Sources */,
+				933E50A2145875B0004467AC /* Artist.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
