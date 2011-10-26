@@ -16,6 +16,7 @@
 		933E503D14546CF7004467AC /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 933E503B14546CF7004467AC /* MainStoryboard.storyboard */; };
 		933E504014546CF7004467AC /* HPMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E503F14546CF7004467AC /* HPMasterViewController.m */; };
 		933E504314546CF7004467AC /* HPDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E504214546CF7004467AC /* HPDetailViewController.m */; };
+		933E50971458661F004467AC /* HPArtistTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E50961458661E004467AC /* HPArtistTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,8 @@
 		933E503F14546CF7004467AC /* HPMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = HPMasterViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		933E504114546CF7004467AC /* HPDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = HPDetailViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		933E504214546CF7004467AC /* HPDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = HPDetailViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		933E50951458661E004467AC /* HPArtistTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPArtistTableViewController.h; sourceTree = "<group>"; };
+		933E50961458661E004467AC /* HPArtistTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPArtistTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,10 +116,12 @@
 		933E504A14552829004467AC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				933E503E14546CF7004467AC /* HPMasterViewController.h */,
-				933E503F14546CF7004467AC /* HPMasterViewController.m */,
+				933E50951458661E004467AC /* HPArtistTableViewController.h */,
+				933E50961458661E004467AC /* HPArtistTableViewController.m */,
 				933E504114546CF7004467AC /* HPDetailViewController.h */,
 				933E504214546CF7004467AC /* HPDetailViewController.m */,
+				933E503E14546CF7004467AC /* HPMasterViewController.h */,
+				933E503F14546CF7004467AC /* HPMasterViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 				933E503A14546CF7004467AC /* AppDelegate.m in Sources */,
 				933E504014546CF7004467AC /* HPMasterViewController.m in Sources */,
 				933E504314546CF7004467AC /* HPDetailViewController.m in Sources */,
+				933E50971458661F004467AC /* HPArtistTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
