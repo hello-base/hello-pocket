@@ -14,7 +14,8 @@ NSString * const kHPHelloRankingBaseURLString = @"http://127.0.0.1:8000/api/v1/"
 
 @implementation HPHelloRankingAPIClient
 
-+ (HPHelloRankingAPIClient *)sharedClient {
++ (HPHelloRankingAPIClient *)sharedClient 
+{
     static HPHelloRankingAPIClient *_sharedClient = nil;
     static dispatch_once_t oncePredicate;
     dispatch_once(&oncePredicate, ^{
@@ -24,7 +25,8 @@ NSString * const kHPHelloRankingBaseURLString = @"http://127.0.0.1:8000/api/v1/"
     return _sharedClient;
 }
 
-- (id)initWithBaseURL:(NSURL *)url {
+- (id)initWithBaseURL:(NSURL *)url 
+{
     self = [super initWithBaseURL:url];
     if (!self) {
         return nil;

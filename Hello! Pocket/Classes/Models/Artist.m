@@ -27,7 +27,8 @@
 @synthesize scope = _scope;
 @synthesize status = _status;
 
-- (id)initWithAttributes:(NSDictionary *)attributes {
+- (id)initWithAttributes:(NSDictionary *)attributes 
+{
     self = [super init];
     if (!self) {
         return nil;
@@ -51,7 +52,8 @@
     return self;
 }
 
-+ (void)artistsWithURLString:(NSString *)urlString parameters:(NSDictionary *)parameters block:(void (^)(NSArray *))block {
++ (void)fetchManyWithURLString:(NSString *)urlString parameters:(NSDictionary *)parameters block:(void (^)(NSArray *))block 
+{
     NSDictionary *mutableParameters = [NSMutableDictionary dictionaryWithDictionary:parameters];
     [[HPHelloRankingAPIClient sharedClient] getPath:urlString parameters:mutableParameters success:^(id object) {
         NSMutableArray *mutableRecords = [NSMutableArray array];

@@ -48,6 +48,6 @@
 @property (nonatomic, strong) NSNumber *status;
 
 - (id)initWithAttributes:(NSDictionary *)attributes;
-+ (void)artistsWithURLString:(NSString *)urlString parameters:(NSDictionary *)parameters block:(void (^)(NSArray *records))block;
++ (void)fetchManyWithURLString:(NSString *)urlString parameters:(NSDictionary *)parameters block:(void (^)(NSArray *records))block;
 
 @end
