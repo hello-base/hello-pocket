@@ -30,6 +30,9 @@
 		933E50CD145879C6004467AC /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E50BF145879C6004467AC /* AFXMLRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		933E50CE145879C6004467AC /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E50C1145879C6004467AC /* UIImageView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		933E50CF145879C6004467AC /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E50C4145879C6004467AC /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		933E50D614594F59004467AC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 933E50D514594F58004467AC /* QuartzCore.framework */; };
+		933E50DB14594FA8004467AC /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 933E50D814594FA8004467AC /* SVProgressHUD.bundle */; };
+		933E50DC14594FA8004467AC /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E50DA14594FA8004467AC /* SVProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +80,10 @@
 		933E50C1145879C6004467AC /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		933E50C3145879C6004467AC /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		933E50C4145879C6004467AC /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		933E50D514594F58004467AC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		933E50D814594FA8004467AC /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		933E50D914594FA8004467AC /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		933E50DA14594FA8004467AC /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				933E50D614594F59004467AC /* QuartzCore.framework in Frameworks */,
 				933E502A14546CF7004467AC /* UIKit.framework in Frameworks */,
 				933E502C14546CF7004467AC /* Foundation.framework in Frameworks */,
 				933E502E14546CF7004467AC /* CoreGraphics.framework in Frameworks */,
@@ -114,6 +122,7 @@
 		933E502814546CF7004467AC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				933E50D514594F58004467AC /* QuartzCore.framework */,
 				933E502914546CF7004467AC /* UIKit.framework */,
 				933E502B14546CF7004467AC /* Foundation.framework */,
 				933E502D14546CF7004467AC /* CoreGraphics.framework */,
@@ -171,8 +180,8 @@
 		933E504B1455285A004467AC /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				933E50A0145875B0004467AC /* Artist.m */,
 				933E50A1145875B0004467AC /* Artist.h */,
+				933E50A0145875B0004467AC /* Artist.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -197,6 +206,7 @@
 			children = (
 				933E50AC145879C6004467AC /* AFNetworking */,
 				933E50C2145879C6004467AC /* JSONKit */,
+				933E50D714594FA8004467AC /* SVProgressHUD */,
 			);
 			name = Vendor;
 			path = "Hello! Pocket/Vendor";
@@ -247,6 +257,16 @@
 			);
 			name = "Networking Extensions";
 			path = ..;
+			sourceTree = "<group>";
+		};
+		933E50D714594FA8004467AC /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				933E50D814594FA8004467AC /* SVProgressHUD.bundle */,
+				933E50D914594FA8004467AC /* SVProgressHUD.h */,
+				933E50DA14594FA8004467AC /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,6 +322,7 @@
 			files = (
 				933E503414546CF7004467AC /* InfoPlist.strings in Resources */,
 				933E503D14546CF7004467AC /* MainStoryboard.storyboard in Resources */,
+				933E50DB14594FA8004467AC /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +351,7 @@
 				933E50CD145879C6004467AC /* AFXMLRequestOperation.m in Sources */,
 				933E50CE145879C6004467AC /* UIImageView+AFNetworking.m in Sources */,
 				933E50CF145879C6004467AC /* JSONKit.m in Sources */,
+				933E50DC14594FA8004467AC /* SVProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
