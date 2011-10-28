@@ -9,6 +9,7 @@
 #import "Artist.h"
 
 #import "HPHelloRankingAPIClient.h"
+#import "SVProgressHUD.h"
 
 @implementation Artist
 
@@ -63,10 +64,12 @@
         }
         if (block) {
             block([NSArray arrayWithArray:mutableRecords]);
+            [SVProgressHUD dismissWithSuccess:@"Success!"];
         }
     } failure:^(NSHTTPURLResponse *response, NSError *error) {
         if (block) {
             block([NSArray array]);
+            [SVProgressHUD dismissWithError:@"Whoops!"];
         }
     }];
 }

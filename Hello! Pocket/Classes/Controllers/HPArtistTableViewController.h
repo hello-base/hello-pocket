@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HPArtistTableViewController : UITableViewController
-
+@interface HPArtistTableViewController : UITableViewController {
+@private
+    NSArray *_artists;
+}
 @end
