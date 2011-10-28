@@ -1,19 +1,22 @@
 //
-//  HPDetailViewController.m
+//  HPArtistDetailViewController.m
 //  Hello! Pocket
 //
 //  Created by Bryan Veloso on 10/24/11.
 //  Copyright (c) 2011 Revyver, Inc. All rights reserved.
 //
 
-#import "HPDetailViewController.h"
+#import "HPArtistDetailViewController.h"
 
-@interface HPDetailViewController ()
+#import "Artist.h"
+
+@interface HPArtistDetailViewController ()
 - (void)configureView;
 @end
 
-@implementation HPDetailViewController
+@implementation HPArtistDetailViewController
 
+@synthesize artist;
 @synthesize detailItem = _detailItem;
 @synthesize detailDescriptionLabel = _detailDescriptionLabel;
 
@@ -33,8 +36,14 @@
 {
     // Update the user interface for the detail item.
 
+    NSLog(@"Artist: %@", self.artist);
+    
+    if (self.artist) {
+        self.detailDescriptionLabel.text = self.artist.name;
+    }
+
     if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
+        self.detailDescriptionLabel.text = @"WHAT?";
     }
 }
 
