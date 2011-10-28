@@ -10,8 +10,8 @@
 
 @interface HPDetailViewController : UIViewController
 
-@property (strong, nonatomic) id detailItem;
+@property (nonatomic, strong) id detailItem;
 
-@property (strong, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (nonatomic, strong) IBOutlet UILabel *detailDescriptionLabel;
 
 @end

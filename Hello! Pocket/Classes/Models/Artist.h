@@ -29,23 +29,23 @@
     NSNumber *_status;    
 }
 
-@property (nonatomic, retain) NSDate *modified;
+@property (nonatomic, strong) NSDate *modified;
 
-@property (nonatomic, retain) NSString *name;
-@property (nonatomic, retain) NSString *kanji;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *kanji;
 
-@property (nonatomic, retain) NSString *alias;
-@property (nonatomic, retain) NSString *aliasKanji;
-@property (nonatomic, retain) NSString *bloodtype;
-@property (nonatomic, retain) NSString *familyKanji;
-@property (nonatomic, retain) NSString *familyName;
-@property (nonatomic, retain) NSString *givenKanji;
-@property (nonatomic, retain) NSString *givenName;
-@property (nonatomic, retain) NSString *nicknames;
-@property (nonatomic, retain) NSString *note;
+@property (nonatomic, strong) NSString *alias;
+@property (nonatomic, strong) NSString *aliasKanji;
+@property (nonatomic, strong) NSString *bloodtype;
+@property (nonatomic, strong) NSString *familyKanji;
+@property (nonatomic, strong) NSString *familyName;
+@property (nonatomic, strong) NSString *givenKanji;
+@property (nonatomic, strong) NSString *givenName;
+@property (nonatomic, strong) NSString *nicknames;
+@property (nonatomic, strong) NSString *note;
 
-@property (nonatomic, retain) NSNumber *scope;
-@property (nonatomic, retain) NSNumber *status;
+@property (nonatomic, strong) NSNumber *scope;
+@property (nonatomic, strong) NSNumber *status;
 
 - (id)initWithAttributes:(NSDictionary *)attributes;
 + (void)artistsWithURLString:(NSString *)urlString parameters:(NSDictionary *)parameters block:(void (^)(NSArray *records))block;
