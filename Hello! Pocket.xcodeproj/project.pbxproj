@@ -15,7 +15,7 @@
 		933E503A14546CF7004467AC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E503914546CF7004467AC /* AppDelegate.m */; };
 		933E503D14546CF7004467AC /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 933E503B14546CF7004467AC /* MainStoryboard.storyboard */; };
 		933E504014546CF7004467AC /* HPMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E503F14546CF7004467AC /* HPMasterViewController.m */; };
-		933E504314546CF7004467AC /* HPDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E504214546CF7004467AC /* HPDetailViewController.m */; };
+		933E504314546CF7004467AC /* HPArtistDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E504214546CF7004467AC /* HPArtistDetailViewController.m */; };
 		933E50971458661F004467AC /* HPArtistTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E50961458661E004467AC /* HPArtistTableViewController.m */; };
 		933E50A2145875B0004467AC /* Artist.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E50A0145875B0004467AC /* Artist.m */; };
 		933E50AA14587950004467AC /* HPHelloRankingAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E50A81458794F004467AC /* HPHelloRankingAPIClient.m */; };
@@ -49,8 +49,8 @@
 		933E503C14546CF7004467AC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		933E503E14546CF7004467AC /* HPMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = HPMasterViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		933E503F14546CF7004467AC /* HPMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = HPMasterViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		933E504114546CF7004467AC /* HPDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = HPDetailViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		933E504214546CF7004467AC /* HPDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = HPDetailViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		933E504114546CF7004467AC /* HPArtistDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = HPArtistDetailViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		933E504214546CF7004467AC /* HPArtistDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = HPArtistDetailViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		933E50951458661E004467AC /* HPArtistTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPArtistTableViewController.h; sourceTree = "<group>"; };
 		933E50961458661E004467AC /* HPArtistTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPArtistTableViewController.m; sourceTree = "<group>"; };
 		933E50A0145875B0004467AC /* Artist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Artist.m; sourceTree = "<group>"; };
@@ -169,8 +169,8 @@
 			children = (
 				933E50951458661E004467AC /* HPArtistTableViewController.h */,
 				933E50961458661E004467AC /* HPArtistTableViewController.m */,
-				933E504114546CF7004467AC /* HPDetailViewController.h */,
-				933E504214546CF7004467AC /* HPDetailViewController.m */,
+				933E504114546CF7004467AC /* HPArtistDetailViewController.h */,
+				933E504214546CF7004467AC /* HPArtistDetailViewController.m */,
 				933E503E14546CF7004467AC /* HPMasterViewController.h */,
 				933E503F14546CF7004467AC /* HPMasterViewController.m */,
 			);
@@ -336,7 +336,7 @@
 				933E503614546CF7004467AC /* main.m in Sources */,
 				933E503A14546CF7004467AC /* AppDelegate.m in Sources */,
 				933E504014546CF7004467AC /* HPMasterViewController.m in Sources */,
-				933E504314546CF7004467AC /* HPDetailViewController.m in Sources */,
+				933E504314546CF7004467AC /* HPArtistDetailViewController.m in Sources */,
 				933E50971458661F004467AC /* HPArtistTableViewController.m in Sources */,
 				933E50A2145875B0004467AC /* Artist.m in Sources */,
 				933E50AA14587950004467AC /* HPHelloRankingAPIClient.m in Sources */,
@@ -383,7 +383,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -398,6 +399,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -408,6 +410,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -417,6 +420,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
