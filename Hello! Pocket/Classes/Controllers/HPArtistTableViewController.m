@@ -8,23 +8,29 @@
 
 #import "HPArtistTableViewController.h"
 
+#import "Artist.h"
+#import "SVProgressHUD.h"
+
+@interface HPArtistTableViewController ()
+@property (readwrite, nonatomic, strong) NSArray *artists;
+
+- (void)loadArtists;
+@end
+
 @implementation HPArtistTableViewController
+
+@synthesize artists = _artists;
+   
+#pragma mark - View Lifecycle
 
 - (void)awakeFromNib
 {
     [super awakeFromNib];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
-}
-
-#pragma mark - View lifecycle
-
 - (void)viewDidLoad
 {
+    [self loadArtists];
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -58,8 +64,55 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // Return YES for supported orientations
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
+#pragma mark - Data Source Methods
+
+- (void)loadArtists
+{
+    [SVProgressHUD showInView:[self view]];
+    
+    NSDictionary *limit = [NSDictionary dictionaryWithObject:@"0" forKey:@"limit"];
+    [Artist fetchManyWithURLString:@"/artists" parameters:limit block:^(NSArray *records) {
+        self.artists = records;
+        [self.tableView reloadData];
+    }];
+}
+
+#pragma mark - TableView Methods
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.artists count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ArtistCell"];
+    Artist *artist = [self.artists objectAtIndex:indexPath.row];
+    cell.textLabel.text = artist.name;
+    cell.detailTextLabel.text = artist.kanji;
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.navigationController pushViewController:nil animated:YES];
+}
+
+#pragma mark - Memory Management
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    [self setArtists:nil];
 }
 
 @end
