@@ -11,7 +11,7 @@
 #import "HPHelloRankingAPIClient.h"
 #import "SVProgressHUD.h"
 
-@implementation Artist
+@implementation Group
 
 @synthesize modified = _modified;
 @synthesize name = _name;
@@ -57,7 +57,7 @@
     [[HPHelloRankingAPIClient sharedClient] getPath:urlString parameters:mutableParameters success:^(id object) {
         NSMutableArray *mutableRecords = [NSMutableArray array];
         for (NSDictionary *attributes in [object valueForKeyPath:@"objects"]) {
-            Group *group = [[Artist alloc] initWithAttributes:attributes];
+            Group *group = [[Group alloc] initWithAttributes:attributes];
             [mutableRecords addObject:group];
         }
         if (block) {
