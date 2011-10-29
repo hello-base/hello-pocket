@@ -107,7 +107,7 @@
 				933E502814546CF7004467AC /* Frameworks */,
 				933E502F14546CF7004467AC /* Hello! Pocket */,
 				933E502614546CF7004467AC /* Products */,
-				933E50AB145879C5004467AC /* Vendor */,
+				933E50AB145879C5004467AC /* Vendors */,
 			);
 			sourceTree = "<group>";
 		};
@@ -201,15 +201,14 @@
 			name = Storyboards;
 			sourceTree = "<group>";
 		};
-		933E50AB145879C5004467AC /* Vendor */ = {
+		933E50AB145879C5004467AC /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
 				933E50AC145879C6004467AC /* AFNetworking */,
 				933E50C2145879C6004467AC /* JSONKit */,
 				933E50D714594FA8004467AC /* SVProgressHUD */,
 			);
-			name = Vendor;
-			path = "Hello! Pocket/Vendor";
+			path = Vendors;
 			sourceTree = "<group>";
 		};
 		933E50AC145879C6004467AC /* AFNetworking */ = {
