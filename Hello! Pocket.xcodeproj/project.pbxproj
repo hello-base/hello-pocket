@@ -167,10 +167,7 @@
 		933E504A14552829004467AC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				933E50951458661E004467AC /* HPArtistTableViewController.h */,
-				933E50961458661E004467AC /* HPArtistTableViewController.m */,
-				933E504114546CF7004467AC /* HPArtistDetailViewController.h */,
-				933E504214546CF7004467AC /* HPArtistDetailViewController.m */,
+				93AFD2DC145C45DB0092B874 /* Artists */,
 				933E503E14546CF7004467AC /* HPMasterViewController.h */,
 				933E503F14546CF7004467AC /* HPMasterViewController.m */,
 			);
@@ -267,6 +264,17 @@
 				933E50DA14594FA8004467AC /* SVProgressHUD.m */,
 			);
 			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		93AFD2DC145C45DB0092B874 /* Artists */ = {
+			isa = PBXGroup;
+			children = (
+				933E50951458661E004467AC /* HPArtistTableViewController.h */,
+				933E50961458661E004467AC /* HPArtistTableViewController.m */,
+				933E504114546CF7004467AC /* HPArtistDetailViewController.h */,
+				933E504214546CF7004467AC /* HPArtistDetailViewController.m */,
+			);
+			name = Artists;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -468,6 +476,7 @@
 				933E504814546CF7004467AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
