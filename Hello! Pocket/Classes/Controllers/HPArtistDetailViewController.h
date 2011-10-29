@@ -1,5 +1,5 @@
 //
-//  HPDetailViewController.h
+//  HPArtistDetailViewController.h
 //  Hello! Pocket
 //
 //  Created by Bryan Veloso on 10/24/11.
@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HPDetailViewController : UIViewController
+@class Artist;
+
+@interface HPArtistDetailViewController : UIViewController
+
+@property (nonatomic, assign) Artist *artist;
 
 @property (nonatomic, strong) id detailItem;
-
 @property (nonatomic, strong) IBOutlet UILabel *detailDescriptionLabel;
 
 @end

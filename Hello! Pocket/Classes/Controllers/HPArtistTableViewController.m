@@ -9,6 +9,7 @@
 #import "HPArtistTableViewController.h"
 
 #import "Artist.h"
+#import "HPArtistDetailViewController.h"
 #import "SVProgressHUD.h"
 
 @interface HPArtistTableViewController ()
@@ -67,6 +68,14 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"SegueToArtistDetail"]) {
+        HPArtistDetailViewController *detail = [segue destinationViewController];
+        [detail setArtist:[self.artists objectAtIndex:self.tableView.indexPathForSelectedRow.row]];
+    }
+}
+
 #pragma mark - Data Source Methods
 
 - (void)loadArtists
@@ -100,11 +109,6 @@
     cell.detailTextLabel.text = artist.kanji;
     
     return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [self.navigationController pushViewController:nil animated:YES];
 }
 
 #pragma mark - Memory Management
