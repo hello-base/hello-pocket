@@ -46,11 +46,47 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <toolbarItems/>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="vIM-ip-pno">
+                            <connections>
+                                <segue destination="VqJ-YO-B8p" kind="modal" id="0WN-du-rp5"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Home" id="eLr-wJ-9hl"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="431" y="1009"/>
+        </scene>
+        <scene sceneID="dkn-vE-Tfh">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Ju-gd-jf1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="Is8-Rx-sDa" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="GRi-gr-Oea">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="WNk-Pb-oEk">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Is8-Rx-sDa" id="dss-3x-Hl7"/>
+                            <outlet property="delegate" destination="Is8-Rx-sDa" id="bod-kR-Iru"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="4d8-et-Kt5"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="431" y="1729"/>
         </scene>
         <scene sceneID="2ch-R4-b59">
             <objects>
@@ -213,12 +249,29 @@
             </objects>
             <point key="canvasLocation" x="-1" y="1009"/>
         </scene>
+        <scene sceneID="w7J-Op-3eq">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cm4-1l-Owt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="VqJ-YO-B8p" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="G7r-Rq-D9x">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Is8-Rx-sDa" kind="relationship" relationship="rootViewController" id="ahY-Qc-9uj"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-1" y="1729"/>
+        </scene>
     </scenes>
     <classes>
         <class className="HPArtistTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HPArtistTableViewController.h"/>
         </class>
-        <class className="HPMasterViewController" superclassName="UITableViewController">
+        <class className="HPMasterViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HPMasterViewController.h"/>
         </class>
     </classes>
