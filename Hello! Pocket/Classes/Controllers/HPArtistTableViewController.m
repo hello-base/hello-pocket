@@ -71,8 +71,10 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"SegueToArtistDetail"]) {
+        Artist *artist = [self.artists objectAtIndex:self.tableView.indexPathForSelectedRow.row];
         HPArtistDetailViewController *detail = [segue destinationViewController];
-        [detail setArtist:[self.artists objectAtIndex:self.tableView.indexPathForSelectedRow.row]];
+        [detail setArtist:artist];
+        [detail setTitle:[artist name]];
     }
 }
 
