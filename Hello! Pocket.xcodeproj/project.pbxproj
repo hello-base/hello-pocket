@@ -113,8 +113,8 @@
 		933E501A14546CF6004467AC = {
 			isa = PBXGroup;
 			children = (
-				933E502814546CF7004467AC /* Frameworks */,
 				933E502F14546CF7004467AC /* Hello! Pocket */,
+				933E502814546CF7004467AC /* Frameworks */,
 				933E502614546CF7004467AC /* Products */,
 				933E50AB145879C5004467AC /* Vendors */,
 			);
