@@ -10,7 +10,7 @@
 
 @class Artist;
 
-@interface HPArtistDetailViewController : UIViewController
+@interface HPArtistDetailViewController : UITableViewController
 
 @property (nonatomic, assign) Artist *artist;
 
