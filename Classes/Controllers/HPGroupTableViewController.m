@@ -71,8 +71,10 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"SegueToGroupDetail"]) {
+        Group *group = [self.groups objectAtIndex:self.tableView.indexPathForSelectedRow.row];
         HPGroupDetailViewController *detail = [segue destinationViewController];
-        [detail setGroup:[self.groups objectAtIndex:self.tableView.indexPathForSelectedRow.row]];
+        [detail setGroup:group];
+        [detail setTitle:group.name];
     }
 }
 
