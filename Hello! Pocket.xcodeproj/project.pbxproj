@@ -176,14 +176,8 @@
 		933E504A14552829004467AC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				93AFD2F9145C61670092B874 /* HPArtistDetailViewController.h */,
-				93AFD2F8145C61670092B874 /* HPArtistDetailViewController.m */,
-				933E50951458661E004467AC /* HPArtistTableViewController.h */,
-				933E50961458661E004467AC /* HPArtistTableViewController.m */,
-				93AFD2FC145D083B0092B874 /* HPGroupDetailViewController.h */,
-				93AFD2FB145D083B0092B874 /* HPGroupDetailViewController.m */,
-				93FCCF29145C22200074CEE3 /* HPGroupTableViewController.h */,
-				93FCCF28145C22200074CEE3 /* HPGroupTableViewController.m */,
+				93AFD2FF145D14DB0092B874 /* Artists */,
+				93AFD2FE145D14850092B874 /* Groups */,
 				933E503E14546CF7004467AC /* HPMasterViewController.h */,
 				933E503F14546CF7004467AC /* HPMasterViewController.m */,
 			);
@@ -281,6 +275,28 @@
 				933E50DA14594FA8004467AC /* SVProgressHUD.m */,
 			);
 			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		93AFD2FE145D14850092B874 /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				93AFD2FC145D083B0092B874 /* HPGroupDetailViewController.h */,
+				93AFD2FB145D083B0092B874 /* HPGroupDetailViewController.m */,
+				93FCCF29145C22200074CEE3 /* HPGroupTableViewController.h */,
+				93FCCF28145C22200074CEE3 /* HPGroupTableViewController.m */,
+			);
+			name = Groups;
+			sourceTree = "<group>";
+		};
+		93AFD2FF145D14DB0092B874 /* Artists */ = {
+			isa = PBXGroup;
+			children = (
+				93AFD2F9145C61670092B874 /* HPArtistDetailViewController.h */,
+				93AFD2F8145C61670092B874 /* HPArtistDetailViewController.m */,
+				933E50951458661E004467AC /* HPArtistTableViewController.h */,
+				933E50961458661E004467AC /* HPArtistTableViewController.m */,
+			);
+			name = Artists;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
