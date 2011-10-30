@@ -33,6 +33,7 @@
 		933E50DB14594FA8004467AC /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 933E50D814594FA8004467AC /* SVProgressHUD.bundle */; };
 		933E50DC14594FA8004467AC /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E50DA14594FA8004467AC /* SVProgressHUD.m */; };
 		93AFD2FA145C61670092B874 /* HPArtistDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFD2F8145C61670092B874 /* HPArtistDetailViewController.m */; };
+		93AFD2FD145D083B0092B874 /* HPGroupDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFD2FB145D083B0092B874 /* HPGroupDetailViewController.m */; };
 		93FCCF2A145C22200074CEE3 /* HPGroupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93FCCF28145C22200074CEE3 /* HPGroupTableViewController.m */; };
 		93FCCF2E145C22350074CEE3 /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 93FCCF2C145C22350074CEE3 /* Group.m */; };
 /* End PBXBuildFile section */
@@ -86,6 +87,8 @@
 		933E50DA14594FA8004467AC /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		93AFD2F8145C61670092B874 /* HPArtistDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPArtistDetailViewController.m; sourceTree = "<group>"; };
 		93AFD2F9145C61670092B874 /* HPArtistDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPArtistDetailViewController.h; sourceTree = "<group>"; };
+		93AFD2FB145D083B0092B874 /* HPGroupDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPGroupDetailViewController.m; sourceTree = "<group>"; };
+		93AFD2FC145D083B0092B874 /* HPGroupDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPGroupDetailViewController.h; sourceTree = "<group>"; };
 		93FCCF28145C22200074CEE3 /* HPGroupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HPGroupTableViewController.m; path = Classes/Controllers/HPGroupTableViewController.m; sourceTree = SOURCE_ROOT; };
 		93FCCF29145C22200074CEE3 /* HPGroupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HPGroupTableViewController.h; path = Classes/Controllers/HPGroupTableViewController.h; sourceTree = SOURCE_ROOT; };
 		93FCCF2C145C22350074CEE3 /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Group.m; path = Classes/Models/Group.m; sourceTree = SOURCE_ROOT; };
@@ -177,6 +180,8 @@
 				93AFD2F8145C61670092B874 /* HPArtistDetailViewController.m */,
 				933E50951458661E004467AC /* HPArtistTableViewController.h */,
 				933E50961458661E004467AC /* HPArtistTableViewController.m */,
+				93AFD2FC145D083B0092B874 /* HPGroupDetailViewController.h */,
+				93AFD2FB145D083B0092B874 /* HPGroupDetailViewController.m */,
 				93FCCF29145C22200074CEE3 /* HPGroupTableViewController.h */,
 				93FCCF28145C22200074CEE3 /* HPGroupTableViewController.m */,
 				933E503E14546CF7004467AC /* HPMasterViewController.h */,
@@ -363,6 +368,7 @@
 				93FCCF2A145C22200074CEE3 /* HPGroupTableViewController.m in Sources */,
 				93FCCF2E145C22350074CEE3 /* Group.m in Sources */,
 				93AFD2FA145C61670092B874 /* HPArtistDetailViewController.m in Sources */,
+				93AFD2FD145D083B0092B874 /* HPGroupDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
