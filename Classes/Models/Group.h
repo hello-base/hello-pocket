@@ -15,7 +15,7 @@
     NSString *_name;
     NSString *_kanji;
 
-    BOOL *_active;
+    NSNumber *_active;
     NSDate *_formation;
     NSDate *_inactive;
     NSNumber *_members;
@@ -33,7 +33,7 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *kanji;
 
-@property (nonatomic, strong) BOOL *active;
+@property (readwrite, strong) NSNumber *active;
 @property (nonatomic, strong) NSDate *formation;
 @property (nonatomic, strong) NSDate *inactive;
 @property (nonatomic, strong) NSNumber *members;
