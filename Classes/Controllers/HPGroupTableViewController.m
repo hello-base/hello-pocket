@@ -108,9 +108,8 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GroupCell"];
     Group *group = [self.groups objectAtIndex:indexPath.row];
     cell.textLabel.text = group.name;
-    cell.detailTextLabel.text = group.kanji;
-    if ([group.name isEqualToString:group.kanji]) {
-        cell.detailTextLabel.text = nil;
+    if (![group.name isEqualToString:group.kanji]) {
+        cell.detailTextLabel.text = group.kanji;
     }
 
     return cell;
