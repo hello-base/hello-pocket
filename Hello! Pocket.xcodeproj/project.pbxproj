@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		930A61CD145FAED000CA787A /* DictionaryHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 930A61CB145FAED000CA787A /* DictionaryHelper.m */; };
+		930A61D0145FB18D00CA787A /* HPHelloRankingAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 930A61CE145FB18D00CA787A /* HPHelloRankingAPIClient.m */; };
 		933E502A14546CF7004467AC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 933E502914546CF7004467AC /* UIKit.framework */; };
 		933E502C14546CF7004467AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 933E502B14546CF7004467AC /* Foundation.framework */; };
 		933E502E14546CF7004467AC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 933E502D14546CF7004467AC /* CoreGraphics.framework */; };
@@ -39,6 +41,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		930A61CB145FAED000CA787A /* DictionaryHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictionaryHelper.m; sourceTree = "<group>"; };
+		930A61CC145FAED000CA787A /* DictionaryHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictionaryHelper.h; sourceTree = "<group>"; };
+		930A61CE145FB18D00CA787A /* HPHelloRankingAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPHelloRankingAPIClient.m; sourceTree = "<group>"; };
+		930A61CF145FB18D00CA787A /* HPHelloRankingAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPHelloRankingAPIClient.h; sourceTree = "<group>"; };
 		933E502514546CF7004467AC /* Hello! Pocket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hello! Pocket.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		933E502914546CF7004467AC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		933E502B14546CF7004467AC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -110,6 +116,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		930A61C9145FAE0900CA787A /* iOSBoilerplate */ = {
+			isa = PBXGroup;
+			children = (
+				930A61CB145FAED000CA787A /* DictionaryHelper.m */,
+				930A61CC145FAED000CA787A /* DictionaryHelper.h */,
+			);
+			path = iOSBoilerplate;
+			sourceTree = "<group>";
+		};
 		933E501A14546CF6004467AC = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +184,8 @@
 				933E504A14552829004467AC /* Controllers */,
 				933E504B1455285A004467AC /* Models */,
 				933E504C14552862004467AC /* Views */,
+				930A61CF145FB18D00CA787A /* HPHelloRankingAPIClient.h */,
+				930A61CE145FB18D00CA787A /* HPHelloRankingAPIClient.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -214,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				933E50AC145879C6004467AC /* AFNetworking */,
+				930A61C9145FAE0900CA787A /* iOSBoilerplate */,
 				933E50C2145879C6004467AC /* JSONKit */,
 				933E50D714594FA8004467AC /* SVProgressHUD */,
 			);
@@ -275,6 +293,15 @@
 				933E50DA14594FA8004467AC /* SVProgressHUD.m */,
 			);
 			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		93612B44145EBF9600832D60 /* TestFlight */ = {
+			isa = PBXGroup;
+			children = (
+				93612B46145EBFAA00832D60 /* libTestFlight.a */,
+				93612B47145EBFAA00832D60 /* TestFlight.h */,
+			);
+			path = TestFlight;
 			sourceTree = "<group>";
 		};
 		93AFD2FE145D14850092B874 /* Groups */ = {
@@ -385,6 +412,8 @@
 				93FCCF2E145C22350074CEE3 /* Group.m in Sources */,
 				93AFD2FA145C61670092B874 /* HPArtistDetailViewController.m in Sources */,
 				93AFD2FD145D083B0092B874 /* HPGroupDetailViewController.m in Sources */,
+				930A61CD145FAED000CA787A /* DictionaryHelper.m in Sources */,
+				930A61D0145FB18D00CA787A /* HPHelloRankingAPIClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
