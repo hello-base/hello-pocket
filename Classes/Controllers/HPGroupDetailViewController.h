@@ -10,7 +10,7 @@
 
 @class Group;
 
-@interface HPGroupDetailViewController : UIViewController
+@interface HPGroupDetailViewController : UITableViewController
 
 @property (nonatomic, assign) Group *group;
 
