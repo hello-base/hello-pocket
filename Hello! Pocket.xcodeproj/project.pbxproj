@@ -19,7 +19,6 @@
 		933E504014546CF7004467AC /* HPMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E503F14546CF7004467AC /* HPMasterViewController.m */; };
 		933E50971458661F004467AC /* HPArtistTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E50961458661E004467AC /* HPArtistTableViewController.m */; };
 		933E50A2145875B0004467AC /* Artist.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E50A0145875B0004467AC /* Artist.m */; };
-		933E50AA14587950004467AC /* HPHelloRankingAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E50A81458794F004467AC /* HPHelloRankingAPIClient.m */; };
 		933E50C5145879C6004467AC /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E50AE145879C6004467AC /* AFHTTPClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		933E50C6145879C6004467AC /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E50B0145879C6004467AC /* AFHTTPRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		933E50C7145879C6004467AC /* AFImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E50B2145879C6004467AC /* AFImageCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -109,11 +108,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93612B48145EBFAA00832D60 /* libTestFlight.a in Frameworks */,
 				933E50D614594F59004467AC /* QuartzCore.framework in Frameworks */,
 				933E502A14546CF7004467AC /* UIKit.framework in Frameworks */,
 				933E502C14546CF7004467AC /* Foundation.framework in Frameworks */,
 				933E502E14546CF7004467AC /* CoreGraphics.framework in Frameworks */,
-				93612B48145EBFAA00832D60 /* libTestFlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,8 +122,8 @@
 		930A61C9145FAE0900CA787A /* iOSBoilerplate */ = {
 			isa = PBXGroup;
 			children = (
-				930A61CB145FAED000CA787A /* DictionaryHelper.m */,
 				930A61CC145FAED000CA787A /* DictionaryHelper.h */,
+				930A61CB145FAED000CA787A /* DictionaryHelper.m */,
 			);
 			path = iOSBoilerplate;
 			sourceTree = "<group>";
@@ -400,7 +399,6 @@
 				933E504014546CF7004467AC /* HPMasterViewController.m in Sources */,
 				933E50971458661F004467AC /* HPArtistTableViewController.m in Sources */,
 				933E50A2145875B0004467AC /* Artist.m in Sources */,
-				933E50AA14587950004467AC /* HPHelloRankingAPIClient.m in Sources */,
 				933E50C5145879C6004467AC /* AFHTTPClient.m in Sources */,
 				933E50C6145879C6004467AC /* AFHTTPRequestOperation.m in Sources */,
 				933E50C7145879C6004467AC /* AFImageCache.m in Sources */,
@@ -500,6 +498,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Vendors\"",
+					"\"$(SRCROOT)/Vendors/TestFlight\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -515,6 +514,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Vendors\"",
+					"\"$(SRCROOT)/Vendors/TestFlight\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
