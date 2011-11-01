@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		930A61CD145FAED000CA787A /* DictionaryHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 930A61CB145FAED000CA787A /* DictionaryHelper.m */; };
-		930A61D0145FB18D00CA787A /* HPHelloRankingAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 930A61CE145FB18D00CA787A /* HPHelloRankingAPIClient.m */; };
 		933E502A14546CF7004467AC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 933E502914546CF7004467AC /* UIKit.framework */; };
 		933E502C14546CF7004467AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 933E502B14546CF7004467AC /* Foundation.framework */; };
 		933E502E14546CF7004467AC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 933E502D14546CF7004467AC /* CoreGraphics.framework */; };
@@ -34,6 +33,7 @@
 		933E50DB14594FA8004467AC /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 933E50D814594FA8004467AC /* SVProgressHUD.bundle */; };
 		933E50DC14594FA8004467AC /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E50DA14594FA8004467AC /* SVProgressHUD.m */; };
 		93612B48145EBFAA00832D60 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93612B46145EBFAA00832D60 /* libTestFlight.a */; };
+		9388894D145FCA8B005E871C /* HPHelloRankingAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9388894B145FCA8B005E871C /* HPHelloRankingAPIClient.m */; };
 		93AFD2FA145C61670092B874 /* HPArtistDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFD2F8145C61670092B874 /* HPArtistDetailViewController.m */; };
 		93AFD2FD145D083B0092B874 /* HPGroupDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFD2FB145D083B0092B874 /* HPGroupDetailViewController.m */; };
 		93FCCF2A145C22200074CEE3 /* HPGroupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93FCCF28145C22200074CEE3 /* HPGroupTableViewController.m */; };
@@ -41,12 +41,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		930A61CE145FB18D00CA787A /* HPHelloRankingAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HPHelloRankingAPIClient.m; path = "hello-pocket/Classes/HPHelloRankingAPIClient.m"; sourceTree = "<group>"; };
-		930A61CF145FB18D00CA787A /* HPHelloRankingAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HPHelloRankingAPIClient.h; path = "hello-pocket/Classes/HPHelloRankingAPIClient.h"; sourceTree = "<group>"; };
 		930A61CB145FAED000CA787A /* DictionaryHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictionaryHelper.m; sourceTree = "<group>"; };
 		930A61CC145FAED000CA787A /* DictionaryHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictionaryHelper.h; sourceTree = "<group>"; };
-		930A61CE145FB18D00CA787A /* HPHelloRankingAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPHelloRankingAPIClient.m; sourceTree = "<group>"; };
-		930A61CF145FB18D00CA787A /* HPHelloRankingAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPHelloRankingAPIClient.h; sourceTree = "<group>"; };
 		933E502514546CF7004467AC /* Hello! Pocket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hello! Pocket.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		933E502914546CF7004467AC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		933E502B14546CF7004467AC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -93,6 +89,8 @@
 		933E50DA14594FA8004467AC /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		93612B46145EBFAA00832D60 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
 		93612B47145EBFAA00832D60 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		9388894B145FCA8B005E871C /* HPHelloRankingAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HPHelloRankingAPIClient.m; path = "hello-pocket/Classes/HPHelloRankingAPIClient.m"; sourceTree = "<group>"; };
+		9388894C145FCA8B005E871C /* HPHelloRankingAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HPHelloRankingAPIClient.h; path = "hello-pocket/Classes/HPHelloRankingAPIClient.h"; sourceTree = "<group>"; };
 		93AFD2F8145C61670092B874 /* HPArtistDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPArtistDetailViewController.m; sourceTree = "<group>"; };
 		93AFD2F9145C61670092B874 /* HPArtistDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPArtistDetailViewController.h; sourceTree = "<group>"; };
 		93AFD2FB145D083B0092B874 /* HPGroupDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPGroupDetailViewController.m; sourceTree = "<group>"; };
@@ -187,8 +185,6 @@
 				933E504A14552829004467AC /* Controllers */,
 				933E504B1455285A004467AC /* Models */,
 				933E504C14552862004467AC /* Views */,
-				930A61CF145FB18D00CA787A /* HPHelloRankingAPIClient.h */,
-				930A61CE145FB18D00CA787A /* HPHelloRankingAPIClient.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -282,8 +278,8 @@
 		933E50D014587D94004467AC /* Networking Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				930A61CF145FB18D00CA787A /* HPHelloRankingAPIClient.h */,
-				930A61CE145FB18D00CA787A /* HPHelloRankingAPIClient.m */,
+				9388894B145FCA8B005E871C /* HPHelloRankingAPIClient.m */,
+				9388894C145FCA8B005E871C /* HPHelloRankingAPIClient.h */,
 			);
 			name = "Networking Extensions";
 			path = ..;
@@ -416,7 +412,7 @@
 				93AFD2FA145C61670092B874 /* HPArtistDetailViewController.m in Sources */,
 				93AFD2FD145D083B0092B874 /* HPGroupDetailViewController.m in Sources */,
 				930A61CD145FAED000CA787A /* DictionaryHelper.m in Sources */,
-				930A61D0145FB18D00CA787A /* HPHelloRankingAPIClient.m in Sources */,
+				9388894D145FCA8B005E871C /* HPHelloRankingAPIClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
