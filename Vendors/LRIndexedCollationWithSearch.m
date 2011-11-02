@@ -1,12 +1,11 @@
 //
-//  FRSearchableIndexCollation.m
-//  
+//  LRSearchableIndexCollation.m
 //
 //  Copyright (c) 2010 Luke Redpath
 //  Licensed under the MIT License
 //
 
-#import "LRIndexedCollationWithSearch"
+#import "LRIndexedCollationWithSearch.h"
 
 
 @implementation LRIndexedCollationWithSearch
@@ -17,21 +16,15 @@
 + (id)currentCollation;
 {
   UILocalizedIndexedCollation *collation = [UILocalizedIndexedCollation currentCollation];
-  return [[[self alloc] initWithCollation:collation] autorelease];
+  return [[self alloc] initWithCollation:collation];
 }
 
 - (id)initWithCollation:(UILocalizedIndexedCollation *)_collation;
 {
   if (self = [super init]) {
-    collation = [_collation retain];
+    collation = _collation;
   }
   return self;
-}
-
-- (void)dealloc;
-{
-  [collation release];
-  [super dealloc];
 }
 
 #pragma mark -

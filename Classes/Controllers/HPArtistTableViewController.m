@@ -10,6 +10,7 @@
 
 #import "Artist.h"
 #import "HPArtistDetailViewController.h"
+#import "LRIndexedCollationWithSearch.h"
 #import "PartitionObjectsHelper.h"
 #import "SVProgressHUD.h"
 
@@ -104,17 +105,17 @@
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
 {
-    return [[UILocalizedIndexedCollation currentCollation] sectionIndexTitles];
+    return [[LRIndexedCollationWithSearch currentCollation] sectionIndexTitles];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
 {
-    return [[UILocalizedIndexedCollation currentCollation] sectionForSectionIndexTitleAtIndex:index];
+    return [[LRIndexedCollationWithSearch currentCollation] sectionForSectionIndexTitleAtIndex:index];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [[[UILocalizedIndexedCollation currentCollation] sectionTitles] count];
+    return [[[LRIndexedCollationWithSearch currentCollation] sectionTitles] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -125,7 +126,7 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     BOOL showSection = [[self.artists objectAtIndex:section] count] != 0;
-    return (showSection) ? [[[UILocalizedIndexedCollation currentCollation] sectionTitles] objectAtIndex:section] : nil;
+    return (showSection) ? [[[LRIndexedCollationWithSearch currentCollation] sectionTitles] objectAtIndex:section] : nil;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

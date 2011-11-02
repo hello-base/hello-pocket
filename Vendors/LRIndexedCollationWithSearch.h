@@ -1,6 +1,5 @@
 //
-//  LRSearchableIndexCollation.m
-//  
+//  LRSearchableIndexCollation.h
 //
 //  Copyright (c) 2010 Luke Redpath
 //  Licensed under the MIT License
