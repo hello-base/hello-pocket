@@ -34,6 +34,8 @@
 		933E50DC14594FA8004467AC /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E50DA14594FA8004467AC /* SVProgressHUD.m */; };
 		93612B48145EBFAA00832D60 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93612B46145EBFAA00832D60 /* libTestFlight.a */; };
 		9388894D145FCA8B005E871C /* HPHelloRankingAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9388894B145FCA8B005E871C /* HPHelloRankingAPIClient.m */; };
+		9388895314618E1D005E871C /* PartitionObjectsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9388895214618E1D005E871C /* PartitionObjectsHelper.m */; };
+		9388896314619426005E871C /* LRIndexedCollationWithSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 9388896114619426005E871C /* LRIndexedCollationWithSearch.m */; };
 		93AFD2FA145C61670092B874 /* HPArtistDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFD2F8145C61670092B874 /* HPArtistDetailViewController.m */; };
 		93AFD2FD145D083B0092B874 /* HPGroupDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFD2FB145D083B0092B874 /* HPGroupDetailViewController.m */; };
 		93FCCF2A145C22200074CEE3 /* HPGroupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93FCCF28145C22200074CEE3 /* HPGroupTableViewController.m */; };
@@ -91,6 +93,10 @@
 		93612B47145EBFAA00832D60 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		9388894B145FCA8B005E871C /* HPHelloRankingAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HPHelloRankingAPIClient.m; path = "hello-pocket/Classes/HPHelloRankingAPIClient.m"; sourceTree = "<group>"; };
 		9388894C145FCA8B005E871C /* HPHelloRankingAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HPHelloRankingAPIClient.h; path = "hello-pocket/Classes/HPHelloRankingAPIClient.h"; sourceTree = "<group>"; };
+		9388895114618E1D005E871C /* PartitionObjectsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartitionObjectsHelper.h; sourceTree = "<group>"; };
+		9388895214618E1D005E871C /* PartitionObjectsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartitionObjectsHelper.m; sourceTree = "<group>"; };
+		9388896114619426005E871C /* LRIndexedCollationWithSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRIndexedCollationWithSearch.m; sourceTree = "<group>"; };
+		9388896214619426005E871C /* LRIndexedCollationWithSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRIndexedCollationWithSearch.h; sourceTree = "<group>"; };
 		93AFD2F8145C61670092B874 /* HPArtistDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPArtistDetailViewController.m; sourceTree = "<group>"; };
 		93AFD2F9145C61670092B874 /* HPArtistDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPArtistDetailViewController.h; sourceTree = "<group>"; };
 		93AFD2FB145D083B0092B874 /* HPGroupDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPGroupDetailViewController.m; sourceTree = "<group>"; };
@@ -185,6 +191,7 @@
 				933E504A14552829004467AC /* Controllers */,
 				933E504B1455285A004467AC /* Models */,
 				933E504C14552862004467AC /* Views */,
+				9388895414618EA7005E871C /* Helpers */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -234,6 +241,8 @@
 				933E50C2145879C6004467AC /* JSONKit */,
 				933E50D714594FA8004467AC /* SVProgressHUD */,
 				93612B44145EBF9600832D60 /* TestFlight */,
+				9388896214619426005E871C /* LRIndexedCollationWithSearch.h */,
+				9388896114619426005E871C /* LRIndexedCollationWithSearch.m */,
 			);
 			path = Vendors;
 			sourceTree = "<group>";
@@ -302,6 +311,15 @@
 				93612B47145EBFAA00832D60 /* TestFlight.h */,
 			);
 			path = TestFlight;
+			sourceTree = "<group>";
+		};
+		9388895414618EA7005E871C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9388895114618E1D005E871C /* PartitionObjectsHelper.h */,
+				9388895214618E1D005E871C /* PartitionObjectsHelper.m */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		93AFD2FE145D14850092B874 /* Groups */ = {
@@ -413,6 +431,8 @@
 				93AFD2FD145D083B0092B874 /* HPGroupDetailViewController.m in Sources */,
 				930A61CD145FAED000CA787A /* DictionaryHelper.m in Sources */,
 				9388894D145FCA8B005E871C /* HPHelloRankingAPIClient.m in Sources */,
+				9388895314618E1D005E871C /* PartitionObjectsHelper.m in Sources */,
+				9388896314619426005E871C /* LRIndexedCollationWithSearch.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
