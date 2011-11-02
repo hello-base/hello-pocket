@@ -88,6 +88,14 @@
     NSDictionary *limit = [NSDictionary dictionaryWithObject:@"0" forKey:@"limit"];
     [Artist fetchManyWithURLString:@"/artists" parameters:limit block:^(NSArray *records) {
         self.artists = [self partitionObjects:records collationStringSelector:@selector(name)];
+
+        // Create a UILabel with the total artist count.
+        UILabel *count = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+        count.textAlignment = UITextAlignmentCenter;
+        count.textColor = [UIColor grayColor];
+        count.text = [NSString stringWithFormat:@"%d Artists", [records count]];
+        self.tableView.tableFooterView = count;
+
         [self.tableView reloadData];
     }];
 }
