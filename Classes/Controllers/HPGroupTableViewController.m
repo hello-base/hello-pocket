@@ -10,6 +10,7 @@
 
 #import "Group.h"
 #import "HPGroupDetailViewController.h"
+#import "PartitionObjectsHelper.h"
 #import "SVProgressHUD.h"
 
 @interface HPGroupTableViewController ()
@@ -71,7 +72,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"SegueToGroupDetail"]) {
-        Group *group = [self.groups objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+        Group *group = [[self.groups objectAtIndex:self.tableView.indexPathForSelectedRow.section] objectAtIndex:self.tableView.indexPathForSelectedRow.row];
         HPGroupDetailViewController *detail = [segue destinationViewController];
         [detail setGroup:group];
         [detail setTitle:group.name];
@@ -86,27 +87,51 @@
 
     NSDictionary *limit = [NSDictionary dictionaryWithObject:@"0" forKey:@"limit"];
     [Group fetchManyWithURLString:@"/groups" parameters:limit block:^(NSArray *records) {
-        self.groups = records;
+        self.groups = [PartitionObjectsHelper partitionObjects:records collationStringSelector:@selector(name)];
+
+        // Create a UILabel with the total artist count.
+        UILabel *count = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+        count.textAlignment = UITextAlignmentCenter;
+        count.textColor = [UIColor grayColor];
+        count.text = [NSString stringWithFormat:@"%d Groups", [records count]];
+        self.tableView.tableFooterView = count;
+
         [self.tableView reloadData];
     }];
 }
 
 #pragma mark - TableView Methods
 
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
+{
+    return [[UILocalizedIndexedCollation currentCollation] sectionIndexTitles];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
+{
+    return [[UILocalizedIndexedCollation currentCollation] sectionForSectionIndexTitleAtIndex:index];
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return [[[UILocalizedIndexedCollation currentCollation] sectionTitles] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.groups count];
+    return [[self.groups objectAtIndex:section] count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    BOOL showSection = [[self.groups objectAtIndex:section] count] != 0;
+    return (showSection) ? [[[UILocalizedIndexedCollation currentCollation] sectionTitles] objectAtIndex:section] : nil;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GroupCell"];
-    Group *group = [self.groups objectAtIndex:indexPath.row];
+    Group *group = [[self.groups objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     cell.textLabel.text = group.name;
     cell.detailTextLabel.text = group.kanji;
     if ([group.name isEqualToString:group.kanji]) {
