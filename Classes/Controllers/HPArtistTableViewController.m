@@ -10,13 +10,13 @@
 
 #import "Artist.h"
 #import "HPArtistDetailViewController.h"
+#import "PartitionObjectsHelper.h"
 #import "SVProgressHUD.h"
 
 @interface HPArtistTableViewController ()
 @property (readwrite, nonatomic, strong) NSArray *artists;
 
 - (void)loadArtists;
-- (NSArray *)partitionObjects:(NSArray *)array collationStringSelector:(SEL)selector;
 @end
 
 @implementation HPArtistTableViewController
@@ -87,7 +87,7 @@
 
     NSDictionary *limit = [NSDictionary dictionaryWithObject:@"0" forKey:@"limit"];
     [Artist fetchManyWithURLString:@"/artists" parameters:limit block:^(NSArray *records) {
-        self.artists = [self partitionObjects:records collationStringSelector:@selector(name)];
+        self.artists = [PartitionObjectsHelper partitionObjects:records collationStringSelector:@selector(name)];
 
         // Create a UILabel with the total artist count.
         UILabel *count = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
@@ -98,30 +98,6 @@
 
         [self.tableView reloadData];
     }];
-}
-
-- (NSArray *)partitionObjects:(NSArray *)array collationStringSelector:(SEL)selector
-{
-    UILocalizedIndexedCollation *collation = [UILocalizedIndexedCollation currentCollation];
-    NSInteger sectionCount = [[collation sectionTitles] count];
-    NSMutableArray *unsortedSections = [NSMutableArray arrayWithCapacity:sectionCount];
-
-    for (int i = 0; i < sectionCount; i++) {
-        [unsortedSections addObject:[NSMutableArray array]];
-    }
-
-    for (id object in array) {
-        NSInteger index = [collation sectionForObject:object collationStringSelector:selector];
-        [[unsortedSections objectAtIndex:index] addObject:object];
-    }
-
-    NSMutableArray *sections = [NSMutableArray arrayWithCapacity:sectionCount];
-
-    for (NSMutableArray *section in unsortedSections) {
-        [sections addObject:[collation sortedArrayFromArray:section collationStringSelector:selector]];
-    }
-
-    return sections;
 }
 
 #pragma mark - TableView Methods
