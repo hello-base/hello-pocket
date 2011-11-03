@@ -236,6 +236,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JCO-wL-FVG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="qLZ-uG-3Fp" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="QTD-1g-ZC4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
