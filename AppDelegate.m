@@ -17,8 +17,6 @@
     NSURLCache *URLCache = [[NSURLCache alloc] initWithMemoryCapacity:1024 * 1024 diskCapacity:1024 * 1024 * 5 diskPath:nil];
 	[NSURLCache setSharedURLCache:URLCache];
 
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent animated:NO];
-
     [TestFlight takeOff:@"d27b97d2f48305abc57a5017b8e9c84d_Mzc3NzQyMDExLTEwLTMwIDE0OjA1OjE3LjcwMTg0OQ"];
 
     return YES;
