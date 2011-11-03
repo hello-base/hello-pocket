@@ -91,9 +91,9 @@
 
         // Create a UILabel with the total artist count.
         UILabel *count = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+        count.text = [NSString stringWithFormat:@"%d Artists", [records count]];
         count.textAlignment = UITextAlignmentCenter;
         count.textColor = [UIColor grayColor];
-        count.text = [NSString stringWithFormat:@"%d Artists", [records count]];
         self.tableView.tableFooterView = count;
 
         [self.tableView reloadData];
