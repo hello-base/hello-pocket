@@ -40,5 +40,7 @@
 	</array>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleBlackTranslucent</string>
+	<key>UIPrerenderedIcon</key>
+	<true/>
 </dict>
 </plist>
