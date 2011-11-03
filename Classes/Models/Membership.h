@@ -23,8 +23,8 @@
     NSNumber *_leadershipTeunure;
 }
 
-@property (nonatomic, strong) Artist *artist;
-@property (nonatomic, strong) Group *group;
+@property (nonatomic, assign) Artist *artist;
+@property (nonatomic, assign) Group *group;
 
 @property (nonatomic, strong) NSNumber *primaryGroup;
 @property (nonatomic, strong) NSDate *joined;
