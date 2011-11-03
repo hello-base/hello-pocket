@@ -15,6 +15,8 @@
     NSArray *_memberships;
 }
 
+@property (nonatomic, assign) Artist *artist;
+
 @property (nonatomic, strong) id detailItem;
 @property (nonatomic, strong) NSArray *memberships;
 

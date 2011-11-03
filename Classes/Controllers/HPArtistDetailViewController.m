@@ -10,6 +10,7 @@
 
 #import "Artist.h"
 #import "Group.h"
+#import "Membership.h"
 
 @interface HPArtistDetailViewController ()
 - (void)configureView;
@@ -18,6 +19,7 @@
 
 @implementation HPArtistDetailViewController
 
+@synthesize artist;
 @synthesize detailItem = _detailItem;
 @synthesize memberships = _memberships;
 
@@ -37,13 +39,17 @@
 {
     // Update the user interface for the detail item.
     if ([self.detailItem isKindOfClass:[Artist class]]) {
-        Artist *artist = self.detailItem;
+        self.artist = self.detailItem;
     }
 }
 
 - (void)loadMemberships
 {
-    
+    NSString *urlString = [NSString stringWithFormat:@"/artists/%@/memberships/", self.artist.pk];
+    NSDictionary *limit = [NSDictionary dictionaryWithObject:@"0" forKey:@"limit"];
+    [Membership fetchManyWithURLString:urlString parameters:limit block:^(NSArray *records) {
+        self.memberships = records;
+    }];
 }
 
 #pragma mark - View Lifecycle

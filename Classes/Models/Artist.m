@@ -14,6 +14,7 @@
 @implementation Artist
 
 @synthesize modified = _modified;
+@synthesize pk = _pk;
 @synthesize name = _name;
 @synthesize kanji = _kanji;
 @synthesize alias = _alias;

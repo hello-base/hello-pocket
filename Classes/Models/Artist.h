@@ -12,6 +12,7 @@
 @private
     NSDate *_modified;
 
+    NSNumber *_pk;
     NSString *_name;
     NSString *_kanji;
 
@@ -31,6 +32,7 @@
 
 @property (nonatomic, strong) NSDate *modified;
 
+@property (nonatomic, strong) NSNumber *pk;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *kanji;
 
