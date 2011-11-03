@@ -42,5 +42,7 @@
 	<string>UIStatusBarStyleBlackTranslucent</string>
 	<key>UIPrerenderedIcon</key>
 	<true/>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.reference</string>
 </dict>
 </plist>
