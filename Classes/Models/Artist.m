@@ -28,13 +28,13 @@
 @synthesize scope = _scope;
 @synthesize status = _status;
 
-- (id)initWithAttributes:(NSDictionary *)attributes 
+- (id)initWithAttributes:(NSDictionary *)attributes
 {
     self = [super init];
     if (!self) {
         return nil;
     }
-    
+
     self.modified = [attributes valueForKeyPath:@"modified"];
     self.name = [attributes valueForKeyPath:@"name"];
     self.kanji = [attributes valueForKeyPath:@"kanji"];
@@ -49,11 +49,11 @@
     self.note = [attributes valueForKeyPath:@"note"];
     self.scope = [attributes valueForKeyPath:@"scope"];
     self.status = [attributes valueForKeyPath:@"status"];
-    
+
     return self;
 }
 
-+ (void)fetchManyWithURLString:(NSString *)urlString parameters:(NSDictionary *)parameters block:(void (^)(NSArray *))block 
++ (void)fetchManyWithURLString:(NSString *)urlString parameters:(NSDictionary *)parameters block:(void (^)(NSArray *))block
 {
     NSDictionary *mutableParameters = [NSMutableDictionary dictionaryWithDictionary:parameters];
     [[HPHelloRankingAPIClient sharedClient] getPath:urlString parameters:mutableParameters success:^(id object) {

@@ -35,9 +35,6 @@
     // Update the user interface for the detail item.
     if ([self.detailItem isKindOfClass:[Artist class]]) {
         Artist *artist = self.detailItem;
-
-        NSLog(@"Artist: %@", artist);
-        NSLog(@"Detail Item: %@", self.detailItem);    
     }
 }
 
@@ -46,7 +43,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view, typically from a nib.
     [self configureView];
 }
 
@@ -69,12 +66,12 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-	[super viewWillDisappear:animated];
+    [super viewWillDisappear:animated];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
-	[super viewDidDisappear:animated];
+    [super viewDidDisappear:animated];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
