@@ -1,27 +1,27 @@
 //
-//  HPArtistTableViewController.m
+//  HPGroupTableViewController.m
 //  Hello! Pocket
 //
-//  Created by Bryan Veloso on 10/27/11.
+//  Created by Bryan Veloso on 10/29/11.
 //  Copyright (c) 2011 Revyver, Inc. All rights reserved.
 //
 
-#import "HPArtistTableViewController.h"
+#import "HPGroupTableViewController.h"
 
-#import "Artist.h"
-#import "HPArtistDetailViewController.h"
+#import "Group.h"
+#import "HPGroupDetailViewController.h"
 #import "PartitionObjectsHelper.h"
 #import "SVProgressHUD.h"
 
-@interface HPArtistTableViewController ()
-@property (readwrite, nonatomic, strong) NSArray *artists;
+@interface HPGroupTableViewController ()
+@property (readwrite, nonatomic, strong) NSArray *groups;
 
-- (void)loadArtists;
+- (void)loadGroups;
 @end
 
-@implementation HPArtistTableViewController
+@implementation HPGroupTableViewController
 
-@synthesize artists = _artists;
+@synthesize groups = _groups;
 
 #pragma mark - View Lifecycle
 
@@ -32,9 +32,9 @@
 
 - (void)viewDidLoad
 {
-    [self loadArtists];
+    [self loadGroups];
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)viewDidUnload
@@ -56,12 +56,12 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-	[super viewWillDisappear:animated];
+    [super viewWillDisappear:animated];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
-	[super viewDidDisappear:animated];
+    [super viewDidDisappear:animated];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -71,29 +71,29 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"SegueToArtistDetail"]) {
-        Artist *artist = [[self.artists objectAtIndex:self.tableView.indexPathForSelectedRow.section] objectAtIndex:self.tableView.indexPathForSelectedRow.row];
-        HPArtistDetailViewController *detail = [segue destinationViewController];
-        [detail setArtist:artist];
-        [detail setTitle:[artist name]];
+    if ([[segue identifier] isEqualToString:@"SegueToGroupDetail"]) {
+        Group *group = [[self.groups objectAtIndex:self.tableView.indexPathForSelectedRow.section] objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+        HPGroupDetailViewController *detail = [segue destinationViewController];
+        [detail setGroup:group];
+        [detail setTitle:group.name];
     }
 }
 
 #pragma mark - Data Source Methods
 
-- (void)loadArtists
+- (void)loadGroups
 {
     [SVProgressHUD showInView:[self view]];
 
     NSDictionary *limit = [NSDictionary dictionaryWithObject:@"0" forKey:@"limit"];
-    [Artist fetchManyWithURLString:@"/artists/" parameters:limit block:^(NSArray *records) {
-        self.artists = [PartitionObjectsHelper partitionObjects:records collationStringSelector:@selector(name)];
+    [Group fetchManyWithURLString:@"/groups/" parameters:limit block:^(NSArray *records) {
+        self.groups = [PartitionObjectsHelper partitionObjects:records collationStringSelector:@selector(name)];
 
         // Create a UILabel with the total artist count.
         UILabel *count = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
         count.textAlignment = UITextAlignmentCenter;
         count.textColor = [UIColor grayColor];
-        count.text = [NSString stringWithFormat:@"%d Artists", [records count]];
+        count.text = [NSString stringWithFormat:@"%d Groups", [records count]];
         self.tableView.tableFooterView = count;
 
         [self.tableView reloadData];
@@ -119,21 +119,24 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[self.artists objectAtIndex:section] count];
+    return [[self.groups objectAtIndex:section] count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    BOOL showSection = [[self.artists objectAtIndex:section] count] != 0;
+    BOOL showSection = [[self.groups objectAtIndex:section] count] != 0;
     return (showSection) ? [[[UILocalizedIndexedCollation currentCollation] sectionTitles] objectAtIndex:section] : nil;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ArtistCell"];
-    Artist *artist = [[self.artists objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
-    cell.textLabel.text = artist.name;
-    cell.detailTextLabel.text = artist.kanji;
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GroupCell"];
+    Group *group = [[self.groups objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    cell.textLabel.text = group.name;
+    cell.detailTextLabel.text = group.kanji;
+    if ([group.name isEqualToString:group.kanji]) {
+        cell.detailTextLabel.text = nil;
+    }
 
     return cell;
 }
@@ -143,7 +146,7 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    [self setArtists:nil];
+    [self setGroups:nil];
 }
 
 @end

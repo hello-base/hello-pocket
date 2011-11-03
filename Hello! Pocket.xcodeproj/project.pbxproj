@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		930A61CD145FAED000CA787A /* DictionaryHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 930A61CB145FAED000CA787A /* DictionaryHelper.m */; };
 		933E502A14546CF7004467AC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 933E502914546CF7004467AC /* UIKit.framework */; };
 		933E502C14546CF7004467AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 933E502B14546CF7004467AC /* Foundation.framework */; };
 		933E502E14546CF7004467AC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 933E502D14546CF7004467AC /* CoreGraphics.framework */; };
@@ -15,10 +16,8 @@
 		933E503A14546CF7004467AC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E503914546CF7004467AC /* AppDelegate.m */; };
 		933E503D14546CF7004467AC /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 933E503B14546CF7004467AC /* MainStoryboard.storyboard */; };
 		933E504014546CF7004467AC /* HPMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E503F14546CF7004467AC /* HPMasterViewController.m */; };
-		933E504314546CF7004467AC /* HPArtistDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E504214546CF7004467AC /* HPArtistDetailViewController.m */; };
 		933E50971458661F004467AC /* HPArtistTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E50961458661E004467AC /* HPArtistTableViewController.m */; };
 		933E50A2145875B0004467AC /* Artist.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E50A0145875B0004467AC /* Artist.m */; };
-		933E50AA14587950004467AC /* HPHelloRankingAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E50A81458794F004467AC /* HPHelloRankingAPIClient.m */; };
 		933E50C5145879C6004467AC /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E50AE145879C6004467AC /* AFHTTPClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		933E50C6145879C6004467AC /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E50B0145879C6004467AC /* AFHTTPRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		933E50C7145879C6004467AC /* AFImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E50B2145879C6004467AC /* AFImageCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -33,9 +32,19 @@
 		933E50D614594F59004467AC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 933E50D514594F58004467AC /* QuartzCore.framework */; };
 		933E50DB14594FA8004467AC /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 933E50D814594FA8004467AC /* SVProgressHUD.bundle */; };
 		933E50DC14594FA8004467AC /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E50DA14594FA8004467AC /* SVProgressHUD.m */; };
+		93612B48145EBFAA00832D60 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93612B46145EBFAA00832D60 /* libTestFlight.a */; };
+		9388894D145FCA8B005E871C /* HPHelloRankingAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9388894B145FCA8B005E871C /* HPHelloRankingAPIClient.m */; };
+		9388895314618E1D005E871C /* PartitionObjectsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9388895214618E1D005E871C /* PartitionObjectsHelper.m */; };
+		9388896314619426005E871C /* LRIndexedCollationWithSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 9388896114619426005E871C /* LRIndexedCollationWithSearch.m */; };
+		93AFD2FA145C61670092B874 /* HPArtistDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFD2F8145C61670092B874 /* HPArtistDetailViewController.m */; };
+		93AFD2FD145D083B0092B874 /* HPGroupDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFD2FB145D083B0092B874 /* HPGroupDetailViewController.m */; };
+		93FCCF2A145C22200074CEE3 /* HPGroupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93FCCF28145C22200074CEE3 /* HPGroupTableViewController.m */; };
+		93FCCF2E145C22350074CEE3 /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 93FCCF2C145C22350074CEE3 /* Group.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		930A61CB145FAED000CA787A /* DictionaryHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictionaryHelper.m; sourceTree = "<group>"; };
+		930A61CC145FAED000CA787A /* DictionaryHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictionaryHelper.h; sourceTree = "<group>"; };
 		933E502514546CF7004467AC /* Hello! Pocket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hello! Pocket.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		933E502914546CF7004467AC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		933E502B14546CF7004467AC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -49,14 +58,10 @@
 		933E503C14546CF7004467AC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		933E503E14546CF7004467AC /* HPMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = HPMasterViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		933E503F14546CF7004467AC /* HPMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = HPMasterViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		933E504114546CF7004467AC /* HPArtistDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = HPArtistDetailViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		933E504214546CF7004467AC /* HPArtistDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = HPArtistDetailViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		933E50951458661E004467AC /* HPArtistTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPArtistTableViewController.h; sourceTree = "<group>"; };
 		933E50961458661E004467AC /* HPArtistTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPArtistTableViewController.m; sourceTree = "<group>"; };
 		933E50A0145875B0004467AC /* Artist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Artist.m; sourceTree = "<group>"; };
 		933E50A1145875B0004467AC /* Artist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Artist.h; sourceTree = "<group>"; };
-		933E50A81458794F004467AC /* HPHelloRankingAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HPHelloRankingAPIClient.m; path = "Hello! Pocket/Classes/HPHelloRankingAPIClient.m"; sourceTree = "<group>"; };
-		933E50A91458794F004467AC /* HPHelloRankingAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HPHelloRankingAPIClient.h; path = "Hello! Pocket/Classes/HPHelloRankingAPIClient.h"; sourceTree = "<group>"; };
 		933E50AD145879C6004467AC /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		933E50AE145879C6004467AC /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		933E50AF145879C6004467AC /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -84,6 +89,22 @@
 		933E50D814594FA8004467AC /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		933E50D914594FA8004467AC /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		933E50DA14594FA8004467AC /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		93612B46145EBFAA00832D60 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
+		93612B47145EBFAA00832D60 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		9388894B145FCA8B005E871C /* HPHelloRankingAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HPHelloRankingAPIClient.m; path = "hello-pocket/Classes/HPHelloRankingAPIClient.m"; sourceTree = "<group>"; };
+		9388894C145FCA8B005E871C /* HPHelloRankingAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HPHelloRankingAPIClient.h; path = "hello-pocket/Classes/HPHelloRankingAPIClient.h"; sourceTree = "<group>"; };
+		9388895114618E1D005E871C /* PartitionObjectsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartitionObjectsHelper.h; sourceTree = "<group>"; };
+		9388895214618E1D005E871C /* PartitionObjectsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartitionObjectsHelper.m; sourceTree = "<group>"; };
+		9388896114619426005E871C /* LRIndexedCollationWithSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRIndexedCollationWithSearch.m; sourceTree = "<group>"; };
+		9388896214619426005E871C /* LRIndexedCollationWithSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRIndexedCollationWithSearch.h; sourceTree = "<group>"; };
+		93AFD2F8145C61670092B874 /* HPArtistDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPArtistDetailViewController.m; sourceTree = "<group>"; };
+		93AFD2F9145C61670092B874 /* HPArtistDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPArtistDetailViewController.h; sourceTree = "<group>"; };
+		93AFD2FB145D083B0092B874 /* HPGroupDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPGroupDetailViewController.m; sourceTree = "<group>"; };
+		93AFD2FC145D083B0092B874 /* HPGroupDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPGroupDetailViewController.h; sourceTree = "<group>"; };
+		93FCCF28145C22200074CEE3 /* HPGroupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HPGroupTableViewController.m; path = Classes/Controllers/HPGroupTableViewController.m; sourceTree = SOURCE_ROOT; };
+		93FCCF29145C22200074CEE3 /* HPGroupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HPGroupTableViewController.h; path = Classes/Controllers/HPGroupTableViewController.h; sourceTree = SOURCE_ROOT; };
+		93FCCF2C145C22350074CEE3 /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Group.m; path = Classes/Models/Group.m; sourceTree = SOURCE_ROOT; };
+		93FCCF2D145C22350074CEE3 /* Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Group.h; path = Classes/Models/Group.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93612B48145EBFAA00832D60 /* libTestFlight.a in Frameworks */,
 				933E50D614594F59004467AC /* QuartzCore.framework in Frameworks */,
 				933E502A14546CF7004467AC /* UIKit.framework in Frameworks */,
 				933E502C14546CF7004467AC /* Foundation.framework in Frameworks */,
@@ -101,13 +123,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		930A61C9145FAE0900CA787A /* iOSBoilerplate */ = {
+			isa = PBXGroup;
+			children = (
+				930A61CC145FAED000CA787A /* DictionaryHelper.h */,
+				930A61CB145FAED000CA787A /* DictionaryHelper.m */,
+			);
+			path = iOSBoilerplate;
+			sourceTree = "<group>";
+		};
 		933E501A14546CF6004467AC = {
 			isa = PBXGroup;
 			children = (
-				933E502814546CF7004467AC /* Frameworks */,
 				933E502F14546CF7004467AC /* Hello! Pocket */,
+				933E502814546CF7004467AC /* Frameworks */,
 				933E502614546CF7004467AC /* Products */,
-				933E50AB145879C5004467AC /* Vendor */,
+				933E50AB145879C5004467AC /* Vendors */,
 			);
 			sourceTree = "<group>";
 		};
@@ -138,7 +169,7 @@
 				933E504D1455288C004467AC /* Storyboards */,
 				933E503014546CF7004467AC /* Supporting Files */,
 			);
-			path = "Hello! Pocket";
+			name = "Hello! Pocket";
 			sourceTree = "<group>";
 		};
 		933E503014546CF7004467AC /* Supporting Files */ = {
@@ -160,6 +191,7 @@
 				933E504A14552829004467AC /* Controllers */,
 				933E504B1455285A004467AC /* Models */,
 				933E504C14552862004467AC /* Views */,
+				9388895414618EA7005E871C /* Helpers */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -167,7 +199,8 @@
 		933E504A14552829004467AC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				93AFD2DC145C45DB0092B874 /* Artists */,
+				93AFD2FF145D14DB0092B874 /* Artists */,
+				93AFD2FE145D14850092B874 /* Groups */,
 				933E503E14546CF7004467AC /* HPMasterViewController.h */,
 				933E503F14546CF7004467AC /* HPMasterViewController.m */,
 			);
@@ -179,6 +212,8 @@
 			children = (
 				933E50A1145875B0004467AC /* Artist.h */,
 				933E50A0145875B0004467AC /* Artist.m */,
+				93FCCF2D145C22350074CEE3 /* Group.h */,
+				93FCCF2C145C22350074CEE3 /* Group.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -198,15 +233,18 @@
 			name = Storyboards;
 			sourceTree = "<group>";
 		};
-		933E50AB145879C5004467AC /* Vendor */ = {
+		933E50AB145879C5004467AC /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
 				933E50AC145879C6004467AC /* AFNetworking */,
+				930A61C9145FAE0900CA787A /* iOSBoilerplate */,
 				933E50C2145879C6004467AC /* JSONKit */,
 				933E50D714594FA8004467AC /* SVProgressHUD */,
+				93612B44145EBF9600832D60 /* TestFlight */,
+				9388896214619426005E871C /* LRIndexedCollationWithSearch.h */,
+				9388896114619426005E871C /* LRIndexedCollationWithSearch.m */,
 			);
-			name = Vendor;
-			path = "Hello! Pocket/Vendor";
+			path = Vendors;
 			sourceTree = "<group>";
 		};
 		933E50AC145879C6004467AC /* AFNetworking */ = {
@@ -249,8 +287,8 @@
 		933E50D014587D94004467AC /* Networking Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				933E50A91458794F004467AC /* HPHelloRankingAPIClient.h */,
-				933E50A81458794F004467AC /* HPHelloRankingAPIClient.m */,
+				9388894B145FCA8B005E871C /* HPHelloRankingAPIClient.m */,
+				9388894C145FCA8B005E871C /* HPHelloRankingAPIClient.h */,
 			);
 			name = "Networking Extensions";
 			path = ..;
@@ -266,13 +304,42 @@
 			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
-		93AFD2DC145C45DB0092B874 /* Artists */ = {
+		93612B44145EBF9600832D60 /* TestFlight */ = {
 			isa = PBXGroup;
 			children = (
+				93612B46145EBFAA00832D60 /* libTestFlight.a */,
+				93612B47145EBFAA00832D60 /* TestFlight.h */,
+			);
+			path = TestFlight;
+			sourceTree = "<group>";
+		};
+		9388895414618EA7005E871C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9388895114618E1D005E871C /* PartitionObjectsHelper.h */,
+				9388895214618E1D005E871C /* PartitionObjectsHelper.m */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		93AFD2FE145D14850092B874 /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				93AFD2FC145D083B0092B874 /* HPGroupDetailViewController.h */,
+				93AFD2FB145D083B0092B874 /* HPGroupDetailViewController.m */,
+				93FCCF29145C22200074CEE3 /* HPGroupTableViewController.h */,
+				93FCCF28145C22200074CEE3 /* HPGroupTableViewController.m */,
+			);
+			name = Groups;
+			sourceTree = "<group>";
+		};
+		93AFD2FF145D14DB0092B874 /* Artists */ = {
+			isa = PBXGroup;
+			children = (
+				93AFD2F9145C61670092B874 /* HPArtistDetailViewController.h */,
+				93AFD2F8145C61670092B874 /* HPArtistDetailViewController.m */,
 				933E50951458661E004467AC /* HPArtistTableViewController.h */,
 				933E50961458661E004467AC /* HPArtistTableViewController.m */,
-				933E504114546CF7004467AC /* HPArtistDetailViewController.h */,
-				933E504214546CF7004467AC /* HPArtistDetailViewController.m */,
 			);
 			name = Artists;
 			sourceTree = "<group>";
@@ -344,10 +411,8 @@
 				933E503614546CF7004467AC /* main.m in Sources */,
 				933E503A14546CF7004467AC /* AppDelegate.m in Sources */,
 				933E504014546CF7004467AC /* HPMasterViewController.m in Sources */,
-				933E504314546CF7004467AC /* HPArtistDetailViewController.m in Sources */,
 				933E50971458661F004467AC /* HPArtistTableViewController.m in Sources */,
 				933E50A2145875B0004467AC /* Artist.m in Sources */,
-				933E50AA14587950004467AC /* HPHelloRankingAPIClient.m in Sources */,
 				933E50C5145879C6004467AC /* AFHTTPClient.m in Sources */,
 				933E50C6145879C6004467AC /* AFHTTPRequestOperation.m in Sources */,
 				933E50C7145879C6004467AC /* AFImageCache.m in Sources */,
@@ -360,6 +425,14 @@
 				933E50CE145879C6004467AC /* UIImageView+AFNetworking.m in Sources */,
 				933E50CF145879C6004467AC /* JSONKit.m in Sources */,
 				933E50DC14594FA8004467AC /* SVProgressHUD.m in Sources */,
+				93FCCF2A145C22200074CEE3 /* HPGroupTableViewController.m in Sources */,
+				93FCCF2E145C22350074CEE3 /* Group.m in Sources */,
+				93AFD2FA145C61670092B874 /* HPArtistDetailViewController.m in Sources */,
+				93AFD2FD145D083B0092B874 /* HPGroupDetailViewController.m in Sources */,
+				930A61CD145FAED000CA787A /* DictionaryHelper.m in Sources */,
+				9388894D145FCA8B005E871C /* HPHelloRankingAPIClient.m in Sources */,
+				9388895314618E1D005E871C /* PartitionObjectsHelper.m in Sources */,
+				9388896314619426005E871C /* LRIndexedCollationWithSearch.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,8 +464,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -407,8 +479,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
+				STRIP_INSTALLED_PRODUCT = NO;
 			};
 			name = Debug;
 		};
@@ -418,9 +490,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
+				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
@@ -428,9 +499,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
+				STRIP_INSTALLED_PRODUCT = NO;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -439,8 +509,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Hello! Pocket/Prefix.pch";
-				INFOPLIST_FILE = "Hello! Pocket/Info.plist";
+				GCC_PREFIX_HEADER = Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Vendors\"",
+					"\"$(SRCROOT)/Vendors/TestFlight\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -450,8 +525,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Hello! Pocket/Prefix.pch";
-				INFOPLIST_FILE = "Hello! Pocket/Info.plist";
+				GCC_PREFIX_HEADER = Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Vendors\"",
+					"\"$(SRCROOT)/Vendors/TestFlight\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

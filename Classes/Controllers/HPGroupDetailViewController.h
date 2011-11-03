@@ -1,18 +1,18 @@
 //
-//  HPArtistDetailViewController.h
+//  HPGroupDetailViewController.h
 //  Hello! Pocket
 //
-//  Created by Bryan Veloso on 10/24/11.
+//  Created by Bryan Veloso on 10/30/11.
 //  Copyright (c) 2011 Revyver, Inc. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@class Artist;
+@class Group;
 
-@interface HPArtistDetailViewController : UITableViewController
+@interface HPGroupDetailViewController : UITableViewController
 
-@property (nonatomic, assign) Artist *artist;
+@property (nonatomic, assign) Group *group;
 
 @property (nonatomic, strong) id detailItem;
 @property (nonatomic, strong) IBOutlet UILabel *detailDescriptionLabel;

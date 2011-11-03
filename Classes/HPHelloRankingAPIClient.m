@@ -10,7 +10,7 @@
 
 #import "AFJSONRequestOperation.h"
 
-NSString * const kHPHelloRankingBaseURLString = @"http://127.0.0.1:8000/api/v1/";
+NSString * const kHPHelloRankingBaseURLString = @"http://gentle-dusk-3420.herokuapp.com/api/v1/";
 
 @implementation HPHelloRankingAPIClient
 

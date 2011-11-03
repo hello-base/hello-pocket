@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HPMasterViewController : UIViewController
+@interface HPMasterViewController : UITableViewController
 
 @end
