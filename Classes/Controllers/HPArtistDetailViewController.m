@@ -26,7 +26,7 @@
 {
     if (_detailItem != newDetailItem) {
         _detailItem = newDetailItem;
-        
+
         // Update the view.
         [self configureView];
     }
@@ -37,7 +37,7 @@
     // Update the user interface for the detail item.
 
     NSLog(@"Artist: %@", self.artist);
-    
+
     if (self.artist) {
         self.detailDescriptionLabel.text = self.artist.name;
     }
@@ -58,7 +58,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view, typically from a nib.
     [self configureView];
 }
 
@@ -81,12 +81,12 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-	[super viewWillDisappear:animated];
+    [super viewWillDisappear:animated];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
-	[super viewDidDisappear:animated];
+    [super viewDidDisappear:animated];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

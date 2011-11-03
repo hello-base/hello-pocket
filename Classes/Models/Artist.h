@@ -26,7 +26,7 @@
     NSString *_note;
 
     NSNumber *_scope;
-    NSNumber *_status;    
+    NSNumber *_status;
 }
 
 @property (nonatomic, strong) NSDate *modified;
