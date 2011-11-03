@@ -10,8 +10,12 @@
 
 @class Artist;
 
-@interface HPArtistDetailViewController : UITableViewController
+@interface HPArtistDetailViewController : UITableViewController {
+@private
+    NSArray *_memberships;
+}
 
 @property (nonatomic, strong) id detailItem;
+@property (nonatomic, strong) NSArray *memberships;
 
 @end

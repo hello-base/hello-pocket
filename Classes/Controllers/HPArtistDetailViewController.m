@@ -9,14 +9,17 @@
 #import "HPArtistDetailViewController.h"
 
 #import "Artist.h"
+#import "Group.h"
 
 @interface HPArtistDetailViewController ()
 - (void)configureView;
+- (void)loadMemberships;
 @end
 
 @implementation HPArtistDetailViewController
 
 @synthesize detailItem = _detailItem;
+@synthesize memberships = _memberships;
 
 #pragma mark - Detail Item Management
 
@@ -36,6 +39,11 @@
     if ([self.detailItem isKindOfClass:[Artist class]]) {
         Artist *artist = self.detailItem;
     }
+}
+
+- (void)loadMemberships
+{
+    
 }
 
 #pragma mark - View Lifecycle
