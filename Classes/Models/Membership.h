@@ -12,11 +12,14 @@
 @class Group;
 
 @interface Membership : NSObject {
-@private    
+@private
+    NSNumber *_artistID;
+    NSNumber *_groupID;
+
     NSNumber *_primaryGroup;
     NSDate *_joined;
     NSDate *_left;
-    
+
     NSNumber *_isLeader;
     NSDate *_leadershipStart;
     NSDate *_leadershipEnd;
@@ -24,7 +27,9 @@
 }
 
 @property (nonatomic, assign) Artist *artist;
+@property (nonatomic, strong) NSNumber *artistID;
 @property (nonatomic, assign) Group *group;
+@property (nonatomic, strong) NSNumber *groupID;
 
 @property (nonatomic, strong) NSNumber *primaryGroup;
 @property (nonatomic, strong) NSDate *joined;
@@ -34,5 +39,8 @@
 @property (nonatomic, strong) NSDate *leadershipStart;
 @property (nonatomic, strong) NSDate *leadershipEnd;
 @property (nonatomic, strong) NSNumber *leadershipTenure;
+
+- (id)initWithAttributes:(NSDictionary *)attributes;
++ (void)fetchManyWithURLString:(NSString *)urlString parameters:(NSDictionary *)parameters block:(void (^)(NSArray *records))block;
 
 @end
