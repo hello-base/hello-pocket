@@ -32,9 +32,9 @@
 
 - (void)viewDidLoad
 {
-    [self loadArtists];
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    [self loadArtists];
 }
 
 - (void)viewDidUnload
@@ -74,7 +74,7 @@
     if ([[segue identifier] isEqualToString:@"SegueToArtistDetail"]) {
         Artist *artist = [[self.artists objectAtIndex:self.tableView.indexPathForSelectedRow.section] objectAtIndex:self.tableView.indexPathForSelectedRow.row];
         HPArtistDetailViewController *detail = [segue destinationViewController];
-        [detail setArtist:artist];
+        [detail setDetailItem:artist];
         [detail setTitle:[artist name]];
     }
 }

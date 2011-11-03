@@ -16,17 +16,15 @@
 
 @implementation HPArtistDetailViewController
 
-@synthesize artist;
 @synthesize detailItem = _detailItem;
-@synthesize detailDescriptionLabel = _detailDescriptionLabel;
 
-#pragma mark - Managing the detail item
+#pragma mark - Detail Item Management
 
 - (void)setDetailItem:(id)newDetailItem
 {
     if (_detailItem != newDetailItem) {
         _detailItem = newDetailItem;
-        
+
         // Update the view.
         [self configureView];
     }
@@ -35,25 +33,15 @@
 - (void)configureView
 {
     // Update the user interface for the detail item.
+    if ([self.detailItem isKindOfClass:[Artist class]]) {
+        Artist *artist = self.detailItem;
 
-    NSLog(@"Artist: %@", self.artist);
-    
-    if (self.artist) {
-        self.detailDescriptionLabel.text = self.artist.name;
-    }
-
-    if (self.detailItem) {
-        self.detailDescriptionLabel.text = @"WHAT?";
+        NSLog(@"Artist: %@", artist);
+        NSLog(@"Detail Item: %@", self.detailItem);    
     }
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
-}
-
-#pragma mark - View lifecycle
+#pragma mark - View Lifecycle
 
 - (void)viewDidLoad
 {
@@ -91,8 +79,14 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // Return YES for supported orientations
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
+#pragma mark - Memory Management
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
 }
 
 @end

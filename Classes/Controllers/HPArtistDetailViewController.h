@@ -12,9 +12,6 @@
 
 @interface HPArtistDetailViewController : UITableViewController
 
-@property (nonatomic, assign) Artist *artist;
-
 @property (nonatomic, strong) id detailItem;
-@property (nonatomic, strong) IBOutlet UILabel *detailDescriptionLabel;
 
 @end
