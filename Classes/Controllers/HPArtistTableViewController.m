@@ -86,7 +86,7 @@
     [SVProgressHUD showInView:[self view]];
 
     NSDictionary *limit = [NSDictionary dictionaryWithObject:@"0" forKey:@"limit"];
-    [Artist fetchManyWithURLString:@"/artists" parameters:limit block:^(NSArray *records) {
+    [Artist fetchManyWithURLString:@"/artists/" parameters:limit block:^(NSArray *records) {
         self.artists = [PartitionObjectsHelper partitionObjects:records collationStringSelector:@selector(name)];
 
         // Create a UILabel with the total artist count.
