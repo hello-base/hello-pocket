@@ -15,9 +15,7 @@
 @implementation Membership
 
 @synthesize artist;
-@synthesize artistID = _artistID;
 @synthesize group;
-@synthesize groupID = _groupID;
 @synthesize primaryGroup = _primaryGroup;
 @synthesize joined = _joined;
 @synthesize left = _left;
@@ -33,8 +31,6 @@
         return nil;
     }
 
-    self.artistID = [attributes valueForKeyPath:@"artist.id"];
-    self.groupID = [attributes valueForKeyPath:@"group.id"];
     self.primaryGroup = [attributes valueForKeyPath:@"primary_group"];
     self.joined = [attributes valueForKeyPath:@"joined"];
     self.left = [attributes valueForKeyPath:@"left"];
@@ -42,6 +38,14 @@
     self.leadershipStart = [attributes valueForKeyPath:@"leadership.start"];
     self.leadershipEnd = [attributes valueForKeyPath:@"leadership.end"];
     self.leadershipTenure = [attributes valueForKeyPath:@"leadership.tenure"];
+
+    if ([attributes valueForKeyPath:@"artist"]) {
+        self.artist = [[Artist alloc] initWithAttributes:[attributes valueForKeyPath:@"artist"]];
+    }
+
+    if ([attributes valueForKeyPath:@"group"]) {
+        self.group = [[Group alloc] initWithAttributes:[attributes valueForKeyPath:@"group"]];
+    }
 
     return self;
 }

@@ -13,9 +13,6 @@
 
 @interface Membership : NSObject {
 @private
-    NSNumber *_artistID;
-    NSNumber *_groupID;
-
     NSNumber *_primaryGroup;
     NSDate *_joined;
     NSDate *_left;
@@ -26,10 +23,8 @@
     NSNumber *_leadershipTeunure;
 }
 
-@property (nonatomic, assign) Artist *artist;
-@property (nonatomic, strong) NSNumber *artistID;
-@property (nonatomic, assign) Group *group;
-@property (nonatomic, strong) NSNumber *groupID;
+@property (nonatomic, strong) Artist *artist;
+@property (nonatomic, strong) Group *group;
 
 @property (nonatomic, strong) NSNumber *primaryGroup;
 @property (nonatomic, strong) NSDate *joined;
