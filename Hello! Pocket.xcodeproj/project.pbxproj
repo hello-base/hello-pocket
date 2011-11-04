@@ -38,6 +38,7 @@
 		9388896314619426005E871C /* LRIndexedCollationWithSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 9388896114619426005E871C /* LRIndexedCollationWithSearch.m */; };
 		93AFD2FA145C61670092B874 /* HPArtistDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFD2F8145C61670092B874 /* HPArtistDetailViewController.m */; };
 		93AFD2FD145D083B0092B874 /* HPGroupDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AFD2FB145D083B0092B874 /* HPGroupDetailViewController.m */; };
+		93D802B71463A74900C98711 /* NSDate+RFC2822.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D802B61463A74900C98711 /* NSDate+RFC2822.m */; };
 		93FCCF2A145C22200074CEE3 /* HPGroupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93FCCF28145C22200074CEE3 /* HPGroupTableViewController.m */; };
 		93FCCF2E145C22350074CEE3 /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 93FCCF2C145C22350074CEE3 /* Group.m */; };
 /* End PBXBuildFile section */
@@ -101,6 +102,8 @@
 		93AFD2F9145C61670092B874 /* HPArtistDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPArtistDetailViewController.h; sourceTree = "<group>"; };
 		93AFD2FB145D083B0092B874 /* HPGroupDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPGroupDetailViewController.m; sourceTree = "<group>"; };
 		93AFD2FC145D083B0092B874 /* HPGroupDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPGroupDetailViewController.h; sourceTree = "<group>"; };
+		93D802B51463A74900C98711 /* NSDate+RFC2822.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+RFC2822.h"; sourceTree = "<group>"; };
+		93D802B61463A74900C98711 /* NSDate+RFC2822.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+RFC2822.m"; sourceTree = "<group>"; };
 		93FCCF28145C22200074CEE3 /* HPGroupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HPGroupTableViewController.m; path = Classes/Controllers/HPGroupTableViewController.m; sourceTree = SOURCE_ROOT; };
 		93FCCF29145C22200074CEE3 /* HPGroupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HPGroupTableViewController.h; path = Classes/Controllers/HPGroupTableViewController.h; sourceTree = SOURCE_ROOT; };
 		93FCCF2C145C22350074CEE3 /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Group.m; path = Classes/Models/Group.m; sourceTree = SOURCE_ROOT; };
@@ -318,6 +321,8 @@
 			children = (
 				9388895114618E1D005E871C /* PartitionObjectsHelper.h */,
 				9388895214618E1D005E871C /* PartitionObjectsHelper.m */,
+				93D802B51463A74900C98711 /* NSDate+RFC2822.h */,
+				93D802B61463A74900C98711 /* NSDate+RFC2822.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -433,6 +438,7 @@
 				9388894D145FCA8B005E871C /* HPHelloRankingAPIClient.m in Sources */,
 				9388895314618E1D005E871C /* PartitionObjectsHelper.m in Sources */,
 				9388896314619426005E871C /* LRIndexedCollationWithSearch.m in Sources */,
+				93D802B71463A74900C98711 /* NSDate+RFC2822.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
