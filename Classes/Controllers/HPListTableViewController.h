@@ -10,13 +10,11 @@
 
 @interface HPListTableViewController : UITableViewController {
 @private
-    NSMutableArray *_items;
+    NSArray *_items;
 }
 
-@property (nonatomic, strong) NSMutableArray *items;
+@property (nonatomic, strong) NSArray *items;
 
 - (void)loadItems;
-- (void)showTableView;
-- (void)hideTableView;
 
 @end

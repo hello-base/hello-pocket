@@ -17,45 +17,25 @@
     NSLog(@"Must be implemented in a subclass.");
 }
 
-- (void)showTableView
-{
-	self.tableView.hidden = NO;
-}
-
-- (void)hideTableView
-{
-	self.tableView.hidden = YES;
-}
-
 #pragma mark - View Lifecycle
 
-- (void)loadView
+- (void)viewDidLoad
 {
-    [super loadView];
-    
-    self.tableView.hidden = YES;
-}
-
-- (void)viewDidLoad{
     [super viewDidLoad];
     
     if (_items && [_items count] > 0) {
         [self.tableView reloadData];
-        [self showTableView];
-    }else{
+    } else {
         [self loadItems];
     }
 }
 
-- (void)viewWillAppear:(BOOL)animated
+#pragma mark - Memory Management
+
+- (void)didReceiveMemoryWarning
 {
-	[super viewWillAppear:animated];
-    
-    // Deselect the selected row.
-    NSIndexPath *selection = [self.tableView indexPathForSelectedRow];
-    if (selection) {
-        [self.tableView deselectRowAtIndexPath:selection animated:YES];
-    }
+    [super didReceiveMemoryWarning];
+    [self setItems:nil];
 }
 
 @end
