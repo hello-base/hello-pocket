@@ -18,6 +18,7 @@
 
     NSString *_alias;
     NSString *_aliasKanji;
+    NSDate *_birthdate;
     NSString *_bloodtype;
     NSString *_familyKanji;
     NSString *_familyName;
@@ -38,6 +39,7 @@
 
 @property (nonatomic, strong) NSString *alias;
 @property (nonatomic, strong) NSString *aliasKanji;
+@property (nonatomic, strong) NSDate *birthdate;
 @property (nonatomic, strong) NSString *bloodtype;
 @property (nonatomic, strong) NSString *familyKanji;
 @property (nonatomic, strong) NSString *familyName;

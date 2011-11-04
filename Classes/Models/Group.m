@@ -9,6 +9,7 @@
 #import "Group.h"
 
 #import "HPHelloRankingAPIClient.h"
+#import "NSDate+RFC2822.h"
 #import "SVProgressHUD.h"
 
 @implementation Group
@@ -34,12 +35,12 @@
         return nil;
     }
 
-    self.modified = [attributes valueForKeyPath:@"modified"];
+    self.modified = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"modified"]];
     self.name = [attributes valueForKeyPath:@"name"];
     self.kanji = [attributes valueForKeyPath:@"kanji"];
     self.active = [attributes valueForKeyPath:@"active"];
-    self.formation = [attributes valueForKeyPath:@"formation"];
-    self.inactive = [attributes valueForKeyPath:@"inactive"];
+    self.formation = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"formation"]];
+    self.inactive = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"inactive"]];
     self.members = [attributes valueForKeyPath:@"members"];
     self.activeMembers = [attributes valueForKeyPath:@"active_members"];
     self.inactiveMembers = [attributes valueForKeyPath:@"inactive_members"];

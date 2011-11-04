@@ -9,6 +9,7 @@
 #import "Artist.h"
 
 #import "HPHelloRankingAPIClient.h"
+#import "NSDate+RFC2822.h"
 #import "SVProgressHUD.h"
 
 @implementation Artist
@@ -19,6 +20,7 @@
 @synthesize kanji = _kanji;
 @synthesize alias = _alias;
 @synthesize aliasKanji = _aliasKanji;
+@synthesize birthdate = _birthdate;
 @synthesize bloodtype = _bloodtype;
 @synthesize familyKanji = _familyKanji;
 @synthesize familyName = _familyName;
@@ -36,11 +38,12 @@
         return nil;
     }
 
-    self.modified = [attributes valueForKeyPath:@"modified"];
+    self.modified = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"modified"]];
     self.name = [attributes valueForKeyPath:@"name"];
     self.kanji = [attributes valueForKeyPath:@"kanji"];
     self.alias = [attributes valueForKeyPath:@"alias"];
     self.aliasKanji = [attributes valueForKeyPath:@"alias_kanji"];
+    self.birthdate = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"birthdate"]];
     self.bloodtype = [attributes valueForKeyPath:@"bloodtype"];
     self.familyKanji = [attributes valueForKeyPath:@"family_kanji"];
     self.familyName = [attributes valueForKeyPath:@"family_name"];

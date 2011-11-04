@@ -11,6 +11,7 @@
 #import "Artist.h"
 #import "Group.h"
 #import "HPHelloRankingAPIClient.h"
+#import "NSDate+RFC2822.h"
 
 @implementation Membership
 
@@ -32,11 +33,11 @@
     }
 
     self.primaryGroup = [attributes valueForKeyPath:@"primary_group"];
-    self.joined = [attributes valueForKeyPath:@"joined"];
-    self.left = [attributes valueForKeyPath:@"left"];
+    self.joined = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"joined"]];
+    self.left = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"left"]];
     self.isLeader = [attributes valueForKeyPath:@"leader"];
-    self.leadershipStart = [attributes valueForKeyPath:@"leadership.start"];
-    self.leadershipEnd = [attributes valueForKeyPath:@"leadership.end"];
+    self.leadershipStart = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"leadership.start"]];
+    self.leadershipEnd = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"leadership.end"]];
     self.leadershipTenure = [attributes valueForKeyPath:@"leadership.tenure"];
 
     if ([attributes valueForKeyPath:@"artist"]) {
