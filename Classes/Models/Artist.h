@@ -52,7 +52,7 @@
 @property (nonatomic, strong) NSNumber *status;
 
 - (id)initWithAttributes:(NSDictionary *)attributes;
++ (void)fetchWithBlock:(void (^)(NSArray *records))block;
 + (void)fetchWithString:(NSString *)urlString parameters:(NSDictionary *)parameters block:(void (^)(Artist *artist))block;
-+ (void)fetchManyWithURLString:(NSString *)urlString parameters:(NSDictionary *)parameters block:(void (^)(NSArray *records))block;
 
 @end
