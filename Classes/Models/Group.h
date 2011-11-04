@@ -33,7 +33,7 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *kanji;
 
-@property (readwrite, strong) NSNumber *active;
+@property (nonatomic, strong) NSNumber *active;
 @property (nonatomic, strong) NSDate *formation;
 @property (nonatomic, strong) NSDate *inactive;
 @property (nonatomic, strong) NSNumber *members;
@@ -46,6 +46,6 @@
 @property (nonatomic, strong) NSNumber *status;
 
 - (id)initWithAttributes:(NSDictionary *)attributes;
-+ (void)fetchManyWithURLString:(NSString *)urlString parameters:(NSDictionary *)parameters block:(void (^)(NSArray *records))block;
++ (void)fetchWithBlock:(void (^)(NSArray *records))block;
 
 @end

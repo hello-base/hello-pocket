@@ -56,10 +56,10 @@
     return self;
 }
 
-+ (void)fetchManyWithURLString:(NSString *)urlString parameters:(NSDictionary *)parameters block:(void (^)(NSArray *))block
++ (void)fetchWithBlock:(void (^)(NSArray *))block
 {
-    NSDictionary *mutableParameters = [NSMutableDictionary dictionaryWithDictionary:parameters];
-    [[HPHelloRankingAPIClient sharedClient] getPath:urlString parameters:mutableParameters success:^(id object) {
+    NSDictionary *limit = [NSDictionary dictionaryWithObject:@"0" forKey:@"limit"];
+    [[HPHelloRankingAPIClient sharedClient] getPath:@"/groups/" parameters:limit success:^(id object) {
         NSMutableArray *mutableRecords = [NSMutableArray array];
         for (NSDictionary *attributes in [object valueForKeyPath:@"objects"]) {
             Group *group = [[Group alloc] initWithAttributes:attributes];
