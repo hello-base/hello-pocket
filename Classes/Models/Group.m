@@ -40,7 +40,6 @@
     self.kanji = [attributes valueForKeyPath:@"kanji"];
     self.active = [attributes valueForKeyPath:@"active"];
     self.formation = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"formation"]];
-    self.inactive = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"inactive"]];
     self.members = [attributes valueForKeyPath:@"members"];
     self.activeMembers = [attributes valueForKeyPath:@"active_members"];
     self.inactiveMembers = [attributes valueForKeyPath:@"inactive_members"];
@@ -48,6 +47,11 @@
     self.classification = [attributes valueForKeyPath:@"classification"];
     self.scope = [attributes valueForKeyPath:@"scope"];
     self.status = [attributes valueForKeyPath:@"status"];
+
+    // The following dates can be null, so we must test for it.
+    if (![[attributes valueForKeyPath:@"inactive"] isKindOfClass:[NSNull class]]) {
+        self.inactive = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"inactive"]];
+    }
 
     return self;
 }

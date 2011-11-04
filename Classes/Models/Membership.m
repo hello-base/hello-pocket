@@ -32,20 +32,27 @@
         return nil;
     }
 
-    self.primaryGroup = [attributes valueForKeyPath:@"primary_group"];
-    self.joined = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"joined"]];
-    self.left = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"left"]];
-    self.isLeader = [attributes valueForKeyPath:@"leader"];
-    self.leadershipStart = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"leadership.start"]];
-    self.leadershipEnd = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"leadership.end"]];
-    self.leadershipTenure = [attributes valueForKeyPath:@"leadership.tenure"];
-
     if ([attributes valueForKeyPath:@"artist"]) {
         self.artist = [[Artist alloc] initWithAttributes:[attributes valueForKeyPath:@"artist"]];
     }
-
     if ([attributes valueForKeyPath:@"group"]) {
         self.group = [[Group alloc] initWithAttributes:[attributes valueForKeyPath:@"group"]];
+    }
+
+    self.primaryGroup = [attributes valueForKeyPath:@"primary_group"];
+    self.joined = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"joined"]];
+    self.isLeader = [attributes valueForKeyPath:@"leader"];
+    self.leadershipTenure = [attributes valueForKeyPath:@"leadership.tenure"];
+
+    // The following dates can be null, so we must test for it.
+    if (![[attributes valueForKeyPath:@"left"] isKindOfClass:[NSNull class]]) {
+        self.left = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"left"]];
+    }
+    if (![[attributes valueForKeyPath:@"leadership_start"] isKindOfClass:[NSNull class]]) {
+        self.leadershipStart = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"leadership.start"]];
+    }
+    if (![[attributes valueForKeyPath:@"leadership_end"] isKindOfClass:[NSNull class]]) {
+        self.leadershipEnd = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"leadership.end"]];
     }
 
     return self;
