@@ -57,20 +57,6 @@
     return self;
 }
 
-+ (void)fetchWithString:(NSString *)urlString parameters:(NSDictionary *)parameters block:(void (^)(Artist *))block
-{
-    NSDictionary *mutableParameters = [NSMutableDictionary dictionaryWithDictionary:parameters];
-    [[HPHelloRankingAPIClient sharedClient] getPath:urlString parameters:mutableParameters success:^(id object) {
-        if (block) {
-            block([[Artist alloc] initWithAttributes:object]);
-        }
-    } failure:^(NSHTTPURLResponse *response, NSError *error) {
-        if (block) {
-            block([[Artist alloc] init]);
-        }
-    }];
-}
-
 + (void)fetchWithBlock:(void (^)(NSArray *))block
 {
     NSDictionary *limit = [NSDictionary dictionaryWithObject:@"0" forKey:@"limit"];
@@ -88,6 +74,20 @@
         if (block) {
             block([NSArray array]);
             [SVProgressHUD dismissWithError:@"Whoops!"];
+        }
+    }];
+}
+
++ (void)fetchWithString:(NSString *)urlString parameters:(NSDictionary *)parameters block:(void (^)(Artist *))block
+{
+    NSDictionary *mutableParameters = [NSMutableDictionary dictionaryWithDictionary:parameters];
+    [[HPHelloRankingAPIClient sharedClient] getPath:urlString parameters:mutableParameters success:^(id object) {
+        if (block) {
+            block([[Artist alloc] initWithAttributes:object]);
+        }
+    } failure:^(NSHTTPURLResponse *response, NSError *error) {
+        if (block) {
+            block([[Artist alloc] init]);
         }
     }];
 }

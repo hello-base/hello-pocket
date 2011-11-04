@@ -86,7 +86,9 @@
         count.textColor = [UIColor grayColor];
         self.tableView.tableFooterView = count;
 
-        [self.tableView reloadData];
+        dispatch_async(dispatch_get_main_queue(), ^(void) {
+            [self.tableView reloadData];
+        });
     }];
 }
 
