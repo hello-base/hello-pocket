@@ -39,6 +39,7 @@
     }
 
     self.modified = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"modified"]];
+    self.pk = [attributes valueForKeyPath:@"id"];
     self.name = [attributes valueForKeyPath:@"name"];
     self.kanji = [attributes valueForKeyPath:@"kanji"];
     self.alias = [attributes valueForKeyPath:@"alias"];
