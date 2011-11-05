@@ -18,7 +18,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="pTv-Vh-oeS" detailTextLabel="GSq-bw-Pxn" style="IBUITableViewCellStyleSubtitle" id="agj-eP-Iy1">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ArtistListCell" textLabel="pTv-Vh-oeS" detailTextLabel="GSq-bw-Pxn" style="IBUITableViewCellStyleSubtitle" id="agj-eP-Iy1">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -44,6 +44,10 @@
                                         </view>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="OBt-rr-oHP" id="LeR-Ll-Lye"/>
+                                    <outlet property="delegate" destination="OBt-rr-oHP" id="fjG-fA-E1x"/>
+                                </connections>
                             </tableView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="RSF-9r-9mp">
                                 <rect key="frame" x="0.0" y="372" width="320" height="44"/>
@@ -68,6 +72,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="LWb-cf-eea"/>
+                    <connections>
+                        <outlet property="tableView" destination="Vuj-gl-mTT" id="dgZ-KL-Ifp"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="500" y="430"/>
@@ -460,7 +467,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="mL5-kw-O4Z" detailTextLabel="6Jt-0n-Lgp" style="IBUITableViewCellStyleSubtitle" id="YJ7-93-hJa">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GroupListCell" textLabel="mL5-kw-O4Z" detailTextLabel="6Jt-0n-Lgp" style="IBUITableViewCellStyleSubtitle" id="YJ7-93-hJa">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -486,6 +493,10 @@
                                         </view>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="IXh-OV-PaN" id="Wbs-cA-HHo"/>
+                                    <outlet property="delegate" destination="IXh-OV-PaN" id="Hqf-S0-CQE"/>
+                                </connections>
                             </tableView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Vih-qf-rUr">
                                 <rect key="frame" x="0.0" y="372" width="320" height="44"/>
@@ -547,7 +558,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="sh3-o3-yca"/>
         <segue reference="O29-ni-B62"/>
-        <segue reference="vjp-gT-cfd"/>
     </inferredMetricsTieBreakers>
 </document>

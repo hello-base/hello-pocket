@@ -62,6 +62,11 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	// Override in a subclass.
+}
+
 #pragma mark - Memory Management
 
 - (void)didReceiveMemoryWarning

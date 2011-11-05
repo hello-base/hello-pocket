@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HPListTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+@interface HPListTableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
 @private
     UITableView *_tableView;
     NSArray *_items;

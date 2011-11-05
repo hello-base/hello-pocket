@@ -80,7 +80,7 @@
         self.items = [PartitionObjectsHelper partitionObjects:records collationStringSelector:@selector(name)];
 
         // Create a UILabel with the total artist count.
-        UILabel *count = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+        UILabel *count = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 52)];
         count.text = [NSString stringWithFormat:@"%d Artists", [records count]];
         count.textAlignment = UITextAlignmentCenter;
         count.textColor = [UIColor grayColor];
@@ -122,7 +122,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ArtistCell"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ArtistListCell"];
     Artist *artist = [[self.items objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     cell.textLabel.text = artist.name;
     cell.detailTextLabel.text = artist.kanji;
