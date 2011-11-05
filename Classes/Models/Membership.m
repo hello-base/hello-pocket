@@ -48,10 +48,10 @@
     if (![[attributes valueForKeyPath:@"left"] isKindOfClass:[NSNull class]]) {
         self.left = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"left"]];
     }
-    if (![[attributes valueForKeyPath:@"leadership_start"] isKindOfClass:[NSNull class]]) {
+    if (![[attributes valueForKeyPath:@"leadership.start"] isKindOfClass:[NSNull class]]) {
         self.leadershipStart = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"leadership.start"]];
     }
-    if (![[attributes valueForKeyPath:@"leadership_end"] isKindOfClass:[NSNull class]]) {
+    if (![[attributes valueForKeyPath:@"leadership.end"] isKindOfClass:[NSNull class]]) {
         self.leadershipEnd = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"leadership.end"]];
     }
 
