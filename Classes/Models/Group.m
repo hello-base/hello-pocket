@@ -14,7 +14,6 @@
 
 @implementation Group
 
-@synthesize modified = _modified;
 @synthesize pk = _pk;
 @synthesize name = _name;
 @synthesize kanji = _kanji;
@@ -36,7 +35,6 @@
         return nil;
     }
 
-    self.modified = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"modified"]];
     self.pk = [attributes valueForKeyPath:@"id"];
     self.name = [attributes valueForKeyPath:@"name"];
     self.kanji = [attributes valueForKeyPath:@"kanji"];

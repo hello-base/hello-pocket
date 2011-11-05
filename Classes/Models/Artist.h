@@ -10,8 +10,6 @@
 
 @interface Artist : NSObject {
 @private
-    NSDate *_modified;
-
     NSNumber *_pk;
     NSString *_name;
     NSString *_kanji;
@@ -30,8 +28,6 @@
     NSNumber *_scope;
     NSNumber *_status;
 }
-
-@property (nonatomic, strong) NSDate *modified;
 
 @property (nonatomic, strong) NSNumber *pk;
 @property (nonatomic, strong) NSString *name;
