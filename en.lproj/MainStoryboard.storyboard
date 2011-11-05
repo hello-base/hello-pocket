@@ -73,6 +73,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="LWb-cf-eea"/>
                     <connections>
+                        <outlet property="filter" destination="QQ4-1U-XJA" id="D8J-kx-3GI"/>
                         <outlet property="tableView" destination="Vuj-gl-mTT" id="dgZ-KL-Ifp"/>
                     </connections>
                 </viewController>
@@ -535,6 +536,9 @@
         </class>
         <class className="HPArtistTableViewController" superclassName="HPListTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HPArtistTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="filter" candidateClass="UISegmentedControl"/>
+            </relationships>
         </class>
         <class className="HPDetailTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HPDetailTableViewController.h"/>

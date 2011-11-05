@@ -15,6 +15,11 @@
 
 @implementation HPArtistTableViewController
 
+@synthesize filter;
+@synthesize allItems = _allItems;
+@synthesize activeItems = _activeItems;
+@synthesize inactiveItems = _inactiveItems;
+
 #pragma mark - View Lifecycle
 
 - (void)awakeFromNib
@@ -26,10 +31,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    [filter addTarget:self action:@selector(filterIndexChanged) forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)viewDidUnload
 {
+    [self setFilter:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -77,11 +84,22 @@
     [SVProgressHUD showInView:[self view]];
 
     [Artist fetchWithBlock:^(NSArray *records) {
-        self.items = [PartitionObjectsHelper partitionObjects:records collationStringSelector:@selector(name)];
+        NSArray *bucket = [NSArray arrayWithArray:records];
+        
+        // Use two predicates to create two filtered arrays of groups.
+        NSPredicate *filterActive = [NSPredicate predicateWithFormat:@"status == 1"];
+        NSPredicate *filterInactive = [NSPredicate predicateWithFormat:@"status == 2"];
 
+        self.allItems = [PartitionObjectsHelper partitionObjects:bucket collationStringSelector:@selector(name)];
+        self.activeItems = [PartitionObjectsHelper partitionObjects:[bucket filteredArrayUsingPredicate:filterActive] collationStringSelector:@selector(name)];;
+        self.inactiveItems = [PartitionObjectsHelper partitionObjects:[bucket filteredArrayUsingPredicate:filterInactive] collationStringSelector:@selector(name)];
+
+        // Set the initial item list to active artists.
+        self.items = self.activeItems;
+        
         // Create a UILabel with the total artist count.
         UILabel *count = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 52)];
-        count.text = [NSString stringWithFormat:@"%d Artists", [records count]];
+        count.text = [NSString stringWithFormat:@"%d Artists", [bucket count]];
         count.textAlignment = UITextAlignmentCenter;
         count.textColor = [UIColor grayColor];
         self.tableView.tableFooterView = count;
@@ -90,6 +108,26 @@
             [self.tableView reloadData];
         });
     }];
+}
+
+- (IBAction)filterIndexChanged
+{
+    switch (self.filter.selectedSegmentIndex) {
+        case 0:
+            self.items = self.activeItems;
+            [self.tableView reloadData];
+            break;
+        case 1:
+            self.items = self.inactiveItems;
+            [self.tableView reloadData];
+            break;
+        case 2:
+            self.items = self.allItems; 
+            [self.tableView reloadData];
+            break;
+        default:
+            break;
+    }
 }
 
 #pragma mark - TableView Methods

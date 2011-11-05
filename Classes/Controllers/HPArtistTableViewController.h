@@ -9,6 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "HPListTableViewController.h"
 
-@interface HPArtistTableViewController : HPListTableViewController
+@interface HPArtistTableViewController : HPListTableViewController {
+    NSArray *_allItems;
+    NSArray *_activeItems;
+    NSArray *_inactiveItems;
+}
+
+@property (nonatomic, strong) IBOutlet UISegmentedControl *filter;
+@property (nonatomic, strong) NSArray *allItems;
+@property (nonatomic, strong) NSArray *activeItems;
+@property (nonatomic, strong) NSArray *inactiveItems;
+
+- (IBAction)filterIndexChanged;
 
 @end
