@@ -10,13 +10,13 @@
 
 @interface Artist : NSObject {
 @private
-    NSDate *_modified;
-
+    NSNumber *_pk;
     NSString *_name;
     NSString *_kanji;
 
     NSString *_alias;
     NSString *_aliasKanji;
+    NSDate *_birthdate;
     NSString *_bloodtype;
     NSString *_familyKanji;
     NSString *_familyName;
@@ -29,13 +29,13 @@
     NSNumber *_status;
 }
 
-@property (nonatomic, strong) NSDate *modified;
-
+@property (nonatomic, strong) NSNumber *pk;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *kanji;
 
 @property (nonatomic, strong) NSString *alias;
 @property (nonatomic, strong) NSString *aliasKanji;
+@property (nonatomic, strong) NSDate *birthdate;
 @property (nonatomic, strong) NSString *bloodtype;
 @property (nonatomic, strong) NSString *familyKanji;
 @property (nonatomic, strong) NSString *familyName;
@@ -48,6 +48,7 @@
 @property (nonatomic, strong) NSNumber *status;
 
 - (id)initWithAttributes:(NSDictionary *)attributes;
-+ (void)fetchManyWithURLString:(NSString *)urlString parameters:(NSDictionary *)parameters block:(void (^)(NSArray *records))block;
++ (void)fetchWithBlock:(void (^)(NSArray *records))block;
++ (void)fetchWithString:(NSString *)urlString parameters:(NSDictionary *)parameters block:(void (^)(Artist *artist))block;
 
 @end

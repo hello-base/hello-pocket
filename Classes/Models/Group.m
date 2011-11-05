@@ -9,11 +9,12 @@
 #import "Group.h"
 
 #import "HPHelloRankingAPIClient.h"
+#import "NSDate+RFC2822.h"
 #import "SVProgressHUD.h"
 
 @implementation Group
 
-@synthesize modified = _modified;
+@synthesize pk = _pk;
 @synthesize name = _name;
 @synthesize kanji = _kanji;
 @synthesize active = _active;
@@ -34,12 +35,11 @@
         return nil;
     }
 
-    self.modified = [attributes valueForKeyPath:@"modified"];
+    self.pk = [attributes valueForKeyPath:@"id"];
     self.name = [attributes valueForKeyPath:@"name"];
     self.kanji = [attributes valueForKeyPath:@"kanji"];
     self.active = [attributes valueForKeyPath:@"active"];
-    self.formation = [attributes valueForKeyPath:@"formation"];
-    self.inactive = [attributes valueForKeyPath:@"inactive"];
+    self.formation = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"formation"]];
     self.members = [attributes valueForKeyPath:@"members"];
     self.activeMembers = [attributes valueForKeyPath:@"active_members"];
     self.inactiveMembers = [attributes valueForKeyPath:@"inactive_members"];
@@ -48,13 +48,18 @@
     self.scope = [attributes valueForKeyPath:@"scope"];
     self.status = [attributes valueForKeyPath:@"status"];
 
+    // The following dates can be null, so we must test for it.
+    if (![[attributes valueForKeyPath:@"inactive"] isKindOfClass:[NSNull class]]) {
+        self.inactive = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"inactive"]];
+    }
+
     return self;
 }
 
-+ (void)fetchManyWithURLString:(NSString *)urlString parameters:(NSDictionary *)parameters block:(void (^)(NSArray *))block
++ (void)fetchWithBlock:(void (^)(NSArray *))block
 {
-    NSDictionary *mutableParameters = [NSMutableDictionary dictionaryWithDictionary:parameters];
-    [[HPHelloRankingAPIClient sharedClient] getPath:urlString parameters:mutableParameters success:^(id object) {
+    NSDictionary *limit = [NSDictionary dictionaryWithObject:@"0" forKey:@"limit"];
+    [[HPHelloRankingAPIClient sharedClient] getPath:@"/groups/" parameters:limit success:^(id object) {
         NSMutableArray *mutableRecords = [NSMutableArray array];
         for (NSDictionary *attributes in [object valueForKeyPath:@"objects"]) {
             Group *group = [[Group alloc] initWithAttributes:attributes];

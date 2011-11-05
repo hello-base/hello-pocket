@@ -11,13 +11,12 @@
 #import "Artist.h"
 #import "Group.h"
 #import "HPHelloRankingAPIClient.h"
+#import "NSDate+RFC2822.h"
 
 @implementation Membership
 
 @synthesize artist;
-@synthesize artistID = _artistID;
 @synthesize group;
-@synthesize groupID = _groupID;
 @synthesize primaryGroup = _primaryGroup;
 @synthesize joined = _joined;
 @synthesize left = _left;
@@ -33,15 +32,28 @@
         return nil;
     }
 
-    self.artistID = [attributes valueForKeyPath:@"artist.id"];
-    self.groupID = [attributes valueForKeyPath:@"group.id"];
+    if ([attributes valueForKeyPath:@"artist"]) {
+        self.artist = [[Artist alloc] initWithAttributes:[attributes valueForKeyPath:@"artist"]];
+    }
+    if ([attributes valueForKeyPath:@"group"]) {
+        self.group = [[Group alloc] initWithAttributes:[attributes valueForKeyPath:@"group"]];
+    }
+
     self.primaryGroup = [attributes valueForKeyPath:@"primary_group"];
-    self.joined = [attributes valueForKeyPath:@"joined"];
-    self.left = [attributes valueForKeyPath:@"left"];
+    self.joined = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"joined"]];
     self.isLeader = [attributes valueForKeyPath:@"leader"];
-    self.leadershipStart = [attributes valueForKeyPath:@"leadership.start"];
-    self.leadershipEnd = [attributes valueForKeyPath:@"leadership.end"];
     self.leadershipTenure = [attributes valueForKeyPath:@"leadership.tenure"];
+
+    // The following dates can be null, so we must test for it.
+    if (![[attributes valueForKeyPath:@"left"] isKindOfClass:[NSNull class]]) {
+        self.left = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"left"]];
+    }
+    if (![[attributes valueForKeyPath:@"leadership.start"] isKindOfClass:[NSNull class]]) {
+        self.leadershipStart = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"leadership.start"]];
+    }
+    if (![[attributes valueForKeyPath:@"leadership.end"] isKindOfClass:[NSNull class]]) {
+        self.leadershipEnd = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"leadership.end"]];
+    }
 
     return self;
 }
