@@ -521,6 +521,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="A8O-vn-tQE"/>
+                    <connections>
+                        <outlet property="tableView" destination="NB0-mC-BJH" id="DeB-Bj-vLM"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="500" y="1584"/>
@@ -547,6 +550,9 @@
         </class>
         <class className="HPListTableViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HPListTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
         </class>
         <class className="HPMasterViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HPMasterViewController.h"/>

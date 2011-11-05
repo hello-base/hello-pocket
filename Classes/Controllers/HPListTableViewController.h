@@ -14,7 +14,7 @@
     NSArray *_items;
 }
 
-@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *items;
 
 - (void)loadItems;
