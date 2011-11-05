@@ -73,7 +73,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"SegueToArtistDetail"]) {
+    if ([[segue identifier] isEqualToString:@"ToArtistDetail"]) {
         Artist *artist = [[self.items objectAtIndex:self.tableView.indexPathForSelectedRow.section] objectAtIndex:self.tableView.indexPathForSelectedRow.row];
         HPArtistDetailViewController *detail = [segue destinationViewController];
         [detail setDetailItem:artist];
@@ -85,7 +85,7 @@
 
 - (void)loadItems
 {
-    [SVProgressHUD showInView:[self view]];
+    [SVProgressHUD showInView:[self view] status:@"Loading..."];
 
     [Artist fetchWithBlock:^(NSArray *records) {
         NSArray *bucket = [NSArray arrayWithArray:records];

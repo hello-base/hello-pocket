@@ -18,11 +18,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ArtistListCell" textLabel="pTv-Vh-oeS" detailTextLabel="GSq-bw-Pxn" style="IBUITableViewCellStyleSubtitle" id="agj-eP-Iy1">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ArtistListCell" textLabel="pTv-Vh-oeS" detailTextLabel="GSq-bw-Pxn" style="IBUITableViewCellStyleSubtitle" id="agj-eP-Iy1">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pTv-Vh-oeS">
@@ -42,6 +42,9 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <connections>
+                                            <segue destination="uNa-aw-pId" kind="push" identifier="ToArtistDetail" id="dcf-2p-3FD"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -278,7 +281,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oic-8i-efz" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="uNa-aw-pId" customClass="HPArtistDetailViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="a4X-4D-YJ9">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -343,7 +346,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SQ1-hN-zOz" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="FmW-Nq-Ns4" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="AkD-gO-GAd">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -537,6 +540,7 @@
         <class className="HPArtistTableViewController" superclassName="HPListTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HPArtistTableViewController.h"/>
             <relationships>
+                <relationship kind="action" name="filterIndexChanged"/>
                 <relationship kind="outlet" name="filter" candidateClass="UISegmentedControl"/>
             </relationships>
         </class>
@@ -569,6 +573,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="sh3-o3-yca"/>
-        <segue reference="O29-ni-B62"/>
+        <segue reference="dcf-2p-3FD"/>
     </inferredMetricsTieBreakers>
 </document>
