@@ -13,15 +13,7 @@
 #import "PartitionObjectsHelper.h"
 #import "SVProgressHUD.h"
 
-@interface HPArtistTableViewController ()
-@property (readwrite, nonatomic, strong) NSArray *artists;
-
-- (void)loadArtists;
-@end
-
 @implementation HPArtistTableViewController
-
-@synthesize artists = _artists;
 
 #pragma mark - View Lifecycle
 
@@ -32,9 +24,8 @@
 
 - (void)viewDidLoad
 {
-    [self loadArtists];
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)viewDidUnload
@@ -72,31 +63,32 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"SegueToArtistDetail"]) {
-        Artist *artist = [[self.artists objectAtIndex:self.tableView.indexPathForSelectedRow.section] objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+        Artist *artist = [[self.items objectAtIndex:self.tableView.indexPathForSelectedRow.section] objectAtIndex:self.tableView.indexPathForSelectedRow.row];
         HPArtistDetailViewController *detail = [segue destinationViewController];
-        [detail setArtist:artist];
+        [detail setDetailItem:artist];
         [detail setTitle:[artist name]];
     }
 }
 
 #pragma mark - Data Source Methods
 
-- (void)loadArtists
+- (void)loadItems
 {
     [SVProgressHUD showInView:[self view]];
 
-    NSDictionary *limit = [NSDictionary dictionaryWithObject:@"0" forKey:@"limit"];
-    [Artist fetchManyWithURLString:@"/artists/" parameters:limit block:^(NSArray *records) {
-        self.artists = [PartitionObjectsHelper partitionObjects:records collationStringSelector:@selector(name)];
+    [Artist fetchWithBlock:^(NSArray *records) {
+        self.items = [PartitionObjectsHelper partitionObjects:records collationStringSelector:@selector(name)];
 
         // Create a UILabel with the total artist count.
         UILabel *count = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+        count.text = [NSString stringWithFormat:@"%d Artists", [records count]];
         count.textAlignment = UITextAlignmentCenter;
         count.textColor = [UIColor grayColor];
-        count.text = [NSString stringWithFormat:@"%d Artists", [records count]];
         self.tableView.tableFooterView = count;
 
-        [self.tableView reloadData];
+        dispatch_async(dispatch_get_main_queue(), ^(void) {
+            [self.tableView reloadData];
+        });
     }];
 }
 
@@ -119,19 +111,19 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[self.artists objectAtIndex:section] count];
+    return [[self.items objectAtIndex:section] count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    BOOL showSection = [[self.artists objectAtIndex:section] count] != 0;
+    BOOL showSection = [[self.items objectAtIndex:section] count] != 0;
     return (showSection) ? [[[UILocalizedIndexedCollation currentCollation] sectionTitles] objectAtIndex:section] : nil;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ArtistCell"];
-    Artist *artist = [[self.artists objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    Artist *artist = [[self.items objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     cell.textLabel.text = artist.name;
     cell.detailTextLabel.text = artist.kanji;
 
@@ -143,7 +135,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    [self setArtists:nil];
 }
 
 @end

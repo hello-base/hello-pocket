@@ -13,15 +13,7 @@
 #import "PartitionObjectsHelper.h"
 #import "SVProgressHUD.h"
 
-@interface HPGroupTableViewController ()
-@property (readwrite, nonatomic, strong) NSArray *groups;
-
-- (void)loadGroups;
-@end
-
 @implementation HPGroupTableViewController
-
-@synthesize groups = _groups;
 
 #pragma mark - View Lifecycle
 
@@ -32,7 +24,6 @@
 
 - (void)viewDidLoad
 {
-    [self loadGroups];
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 }
@@ -72,7 +63,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"SegueToGroupDetail"]) {
-        Group *group = [[self.groups objectAtIndex:self.tableView.indexPathForSelectedRow.section] objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+        Group *group = [[self.items objectAtIndex:self.tableView.indexPathForSelectedRow.section] objectAtIndex:self.tableView.indexPathForSelectedRow.row];
         HPGroupDetailViewController *detail = [segue destinationViewController];
         [detail setGroup:group];
         [detail setTitle:group.name];
@@ -81,13 +72,12 @@
 
 #pragma mark - Data Source Methods
 
-- (void)loadGroups
+- (void)loadItems
 {
     [SVProgressHUD showInView:[self view]];
 
-    NSDictionary *limit = [NSDictionary dictionaryWithObject:@"0" forKey:@"limit"];
-    [Group fetchManyWithURLString:@"/groups/" parameters:limit block:^(NSArray *records) {
-        self.groups = [PartitionObjectsHelper partitionObjects:records collationStringSelector:@selector(name)];
+    [Group fetchWithBlock:^(NSArray *records) {
+        self.items = [PartitionObjectsHelper partitionObjects:records collationStringSelector:@selector(name)];
 
         // Create a UILabel with the total artist count.
         UILabel *count = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
@@ -96,7 +86,9 @@
         count.text = [NSString stringWithFormat:@"%d Groups", [records count]];
         self.tableView.tableFooterView = count;
 
-        [self.tableView reloadData];
+        dispatch_async(dispatch_get_main_queue(), ^(void) {
+            [self.tableView reloadData];
+        });
     }];
 }
 
@@ -119,19 +111,19 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[self.groups objectAtIndex:section] count];
+    return [[self.items objectAtIndex:section] count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    BOOL showSection = [[self.groups objectAtIndex:section] count] != 0;
+    BOOL showSection = [[self.items objectAtIndex:section] count] != 0;
     return (showSection) ? [[[UILocalizedIndexedCollation currentCollation] sectionTitles] objectAtIndex:section] : nil;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GroupCell"];
-    Group *group = [[self.groups objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    Group *group = [[self.items objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     cell.textLabel.text = group.name;
     cell.detailTextLabel.text = group.kanji;
     if ([group.name isEqualToString:group.kanji]) {
@@ -146,7 +138,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    [self setGroups:nil];
 }
 
 @end

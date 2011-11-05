@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HPListTableViewController.h"
 
-@interface HPGroupTableViewController : UITableViewController {
-@private
-    NSArray *_groups;
-}
+@interface HPGroupTableViewController : HPListTableViewController
+
 @end
