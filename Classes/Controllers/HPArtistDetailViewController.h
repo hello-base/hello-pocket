@@ -7,17 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HPDetailTableViewController.h"
 
 @class Artist;
 
-@interface HPArtistDetailViewController : UITableViewController {
+@interface HPArtistDetailViewController : HPDetailTableViewController {
 @private
     NSArray *_memberships;
+    NSArray *_photos;
 }
 
 @property (nonatomic, assign) Artist *artist;
 
 @property (nonatomic, strong) id detailItem;
 @property (nonatomic, strong) NSArray *memberships;
+@property (nonatomic, strong) NSArray *photos;
 
 @end

@@ -12,4 +12,6 @@
 
 @property (nonatomic, strong) id detailItem;
 
+- (UITableViewCell *)createCellForIdentifier:(NSString *)identifier tableView:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath style:(UITableViewCellStyle)style selectable:(BOOL)selectable;
+
 @end
