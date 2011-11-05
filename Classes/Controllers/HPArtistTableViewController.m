@@ -54,6 +54,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -85,7 +86,7 @@
 
 - (void)loadItems
 {
-    [SVProgressHUD showInView:[self view] status:@"Loading..."];
+    [SVProgressHUD showWithStatus:@"Loading..." maskType:SVProgressHUDMaskTypeClear];
 
     [Artist fetchWithBlock:^(NSArray *records) {
         NSArray *bucket = [NSArray arrayWithArray:records];

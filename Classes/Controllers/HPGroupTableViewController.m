@@ -85,7 +85,7 @@
 
 - (void)loadItems
 {
-    [SVProgressHUD showInView:[self view] status:@"Loading..."];
+    [SVProgressHUD showWithStatus:@"Loading..." maskType:SVProgressHUDMaskTypeClear];
 
     [Group fetchWithBlock:^(NSArray *records) {
         NSArray *bucket = [NSArray arrayWithArray:records];
