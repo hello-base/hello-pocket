@@ -33,8 +33,8 @@
 
 - (void)viewDidLoad
 {
-    [filter addTarget:self action:@selector(filterIndexChanged) forControlEvents:UIControlEventValueChanged];
     [super viewDidLoad];
+    // Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)viewDidUnload
@@ -89,15 +89,15 @@
 
     [Artist fetchWithBlock:^(NSArray *records) {
         NSArray *bucket = [NSArray arrayWithArray:records];
-        
+
         self.allItems = [PartitionObjectsHelper partitionObjects:bucket collationStringSelector:@selector(name)];
         self.allItemsCount = [bucket count];
-        
+
         NSPredicate *filterActive = [NSPredicate predicateWithFormat:@"status == 1"];
         NSArray *activeBucket = [NSArray arrayWithArray:[bucket filteredArrayUsingPredicate:filterActive]];
         self.activeItems = [PartitionObjectsHelper partitionObjects:activeBucket collationStringSelector:@selector(name)];
-        self.activeItemsCount = [activeBucket count];                        
-        
+        self.activeItemsCount = [activeBucket count];
+
         NSPredicate *filterInactive = [NSPredicate predicateWithFormat:@"status == 2"];
         NSArray *inactiveBucket = [NSArray arrayWithArray:[bucket filteredArrayUsingPredicate:filterInactive]];
         self.inactiveItems = [PartitionObjectsHelper partitionObjects:inactiveBucket collationStringSelector:@selector(name)];
@@ -105,7 +105,7 @@
 
         // Set the initial item list to active artists.
         self.items = self.activeItems;
-        
+
         // Create a UILabel with the total artist count.
         self.itemCount = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 52)];
         self.itemCount.text = [NSString stringWithFormat:@"%d Artists", self.activeItemsCount];
@@ -129,11 +129,11 @@
             break;
         case 1:
             self.items = self.inactiveItems;
-            self.itemCount.text = [NSString stringWithFormat:@"%d Artists", self.inactiveItemsCount];            
+            self.itemCount.text = [NSString stringWithFormat:@"%d Artists", self.inactiveItemsCount];
             [self.tableView reloadData];
             break;
         case 2:
-            self.items = self.allItems; 
+            self.items = self.allItems;
             self.itemCount.text = [NSString stringWithFormat:@"%d Artists", self.allItemsCount];
             [self.tableView reloadData];
             break;

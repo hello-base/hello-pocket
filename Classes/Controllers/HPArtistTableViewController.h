@@ -10,6 +10,7 @@
 #import "HPListTableViewController.h"
 
 @interface HPArtistTableViewController : HPListTableViewController {
+@private
     NSArray *_allItems;
     NSArray *_activeItems;
     NSArray *_inactiveItems;
@@ -17,7 +18,6 @@
     int _allItemsCount;
     int _activeItemsCount;
     int _inactiveItemsCount;
-
 }
 
 @property (nonatomic, strong) IBOutlet UISegmentedControl *filter;
