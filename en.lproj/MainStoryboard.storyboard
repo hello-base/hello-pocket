@@ -382,14 +382,14 @@
         </scene>
     </scenes>
     <classes>
-        <class className="HPArtistDetailViewController" superclassName="UITableViewController">
+        <class className="HPArtistDetailViewController" superclassName="HPDetailTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HPArtistDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="detailDescriptionLabel" candidateClass="UILabel"/>
-            </relationships>
         </class>
-        <class className="HPArtistTableViewController" superclassName="UITableViewController">
+        <class className="HPArtistTableViewController" superclassName="HPListTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HPArtistTableViewController.h"/>
+        </class>
+        <class className="HPDetailTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HPDetailTableViewController.h"/>
         </class>
         <class className="HPGroupDetailViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HPGroupDetailViewController.h"/>
@@ -397,8 +397,11 @@
                 <relationship kind="outlet" name="detailDescriptionLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
-        <class className="HPGroupTableViewController" superclassName="UITableViewController">
+        <class className="HPGroupTableViewController" superclassName="HPListTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HPGroupTableViewController.h"/>
+        </class>
+        <class className="HPListTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HPListTableViewController.h"/>
         </class>
         <class className="HPMasterViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HPMasterViewController.h"/>
@@ -409,4 +412,8 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="O29-ni-B62"/>
+        <segue reference="vjp-gT-cfd"/>
+    </inferredMetricsTieBreakers>
 </document>
