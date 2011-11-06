@@ -386,12 +386,12 @@
 		93D802DF1465440700C98711 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				93D80314146704FD00C98711 /* NSString+MD5Addition.m */,
-				93D80315146704FD00C98711 /* UIDevice+IdentifierAddition.m */,
-				93D80316146704FD00C98711 /* NSString+MD5Addition.h */,
-				93D80317146704FD00C98711 /* UIDevice+IdentifierAddition.h */,
 				93D802B51463A74900C98711 /* NSDate+RFC2822.h */,
 				93D802B61463A74900C98711 /* NSDate+RFC2822.m */,
+				93D80316146704FD00C98711 /* NSString+MD5Addition.h */,
+				93D80314146704FD00C98711 /* NSString+MD5Addition.m */,
+				93D80317146704FD00C98711 /* UIDevice+IdentifierAddition.h */,
+				93D80315146704FD00C98711 /* UIDevice+IdentifierAddition.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
