@@ -6,9 +6,9 @@
 //  Copyright (c) 2011 Revyver, Inc. All rights reserved.
 //
 
-#import "HPListTableViewController.h"
+#import "HPTableViewController.h"
 
-@implementation HPListTableViewController
+@implementation HPTableViewController
 
 @synthesize tableView = _tableView;
 @synthesize items = _items;

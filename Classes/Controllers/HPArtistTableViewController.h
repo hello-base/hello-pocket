@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HPListTableViewController.h"
+#import "HPTableViewController.h"
 
-@interface HPArtistTableViewController : HPListTableViewController {
+@interface HPArtistTableViewController : HPTableViewController {
 @private
     NSArray *_allItems;
     NSArray *_activeItems;
