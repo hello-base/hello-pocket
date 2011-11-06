@@ -66,7 +66,7 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+    return (interfaceOrientation = UIInterfaceOrientationPortrait);
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
