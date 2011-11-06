@@ -18,11 +18,8 @@
 @synthesize filter;
 @synthesize itemCount;
 @synthesize allItems = _allItems;
-@synthesize allItemsCount = _allItemsCount;
 @synthesize activeItems = _activeItems;
-@synthesize activeItemsCount = _activeItemsCount;
 @synthesize inactiveItems = _inactiveItems;
-@synthesize inactiveItemsCount = _inactiveItemsCount;
 
 #pragma mark - View Lifecycle
 
@@ -49,6 +46,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -90,28 +88,16 @@
     [Group fetchWithBlock:^(NSArray *records) {
         NSArray *bucket = [NSArray arrayWithArray:records];
 
-        self.allItems = [PartitionObjectsHelper partitionObjects:bucket collationStringSelector:@selector(name)];
-        self.allItemsCount = [bucket count];
-
         NSPredicate *filterActive = [NSPredicate predicateWithFormat:@"status == 1"];
-        NSArray *activeBucket = [NSArray arrayWithArray:[bucket filteredArrayUsingPredicate:filterActive]];
-        self.activeItems = [PartitionObjectsHelper partitionObjects:activeBucket collationStringSelector:@selector(name)];
-        self.activeItemsCount = [activeBucket count];
-
         NSPredicate *filterInactive = [NSPredicate predicateWithFormat:@"status == 2"];
-        NSArray *inactiveBucket = [NSArray arrayWithArray:[bucket filteredArrayUsingPredicate:filterInactive]];
-        self.inactiveItems = [PartitionObjectsHelper partitionObjects:inactiveBucket collationStringSelector:@selector(name)];
-        self.inactiveItemsCount = [inactiveBucket count];
+        self.allItems = [PartitionObjectsHelper partitionObjects:bucket collationStringSelector:@selector(name)];
+        self.activeItems = [PartitionObjectsHelper partitionObjects:[bucket filteredArrayUsingPredicate:filterActive] collationStringSelector:@selector(name)];
+        self.inactiveItems = [PartitionObjectsHelper partitionObjects:[bucket filteredArrayUsingPredicate:filterInactive] collationStringSelector:@selector(name)];
 
         // Set the initial item list to active artists.
         self.items = self.activeItems;
 
-        // Create a UILabel with the total artist count.
-        self.itemCount = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 52)];
-        self.itemCount.text = [NSString stringWithFormat:@"%d Groups", self.activeItemsCount];
-        self.itemCount.textAlignment = UITextAlignmentCenter;
-        self.itemCount.textColor = [UIColor grayColor];
-        self.tableView.tableFooterView = itemCount;
+        [self addFooterWithCount:[self count] withLabel:@"artists"];
 
         dispatch_async(dispatch_get_main_queue(), ^(void) {
             [self.tableView reloadData];
@@ -121,20 +107,21 @@
 
 - (IBAction)filterIndexChanged
 {
+    static NSString *labelText = @"groups";
     switch (self.filter.selectedSegmentIndex) {
         case 0:
             self.items = self.activeItems;
-            self.itemCount.text = [NSString stringWithFormat:@"%d Groups", self.activeItemsCount];
+            [self addFooterWithCount:[self count] withLabel:labelText];
             [self.tableView reloadData];
             break;
         case 1:
             self.items = self.inactiveItems;
-            self.itemCount.text = [NSString stringWithFormat:@"%d Groups", self.inactiveItemsCount];
+            [self addFooterWithCount:[self count] withLabel:labelText];
             [self.tableView reloadData];
             break;
         case 2:
             self.items = self.allItems;
-            self.itemCount.text = [NSString stringWithFormat:@"%d Groups", self.allItemsCount];
+            [self addFooterWithCount:[self count] withLabel:labelText];
             [self.tableView reloadData];
             break;
         default:
@@ -143,32 +130,6 @@
 }
 
 #pragma mark - TableView Methods
-
-- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
-{
-    return [[UILocalizedIndexedCollation currentCollation] sectionIndexTitles];
-}
-
-- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
-{
-    return [[UILocalizedIndexedCollation currentCollation] sectionForSectionIndexTitleAtIndex:index];
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return [[[UILocalizedIndexedCollation currentCollation] sectionTitles] count];
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [[self.items objectAtIndex:section] count];
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    BOOL showSection = [[self.items objectAtIndex:section] count] != 0;
-    return (showSection) ? [[[UILocalizedIndexedCollation currentCollation] sectionTitles] objectAtIndex:section] : nil;
-}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
