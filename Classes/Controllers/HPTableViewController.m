@@ -31,6 +31,17 @@
     }
 }
 
+# pragma - Convenience Methods
+
+- (NSUInteger)count
+{
+    NSUInteger count = 0;
+    for (NSArray *section in _items) {
+        count += [section count];
+    }
+    return count;
+}
+
 #pragma mark - TableView Methods
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

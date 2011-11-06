@@ -18,5 +18,6 @@
 @property (nonatomic, strong) NSArray *items;
 
 - (void)loadItems;
+- (NSUInteger)count;
 
 @end
