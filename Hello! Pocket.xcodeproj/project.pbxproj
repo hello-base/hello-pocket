@@ -43,6 +43,8 @@
 		93D802C2146421AB00C98711 /* HPTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D802C1146421AA00C98711 /* HPTableViewController.m */; };
 		93D802D71465078300C98711 /* HPDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D802D61465078100C98711 /* HPDetailTableViewController.m */; };
 		93D80306146647DD00C98711 /* HPPeopleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D80305146647DC00C98711 /* HPPeopleTableViewController.m */; };
+		93D80318146704FD00C98711 /* NSString+MD5Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D80314146704FD00C98711 /* NSString+MD5Addition.m */; };
+		93D80319146704FD00C98711 /* UIDevice+IdentifierAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D80315146704FD00C98711 /* UIDevice+IdentifierAddition.m */; };
 		93FCCF2A145C22200074CEE3 /* HPGroupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93FCCF28145C22200074CEE3 /* HPGroupTableViewController.m */; };
 		93FCCF2E145C22350074CEE3 /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 93FCCF2C145C22350074CEE3 /* Group.m */; };
 /* End PBXBuildFile section */
@@ -116,6 +118,10 @@
 		93D802D61465078100C98711 /* HPDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPDetailTableViewController.m; sourceTree = "<group>"; };
 		93D80304146647DB00C98711 /* HPPeopleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPeopleTableViewController.h; sourceTree = "<group>"; };
 		93D80305146647DC00C98711 /* HPPeopleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPeopleTableViewController.m; sourceTree = "<group>"; };
+		93D80314146704FD00C98711 /* NSString+MD5Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5Addition.m"; sourceTree = "<group>"; };
+		93D80315146704FD00C98711 /* UIDevice+IdentifierAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+IdentifierAddition.m"; sourceTree = "<group>"; };
+		93D80316146704FD00C98711 /* NSString+MD5Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5Addition.h"; sourceTree = "<group>"; };
+		93D80317146704FD00C98711 /* UIDevice+IdentifierAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+IdentifierAddition.h"; sourceTree = "<group>"; };
 		93FCCF28145C22200074CEE3 /* HPGroupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = HPGroupTableViewController.m; path = Classes/Controllers/HPGroupTableViewController.m; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		93FCCF29145C22200074CEE3 /* HPGroupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HPGroupTableViewController.h; path = Classes/Controllers/HPGroupTableViewController.h; sourceTree = SOURCE_ROOT; };
 		93FCCF2C145C22350074CEE3 /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Group.m; path = Classes/Models/Group.m; sourceTree = SOURCE_ROOT; };
@@ -380,6 +386,10 @@
 		93D802DF1465440700C98711 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				93D80314146704FD00C98711 /* NSString+MD5Addition.m */,
+				93D80315146704FD00C98711 /* UIDevice+IdentifierAddition.m */,
+				93D80316146704FD00C98711 /* NSString+MD5Addition.h */,
+				93D80317146704FD00C98711 /* UIDevice+IdentifierAddition.h */,
 				93D802B51463A74900C98711 /* NSDate+RFC2822.h */,
 				93D802B61463A74900C98711 /* NSDate+RFC2822.m */,
 			);
@@ -481,6 +491,8 @@
 				93D802C2146421AB00C98711 /* HPTableViewController.m in Sources */,
 				93D802D71465078300C98711 /* HPDetailTableViewController.m in Sources */,
 				93D80306146647DD00C98711 /* HPPeopleTableViewController.m in Sources */,
+				93D80318146704FD00C98711 /* NSString+MD5Addition.m in Sources */,
+				93D80319146704FD00C98711 /* UIDevice+IdentifierAddition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
