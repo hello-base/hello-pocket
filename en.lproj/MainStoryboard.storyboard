@@ -366,7 +366,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
-                                            <segue destination="500-lM-kpm" kind="push" id="d8f-Aj-OpJ"/>
+                                            <segue destination="500-lM-kpm" kind="push" identifier="ToGroupDetail" id="d8f-Aj-OpJ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -422,11 +422,8 @@
         <class className="HPDetailTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HPDetailTableViewController.h"/>
         </class>
-        <class className="HPGroupDetailViewController" superclassName="UITableViewController">
+        <class className="HPGroupDetailViewController" superclassName="HPDetailTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HPGroupDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="detailDescriptionLabel" candidateClass="UILabel"/>
-            </relationships>
         </class>
         <class className="HPGroupTableViewController" superclassName="HPPeopleTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HPGroupTableViewController.h"/>
