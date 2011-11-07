@@ -105,12 +105,13 @@ enum Sections {
     NSString *urlString = [NSString stringWithFormat:@"/groups/%@/members/", self.group.pk];
     NSDictionary *limit = [NSDictionary dictionaryWithObject:@"0" forKey:@"limit"];
     [Membership fetchManyWithURLString:urlString parameters:limit block:^(NSArray *records) {
-        self.members = records;
+        NSArray *bucket = [[records reverseObjectEnumerator] allObjects];
+        self.members = bucket;
 
         NSPredicate *filterActive = [NSPredicate predicateWithFormat:@"left == NIL"];
         NSPredicate *filterInactive = [NSPredicate predicateWithFormat:@"left != NIL"];
-        self.activeMembers = [records filteredArrayUsingPredicate:filterActive];
-        self.inactiveMembers = [records filteredArrayUsingPredicate:filterInactive];
+        self.activeMembers = [bucket filteredArrayUsingPredicate:filterActive];
+        self.inactiveMembers = [bucket filteredArrayUsingPredicate:filterInactive];
 
         dispatch_async(dispatch_get_main_queue(), ^(void) {
             [self.tableView reloadData];
@@ -131,7 +132,7 @@ enum Sections {
         case kHeaderSection:
             return nil;
         case kMembersSection:
-            return @"Memberships";
+            return @"Current Members";
         default:
             return nil;
     }
@@ -201,10 +202,6 @@ enum Sections {
     Membership *membership = [self.activeMembers objectAtIndex:indexPath.row];
     cell.textLabel.text = membership.artist.name;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", membership.joined];
-
-    if ([membership.group.name isEqualToString:@"Soloist"]) {
-        cell.accessoryType = UITableViewCellAccessoryNone;
-    }
 }
 
 #pragma mark - Memory Management
