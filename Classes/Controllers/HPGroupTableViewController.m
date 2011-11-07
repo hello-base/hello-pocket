@@ -15,6 +15,12 @@
 
 @implementation HPGroupTableViewController
 
+@synthesize filter;
+@synthesize itemCount;
+@synthesize allItems = _allItems;
+@synthesize activeItems = _activeItems;
+@synthesize inactiveItems = _inactiveItems;
+
 #pragma mark - View Lifecycle
 
 - (void)awakeFromNib
@@ -30,6 +36,8 @@
 
 - (void)viewDidUnload
 {
+    [self setFilter:nil];
+    [self setItemCount:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -38,6 +46,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -57,12 +66,12 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+    return UIInterfaceOrientationIsPortrait(interfaceOrientation);
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"SegueToGroupDetail"]) {
+    if ([[segue identifier] isEqualToString:@"ToGroupDetail"]) {
         Group *group = [[self.items objectAtIndex:self.tableView.indexPathForSelectedRow.section] objectAtIndex:self.tableView.indexPathForSelectedRow.row];
         HPGroupDetailViewController *detail = [segue destinationViewController];
         [detail setGroup:group];
@@ -74,17 +83,21 @@
 
 - (void)loadItems
 {
-    [SVProgressHUD showInView:[self view]];
+    [SVProgressHUD showWithStatus:@"Loading..." maskType:SVProgressHUDMaskTypeClear];
 
     [Group fetchWithBlock:^(NSArray *records) {
-        self.items = [PartitionObjectsHelper partitionObjects:records collationStringSelector:@selector(name)];
+        NSArray *bucket = [NSArray arrayWithArray:records];
 
-        // Create a UILabel with the total artist count.
-        UILabel *count = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
-        count.textAlignment = UITextAlignmentCenter;
-        count.textColor = [UIColor grayColor];
-        count.text = [NSString stringWithFormat:@"%d Groups", [records count]];
-        self.tableView.tableFooterView = count;
+        NSPredicate *filterActive = [NSPredicate predicateWithFormat:@"status == 1"];
+        NSPredicate *filterInactive = [NSPredicate predicateWithFormat:@"status == 2"];
+        self.allItems = [PartitionObjectsHelper partitionObjects:bucket collationStringSelector:@selector(name)];
+        self.activeItems = [PartitionObjectsHelper partitionObjects:[bucket filteredArrayUsingPredicate:filterActive] collationStringSelector:@selector(name)];
+        self.inactiveItems = [PartitionObjectsHelper partitionObjects:[bucket filteredArrayUsingPredicate:filterInactive] collationStringSelector:@selector(name)];
+
+        // Set the initial item list to active artists.
+        self.items = self.activeItems;
+
+        [self addFooterWithCount:[self count] withLabel:@"artists"];
 
         dispatch_async(dispatch_get_main_queue(), ^(void) {
             [self.tableView reloadData];
@@ -92,37 +105,35 @@
     }];
 }
 
+- (IBAction)filterIndexChanged
+{
+    static NSString *labelText = @"groups";
+    switch (self.filter.selectedSegmentIndex) {
+        case 0:
+            self.items = self.activeItems;
+            [self addFooterWithCount:[self count] withLabel:labelText];
+            [self.tableView reloadData];
+            break;
+        case 1:
+            self.items = self.inactiveItems;
+            [self addFooterWithCount:[self count] withLabel:labelText];
+            [self.tableView reloadData];
+            break;
+        case 2:
+            self.items = self.allItems;
+            [self addFooterWithCount:[self count] withLabel:labelText];
+            [self.tableView reloadData];
+            break;
+        default:
+            break;
+    }
+}
+
 #pragma mark - TableView Methods
-
-- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
-{
-    return [[UILocalizedIndexedCollation currentCollation] sectionIndexTitles];
-}
-
-- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
-{
-    return [[UILocalizedIndexedCollation currentCollation] sectionForSectionIndexTitleAtIndex:index];
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return [[[UILocalizedIndexedCollation currentCollation] sectionTitles] count];
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [[self.items objectAtIndex:section] count];
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    BOOL showSection = [[self.items objectAtIndex:section] count] != 0;
-    return (showSection) ? [[[UILocalizedIndexedCollation currentCollation] sectionTitles] objectAtIndex:section] : nil;
-}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GroupCell"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GroupListCell"];
     Group *group = [[self.items objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     cell.textLabel.text = group.name;
     cell.detailTextLabel.text = group.kanji;

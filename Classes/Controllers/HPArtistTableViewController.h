@@ -7,8 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HPListTableViewController.h"
+#import "HPPeopleTableViewController.h"
 
-@interface HPArtistTableViewController : HPListTableViewController
+@interface HPArtistTableViewController : HPPeopleTableViewController {
+@private
+    NSArray *_allItems;
+    NSArray *_activeItems;
+    NSArray *_inactiveItems;
+}
+
+@property (nonatomic, strong) IBOutlet UISegmentedControl *filter;
+@property (nonatomic, strong) UILabel *itemCount;
+
+@property (nonatomic, strong) NSArray *allItems;
+@property (nonatomic, strong) NSArray *activeItems;
+@property (nonatomic, strong) NSArray *inactiveItems;
+
+- (IBAction)filterIndexChanged;
 
 @end

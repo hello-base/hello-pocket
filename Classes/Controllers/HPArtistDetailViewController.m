@@ -71,7 +71,7 @@ enum Sections {
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+    return UIInterfaceOrientationIsPortrait(interfaceOrientation);
 }
 
 #pragma mark - Detail Item Management
@@ -165,6 +165,7 @@ enum Sections {
     // Membership (Resumé) Section
     if (indexPath.section == kMembershipSection) {
         identifier = @"Membership";
+        style = UITableViewCellStyleSubtitle;
     }
 
     return [self createCellForIdentifier:identifier tableView:tableView indexPath:indexPath style:style selectable:selectable];
@@ -190,7 +191,8 @@ enum Sections {
 - (void)customizeCellForMembership:(UITableViewCell *)cell indexPath:(NSIndexPath *)indexPath
 {
     Membership *membership = [self.memberships objectAtIndex:indexPath.row];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", membership.group.name];
+    cell.textLabel.text = membership.group.name;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", membership.joined];
 
     if ([membership.group.name isEqualToString:@"Soloist"]) {
         cell.accessoryType = UITableViewCellAccessoryNone;
