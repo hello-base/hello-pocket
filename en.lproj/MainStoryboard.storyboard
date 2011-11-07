@@ -306,7 +306,9 @@
                             <outlet property="delegate" destination="nue-A1-Gbc" id="RMg-05-dWE"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="HWZ-2v-EpP"/>
+                    <navigationItem key="navigationItem" id="HWZ-2v-EpP">
+                        <barButtonItem key="leftBarButtonItem" title="Settings" id="RU8-rd-i5c"/>
+                    </navigationItem>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="429" y="1007"/>
