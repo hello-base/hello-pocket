@@ -74,8 +74,8 @@
     if ([[segue identifier] isEqualToString:@"ToGroupDetail"]) {
         Group *group = [[self.items objectAtIndex:self.tableView.indexPathForSelectedRow.section] objectAtIndex:self.tableView.indexPathForSelectedRow.row];
         HPGroupDetailViewController *detail = [segue destinationViewController];
-        [detail setGroup:group];
-        [detail setTitle:group.name];
+        [detail setDetailItem:group];
+        [detail setTitle:[group name]];
     }
 }
 
