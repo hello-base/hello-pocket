@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class Artist;
+
 @interface HPArtistListCell : UITableViewCell
+
+@property (nonatomic, strong) Artist *artist;
 
 @end

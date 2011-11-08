@@ -409,9 +409,9 @@
 			isa = PBXGroup;
 			children = (
 				93DE67D3146978EB003293B0 /* HPArtistListCell.h */,
+				93DE67D4146978EB003293B0 /* HPArtistListCell.m */,
 				93DE67D614697906003293B0 /* HPGroupListCell.h */,
 				93DE67D714697906003293B0 /* HPGroupListCell.m */,
-				93DE67D4146978EB003293B0 /* HPArtistListCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";

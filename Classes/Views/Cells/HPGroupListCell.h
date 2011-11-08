@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class Group;
+
 @interface HPGroupListCell : UITableViewCell
+
+@property (nonatomic, strong) Group *group;
 
 @end
