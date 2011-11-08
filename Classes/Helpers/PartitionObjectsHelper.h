@@ -9,5 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface PartitionObjectsHelper : NSObject
+
 + (NSArray *)partitionObjects:(NSArray *)array collationStringSelector:(SEL)selector;
+
 @end

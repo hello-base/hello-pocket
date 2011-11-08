@@ -12,9 +12,7 @@
 
 @interface HPGroupDetailViewController : UITableViewController
 
-@property (nonatomic, assign) Group *group;
-
 @property (nonatomic, strong) id detailItem;
-@property (nonatomic, strong) IBOutlet UILabel *detailDescriptionLabel;
+@property (nonatomic, assign) Group *group;
 
 @end

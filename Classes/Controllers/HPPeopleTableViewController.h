@@ -8,9 +8,7 @@
 
 #import "HPTableViewController.h"
 
-@interface HPPeopleTableViewController : HPTableViewController {
-    UILabel *countLabel;
-}
+@interface HPPeopleTableViewController : HPTableViewController
 
 @property (nonatomic, retain) UILabel *countLabel;
 

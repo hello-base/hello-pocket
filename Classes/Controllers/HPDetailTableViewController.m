@@ -18,7 +18,7 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:style reuseIdentifier:identifier];
         cell.selectionStyle = selectable ? UITableViewCellSelectionStyleBlue : UITableViewCellSelectionStyleNone;
-        
+
         SEL initCellSelector = NSSelectorFromString([NSString stringWithFormat:@"initCellFor%@:indexPath:", identifier]);
         if ([self respondsToSelector:initCellSelector]) {
             [self performSelector:initCellSelector withObject:cell withObject:indexPath];

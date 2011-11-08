@@ -16,9 +16,8 @@
 
 @implementation HPGroupDetailViewController
 
-@synthesize group;
+@synthesize group = _group;
 @synthesize detailItem = _detailItem;
-@synthesize detailDescriptionLabel = _detailDescriptionLabel;
 
 #pragma mark - Managing the detail item
 

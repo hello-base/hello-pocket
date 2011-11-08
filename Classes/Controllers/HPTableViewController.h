@@ -8,13 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HPTableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
-@private
-    UITableView *_tableView;
-    NSArray *_items;
-}
+@interface HPTableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
+
 @property (nonatomic, strong) NSArray *items;
 
 - (void)loadItems;

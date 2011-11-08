@@ -8,26 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Artist : NSObject {
-@private
-    NSNumber *_pk;
-    NSString *_name;
-    NSString *_kanji;
-
-    NSString *_alias;
-    NSString *_aliasKanji;
-    NSDate *_birthdate;
-    NSString *_bloodtype;
-    NSString *_familyKanji;
-    NSString *_familyName;
-    NSString *_givenKanji;
-    NSString *_givenName;
-    NSString *_nicknames;
-    NSString *_note;
-
-    NSNumber *_scope;
-    NSNumber *_status;
-}
+@interface Artist : NSObject
 
 @property (nonatomic, strong) NSNumber *pk;
 @property (nonatomic, strong) NSString *name;

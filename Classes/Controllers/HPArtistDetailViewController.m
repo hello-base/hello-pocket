@@ -19,7 +19,7 @@
 
 @implementation HPArtistDetailViewController
 
-@synthesize artist;
+@synthesize artist = _artist;
 @synthesize detailItem = _detailItem;
 @synthesize memberships = _memberships;
 @synthesize photos = _photos;

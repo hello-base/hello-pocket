@@ -9,12 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HPPeopleTableViewController.h"
 
-@interface HPGroupTableViewController : HPPeopleTableViewController {
-@private
-    NSArray *_allItems;
-    NSArray *_activeItems;
-    NSArray *_inactiveItems;
-}
+@interface HPGroupTableViewController : HPPeopleTableViewController
 
 @property (nonatomic, strong) IBOutlet UISegmentedControl *filter;
 @property (nonatomic, strong) UILabel *itemCount;

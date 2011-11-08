@@ -23,7 +23,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     if (_items && [_items count] > 0) {
         [self.tableView reloadData];
     } else {
