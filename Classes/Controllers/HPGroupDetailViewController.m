@@ -19,8 +19,8 @@
 
 @implementation HPGroupDetailViewController
 
-@synthesize group = _group;
 @synthesize detailItem = _detailItem;
+@synthesize group = _group;
 @synthesize members = _members;
 @synthesize activeMembers = _activeMembers;
 @synthesize inactiveMembers = _inactiveMembers;
