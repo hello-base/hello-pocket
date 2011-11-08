@@ -41,6 +41,12 @@
     }
 }
 
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+    self.tableView = nil;
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
