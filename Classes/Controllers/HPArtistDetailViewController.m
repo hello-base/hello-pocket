@@ -89,11 +89,12 @@ enum Sections {
 - (void)configureView
 {
     // Update the user interface for the detail item.
-    if ([self.detailItem isKindOfClass:[Artist class]]) {
-        self.artist = self.detailItem;
-    }
+    self.artist = self.detailItem;
+    [self loadMemberships];
+}
 
-    // [self loadMemberships];
+- (void)loadMemberships
+{
     NSString *urlString = [NSString stringWithFormat:@"/artists/%@/memberships/", self.artist.pk];
     NSDictionary *limit = [NSDictionary dictionaryWithObject:@"0" forKey:@"limit"];
     [Membership fetchManyWithURLString:urlString parameters:limit block:^(NSArray *records) {
@@ -103,11 +104,6 @@ enum Sections {
             [self.tableView reloadData];
         });
     }];
-}
-
-- (void)loadMemberships
-{
-
 }
 
 #pragma mark - TableView Methods

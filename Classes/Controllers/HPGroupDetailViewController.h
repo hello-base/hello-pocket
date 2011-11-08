@@ -7,12 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HPDetailTableViewController.h"
 
 @class Group;
 
-@interface HPGroupDetailViewController : UITableViewController
+@interface HPGroupDetailViewController : HPDetailTableViewController
 
 @property (nonatomic, strong) id detailItem;
 @property (nonatomic, assign) Group *group;
+@property (nonatomic, strong) NSArray *members;
+@property (nonatomic, strong) NSArray *activeMembers;
+@property (nonatomic, strong) NSArray *inactiveMembers;
+@property (nonatomic, strong) NSArray *photos;
 
 @end
