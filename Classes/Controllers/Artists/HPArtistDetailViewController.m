@@ -19,8 +19,8 @@
 
 @implementation HPArtistDetailViewController
 
-@synthesize artist;
 @synthesize detailItem = _detailItem;
+@synthesize artist = _artist;
 @synthesize memberships = _memberships;
 @synthesize photos = _photos;
 
@@ -71,7 +71,7 @@ enum Sections {
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+    return UIInterfaceOrientationIsPortrait(interfaceOrientation);
 }
 
 #pragma mark - Detail Item Management
@@ -89,11 +89,12 @@ enum Sections {
 - (void)configureView
 {
     // Update the user interface for the detail item.
-    if ([self.detailItem isKindOfClass:[Artist class]]) {
-        self.artist = self.detailItem;
-    }
+    self.artist = self.detailItem;
+    [self loadMemberships];
+}
 
-    // [self loadMemberships];
+- (void)loadMemberships
+{
     NSString *urlString = [NSString stringWithFormat:@"/artists/%@/memberships/", self.artist.pk];
     NSDictionary *limit = [NSDictionary dictionaryWithObject:@"0" forKey:@"limit"];
     [Membership fetchManyWithURLString:urlString parameters:limit block:^(NSArray *records) {
@@ -103,11 +104,6 @@ enum Sections {
             [self.tableView reloadData];
         });
     }];
-}
-
-- (void)loadMemberships
-{
-
 }
 
 #pragma mark - TableView Methods
@@ -165,6 +161,7 @@ enum Sections {
     // Membership (Resumé) Section
     if (indexPath.section == kMembershipSection) {
         identifier = @"Membership";
+        style = UITableViewCellStyleSubtitle;
     }
 
     return [self createCellForIdentifier:identifier tableView:tableView indexPath:indexPath style:style selectable:selectable];
@@ -190,7 +187,8 @@ enum Sections {
 - (void)customizeCellForMembership:(UITableViewCell *)cell indexPath:(NSIndexPath *)indexPath
 {
     Membership *membership = [self.memberships objectAtIndex:indexPath.row];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", membership.group.name];
+    cell.textLabel.text = membership.group.name;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", membership.joined];
 
     if ([membership.group.name isEqualToString:@"Soloist"]) {
         cell.accessoryType = UITableViewCellAccessoryNone;
