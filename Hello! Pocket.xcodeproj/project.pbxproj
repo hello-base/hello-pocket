@@ -122,8 +122,8 @@
 		93D80315146704FD00C98711 /* UIDevice+IdentifierAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+IdentifierAddition.m"; sourceTree = "<group>"; };
 		93D80316146704FD00C98711 /* NSString+MD5Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5Addition.h"; sourceTree = "<group>"; };
 		93D80317146704FD00C98711 /* UIDevice+IdentifierAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+IdentifierAddition.h"; sourceTree = "<group>"; };
-		93FCCF28145C22200074CEE3 /* HPGroupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = HPGroupTableViewController.m; path = Classes/Controllers/HPGroupTableViewController.m; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		93FCCF29145C22200074CEE3 /* HPGroupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HPGroupTableViewController.h; path = Classes/Controllers/HPGroupTableViewController.h; sourceTree = SOURCE_ROOT; };
+		93FCCF28145C22200074CEE3 /* HPGroupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = HPGroupTableViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		93FCCF29145C22200074CEE3 /* HPGroupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPGroupTableViewController.h; sourceTree = "<group>"; };
 		93FCCF2C145C22350074CEE3 /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Group.m; path = Classes/Models/Group.m; sourceTree = SOURCE_ROOT; };
 		93FCCF2D145C22350074CEE3 /* Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Group.h; path = Classes/Models/Group.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -355,7 +355,7 @@
 				93FCCF29145C22200074CEE3 /* HPGroupTableViewController.h */,
 				93FCCF28145C22200074CEE3 /* HPGroupTableViewController.m */,
 			);
-			name = Groups;
+			path = Groups;
 			sourceTree = "<group>";
 		};
 		93AFD2FF145D14DB0092B874 /* Artists */ = {
@@ -366,7 +366,7 @@
 				933E50951458661E004467AC /* HPArtistTableViewController.h */,
 				933E50961458661E004467AC /* HPArtistTableViewController.m */,
 			);
-			name = Artists;
+			path = Artists;
 			sourceTree = "<group>";
 		};
 		93D802DE146543CA00C98711 /* Classes */ = {
