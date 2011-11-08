@@ -36,7 +36,6 @@
 
 - (void)viewDidUnload
 {
-    [self setFilter:nil];
     [self setItemCount:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.

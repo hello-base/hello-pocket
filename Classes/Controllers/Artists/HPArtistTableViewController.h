@@ -11,7 +11,7 @@
 
 @interface HPArtistTableViewController : HPPeopleTableViewController
 
-@property (nonatomic, strong) IBOutlet UISegmentedControl *filter;
+@property (nonatomic, weak) IBOutlet UISegmentedControl *filter;
 @property (nonatomic, strong) UILabel *itemCount;
 
 @property (nonatomic, strong) NSArray *allItems;
