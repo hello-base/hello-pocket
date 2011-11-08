@@ -13,6 +13,16 @@
 @synthesize tableView = _tableView;
 @synthesize items = _items;
 
+- (void)hideTableView
+{
+    self.tableView.hidden = YES;
+}
+
+- (void)showTableView
+{
+    self.tableView.hidden = NO;
+}
+
 - (void)loadItems
 {
     NSLog(@"Must be implemented in a subclass.");

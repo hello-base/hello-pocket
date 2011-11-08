@@ -14,6 +14,8 @@
 
 @property (nonatomic, strong) NSArray *items;
 
+- (void)hideTableView;
+- (void)showTableView;
 - (void)loadItems;
 - (NSUInteger)count;
 
