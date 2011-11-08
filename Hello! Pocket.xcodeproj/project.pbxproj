@@ -45,6 +45,8 @@
 		93D80306146647DD00C98711 /* HPPeopleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D80305146647DC00C98711 /* HPPeopleTableViewController.m */; };
 		93D80318146704FD00C98711 /* NSString+MD5Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D80314146704FD00C98711 /* NSString+MD5Addition.m */; };
 		93D80319146704FD00C98711 /* UIDevice+IdentifierAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D80315146704FD00C98711 /* UIDevice+IdentifierAddition.m */; };
+		93DE67D5146978EB003293B0 /* HPArtistListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93DE67D4146978EB003293B0 /* HPArtistListCell.m */; };
+		93DE67D814697906003293B0 /* HPGroupListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93DE67D714697906003293B0 /* HPGroupListCell.m */; };
 		93FCCF2A145C22200074CEE3 /* HPGroupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93FCCF28145C22200074CEE3 /* HPGroupTableViewController.m */; };
 		93FCCF2E145C22350074CEE3 /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 93FCCF2C145C22350074CEE3 /* Group.m */; };
 /* End PBXBuildFile section */
@@ -124,6 +126,12 @@
 		93D80317146704FD00C98711 /* UIDevice+IdentifierAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+IdentifierAddition.h"; sourceTree = "<group>"; };
 		93FCCF28145C22200074CEE3 /* HPGroupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = HPGroupTableViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		93FCCF29145C22200074CEE3 /* HPGroupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPGroupTableViewController.h; sourceTree = "<group>"; };
+		93DE67D3146978EB003293B0 /* HPArtistListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPArtistListCell.h; sourceTree = "<group>"; };
+		93DE67D4146978EB003293B0 /* HPArtistListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPArtistListCell.m; sourceTree = "<group>"; };
+		93DE67D614697906003293B0 /* HPGroupListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPGroupListCell.h; sourceTree = "<group>"; };
+		93DE67D714697906003293B0 /* HPGroupListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPGroupListCell.m; sourceTree = "<group>"; };
+		93FCCF28145C22200074CEE3 /* HPGroupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = HPGroupTableViewController.m; path = Classes/Controllers/HPGroupTableViewController.m; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		93FCCF29145C22200074CEE3 /* HPGroupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HPGroupTableViewController.h; path = Classes/Controllers/HPGroupTableViewController.h; sourceTree = SOURCE_ROOT; };
 		93FCCF2C145C22350074CEE3 /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Group.m; path = Classes/Models/Group.m; sourceTree = SOURCE_ROOT; };
 		93FCCF2D145C22350074CEE3 /* Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Group.h; path = Classes/Models/Group.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -244,6 +252,7 @@
 		933E504C14552862004467AC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				93DE67D114697848003293B0 /* Cells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -396,6 +405,17 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
+		93DE67D114697848003293B0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				93DE67D3146978EB003293B0 /* HPArtistListCell.h */,
+				93DE67D4146978EB003293B0 /* HPArtistListCell.m */,
+				93DE67D614697906003293B0 /* HPGroupListCell.h */,
+				93DE67D714697906003293B0 /* HPGroupListCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -493,6 +513,8 @@
 				93D80306146647DD00C98711 /* HPPeopleTableViewController.m in Sources */,
 				93D80318146704FD00C98711 /* NSString+MD5Addition.m in Sources */,
 				93D80319146704FD00C98711 /* UIDevice+IdentifierAddition.m in Sources */,
+				93DE67D5146978EB003293B0 /* HPArtistListCell.m in Sources */,
+				93DE67D814697906003293B0 /* HPGroupListCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
