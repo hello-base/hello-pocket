@@ -34,6 +34,8 @@
 {
     [super viewDidLoad];
 
+    self.tableView.hidden = YES;
+
     if (_items && [_items count] > 0) {
         [self.tableView reloadData];
     } else {
