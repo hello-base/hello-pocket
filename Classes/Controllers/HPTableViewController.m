@@ -41,6 +41,13 @@
     }
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
+    NSIndexPath *selection = [(UITableView *)_tableView indexPathForSelectedRow];
+    if (selection) [_tableView deselectRowAtIndexPath:selection animated:YES];
+}
+
 # pragma - Convenience Methods
 
 - (NSUInteger)count
