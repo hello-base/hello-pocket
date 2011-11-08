@@ -8,6 +8,8 @@
 
 #import "HPGroupListCell.h"
 
+#import "Group.h"
+
 @implementation HPGroupListCell
 
 @synthesize group = _group;
@@ -15,17 +17,61 @@
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
+    if (!self) {
+        return nil;
     }
+
+    self.textLabel.backgroundColor = self.backgroundColor;
+    self.textLabel.textColor = [UIColor blackColor];
+    self.textLabel.numberOfLines = 2;
+
+    self.detailTextLabel.backgroundColor = self.backgroundColor;
+    self.detailTextLabel.textColor = [UIColor grayColor];
+
+    self.imageView.backgroundColor = self.backgroundColor;
+    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+
+    self.selectionStyle = UITableViewCellSelectionStyleGray;
+
     return self;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
+}
 
-    // Configure the view for the selected state
+- (void)setGroup:(Group *)group
+{
+    self.textLabel.text = group.name;
+    self.detailTextLabel.text = group.kanji;
+    if ([group.name isEqualToString:group.kanji]) self.detailTextLabel.text = nil;
+}
+
+- (void)prepareForReuse
+{
+    self.textLabel.text = nil;
+    self.detailTextLabel.text = nil;
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+
+    CGRect imageViewFrame = self.imageView.frame;
+    CGRect textLabelFrame = self.textLabel.frame;
+    CGRect detailTextLabelFrame = self.detailTextLabel.frame;
+
+    imageViewFrame.origin = CGPointMake(10.0f, 10.0f);
+    imageViewFrame.size = CGSizeMake(50.0f, 50.0f);
+    textLabelFrame.origin.x = imageViewFrame.size.width + 25.0f;
+    detailTextLabelFrame.origin.x = textLabelFrame.origin.x;
+    textLabelFrame.size.width = 240.0f;
+    detailTextLabelFrame.size.width = textLabelFrame.size.width;
+
+    self.textLabel.frame = textLabelFrame;
+    self.detailTextLabel.frame = detailTextLabelFrame;
+    self.imageView.frame = imageViewFrame;
 }
 
 @end

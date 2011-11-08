@@ -10,6 +10,7 @@
 
 #import "Group.h"
 #import "HPGroupDetailViewController.h"
+#import "HPGroupListCell.h"
 #import "PartitionObjectsHelper.h"
 #import "SVProgressHUD.h"
 
@@ -133,13 +134,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GroupListCell"];
+    HPGroupListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GroupListCell"];
     Group *group = [[self.items objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
-    cell.textLabel.text = group.name;
-    cell.detailTextLabel.text = group.kanji;
-    if ([group.name isEqualToString:group.kanji]) {
-        cell.detailTextLabel.text = nil;
-    }
+    cell.group = group;
 
     return cell;
 }
