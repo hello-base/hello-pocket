@@ -10,6 +10,7 @@
 
 #import "Artist.h"
 #import "HPArtistDetailViewController.h"
+#import "HPArtistListCell.h"
 #import "PartitionObjectsHelper.h"
 #import "SVProgressHUD.h"
 
@@ -32,6 +33,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.tableView.rowHeight = 70.0f;
 }
 
 - (void)viewDidUnload
@@ -133,10 +135,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ArtistListCell"];
+    HPArtistListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ArtistListCell"];
     Artist *artist = [[self.items objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
-    cell.textLabel.text = artist.name;
-    cell.detailTextLabel.text = artist.kanji;
+    cell.artist = artist;
 
     return cell;
 }
