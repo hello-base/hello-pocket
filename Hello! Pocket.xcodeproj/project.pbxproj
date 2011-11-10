@@ -373,8 +373,7 @@
 				933E50951458661E004467AC /* HPIdolTableViewController.h */,
 				933E50961458661E004467AC /* HPIdolTableViewController.m */,
 			);
-			name = Idols;
-			path = Artists;
+			path = Idols;
 			sourceTree = "<group>";
 		};
 		93D802DE146543CA00C98711 /* Classes */ = {
