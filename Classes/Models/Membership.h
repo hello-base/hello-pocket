@@ -8,12 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@class Artist;
+@class Idol;
 @class Group;
 
 @interface Membership : NSObject
 
-@property (nonatomic, strong) Artist *artist;
+@property (nonatomic, strong) Idol *idol;
 @property (nonatomic, strong) Group *group;
 
 @property (nonatomic, strong) NSNumber *primaryGroup;

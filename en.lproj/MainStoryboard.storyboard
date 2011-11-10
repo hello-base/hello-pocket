@@ -8,7 +8,7 @@
         <scene sceneID="ejs-Ty-OFs">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D3b-LG-QAJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="OBt-rr-oHP" customClass="HPArtistTableViewController" sceneMemberID="viewController">
+                <viewController id="OBt-rr-oHP" customClass="HPIdolTableViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G67-hr-1Az">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -18,22 +18,22 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ArtistListCell" textLabel="pTv-Vh-oeS" detailTextLabel="GSq-bw-Pxn" style="IBUITableViewCellStyleSubtitle" id="agj-eP-Iy1">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="IdolListCell" textLabel="8tK-z9-zWW" detailTextLabel="yd1-NJ-Zcr" style="IBUITableViewCellStyleSubtitle" id="agj-eP-Iy1" customClass="HPIdolListCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pTv-Vh-oeS">
-                                                    <rect key="frame" x="10" y="2" width="38" height="22"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Idol Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8tK-z9-zWW">
+                                                    <rect key="frame" x="10" y="2" width="87" height="22"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GSq-bw-Pxn">
-                                                    <rect key="frame" x="10" y="24" width="47" height="18"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Name in Kanji" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yd1-NJ-Zcr">
+                                                    <rect key="frame" x="10" y="24" width="88" height="18"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
@@ -43,7 +43,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
-                                            <segue destination="uNa-aw-pId" kind="push" identifier="ToArtistDetail" id="dcf-2p-3FD"/>
+                                            <segue destination="uNa-aw-pId" kind="push" identifier="ToIdolDetail" id="dcf-2p-3FD"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -167,7 +167,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="uNa-aw-pId" kind="push" identifier="ArtistToDetailSegue" id="b1p-s8-q0Y"/>
+                                    <segue destination="uNa-aw-pId" kind="push" identifier="IdolToDetailSegue" id="b1p-s8-q0Y"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -184,7 +184,7 @@
         <scene sceneID="Rte-MA-oUP">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oic-8i-efz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="uNa-aw-pId" customClass="HPArtistDetailViewController" sceneMemberID="viewController">
+                <tableViewController id="uNa-aw-pId" customClass="HPIdolDetailViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="a4X-4D-YJ9">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -254,14 +254,14 @@
                         <sections>
                             <tableViewSection id="hHK-ht-K7P">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ArtistMasterCell" textLabel="34Z-nG-00V" style="IBUITableViewCellStyleDefault" id="7gr-S7-pWG">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="IdolMasterCell" textLabel="34Z-nG-00V" style="IBUITableViewCellStyleDefault" id="7gr-S7-pWG">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Artists" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="34Z-nG-00V">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Idols" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="34Z-nG-00V">
                                                     <rect key="frame" x="10" y="0.0" width="280" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
@@ -341,22 +341,22 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GroupListCell" textLabel="mL5-kw-O4Z" detailTextLabel="6Jt-0n-Lgp" style="IBUITableViewCellStyleSubtitle" id="YJ7-93-hJa">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GroupListCell" textLabel="mL5-kw-O4Z" detailTextLabel="6Jt-0n-Lgp" style="IBUITableViewCellStyleSubtitle" id="YJ7-93-hJa" customClass="HPGroupListCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mL5-kw-O4Z">
-                                                    <rect key="frame" x="10" y="2" width="38" height="22"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Group Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mL5-kw-O4Z">
+                                                    <rect key="frame" x="10" y="2" width="109" height="22"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6Jt-0n-Lgp">
-                                                    <rect key="frame" x="10" y="24" width="47" height="18"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Name in Kanji" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6Jt-0n-Lgp">
+                                                    <rect key="frame" x="10" y="24" width="88" height="18"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -409,24 +409,30 @@
         </scene>
     </scenes>
     <classes>
-        <class className="HPArtistDetailViewController" superclassName="HPDetailTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HPArtistDetailViewController.h"/>
-        </class>
-        <class className="HPArtistTableViewController" superclassName="HPPeopleTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HPArtistTableViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="filterIndexChanged"/>
-                <relationship kind="outlet" name="filter" candidateClass="UISegmentedControl"/>
-            </relationships>
-        </class>
         <class className="HPDetailTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HPDetailTableViewController.h"/>
         </class>
         <class className="HPGroupDetailViewController" superclassName="HPDetailTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HPGroupDetailViewController.h"/>
         </class>
+        <class className="HPGroupListCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HPGroupListCell.h"/>
+        </class>
         <class className="HPGroupTableViewController" superclassName="HPPeopleTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HPGroupTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="filterIndexChanged"/>
+                <relationship kind="outlet" name="filter" candidateClass="UISegmentedControl"/>
+            </relationships>
+        </class>
+        <class className="HPIdolDetailViewController" superclassName="HPDetailTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HPIdolDetailViewController.h"/>
+        </class>
+        <class className="HPIdolListCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HPIdolListCell.h"/>
+        </class>
+        <class className="HPIdolTableViewController" superclassName="HPPeopleTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HPIdolTableViewController.h"/>
             <relationships>
                 <relationship kind="action" name="filterIndexChanged"/>
                 <relationship kind="outlet" name="filter" candidateClass="UISegmentedControl"/>

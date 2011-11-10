@@ -1,19 +1,20 @@
 //
-//  HPArtistTableViewController.m
+//  HPIdolTableViewController.m
 //  Hello! Pocket
 //
 //  Created by Bryan Veloso on 10/27/11.
 //  Copyright (c) 2011 Revyver, Inc. All rights reserved.
 //
 
-#import "HPArtistTableViewController.h"
+#import "HPIdolTableViewController.h"
 
-#import "Artist.h"
-#import "HPArtistDetailViewController.h"
+#import "Idol.h"
+#import "HPIdolDetailViewController.h"
+#import "HPIdolListCell.h"
 #import "PartitionObjectsHelper.h"
 #import "SVProgressHUD.h"
 
-@implementation HPArtistTableViewController
+@implementation HPIdolTableViewController
 
 @synthesize filter;
 @synthesize itemCount;
@@ -32,6 +33,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.tableView.rowHeight = 70.0f;
 }
 
 - (void)viewDidUnload
@@ -69,11 +71,11 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"ToArtistDetail"]) {
-        Artist *artist = [[self.items objectAtIndex:self.tableView.indexPathForSelectedRow.section] objectAtIndex:self.tableView.indexPathForSelectedRow.row];
-        HPArtistDetailViewController *detail = [segue destinationViewController];
-        [detail setDetailItem:artist];
-        [detail setTitle:[artist name]];
+    if ([[segue identifier] isEqualToString:@"ToIdolDetail"]) {
+        Idol *idol = [[self.items objectAtIndex:self.tableView.indexPathForSelectedRow.section] objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+        HPIdolDetailViewController *detail = [segue destinationViewController];
+        [detail setDetailItem:idol];
+        [detail setTitle:[idol name]];
     }
 }
 
@@ -83,7 +85,7 @@
 {
     [SVProgressHUD showWithStatus:@"Loading..." maskType:SVProgressHUDMaskTypeClear];
 
-    [Artist fetchWithBlock:^(NSArray *records) {
+    [Idol fetchWithBlock:^(NSArray *records) {
         NSArray *bucket = [NSArray arrayWithArray:records];
 
         NSPredicate *filterActive = [NSPredicate predicateWithFormat:@"status == 1"];
@@ -92,10 +94,10 @@
         self.activeItems = [PartitionObjectsHelper partitionObjects:[bucket filteredArrayUsingPredicate:filterActive] collationStringSelector:@selector(name)];
         self.inactiveItems = [PartitionObjectsHelper partitionObjects:[bucket filteredArrayUsingPredicate:filterInactive] collationStringSelector:@selector(name)];
 
-        // Set the initial item list to active artists.
+        // Set the initial item list to active idols.
         self.items = self.activeItems;
 
-        [self addFooterWithCount:[self count] withLabel:@"artists"];
+        [self addFooterWithCount:[self count] withLabel:@"idols"];
 
         dispatch_async(dispatch_get_main_queue(), ^(void) {
             [self.tableView reloadData];
@@ -106,7 +108,7 @@
 
 - (IBAction)filterIndexChanged
 {
-    static NSString *labelText = @"artists";
+    static NSString *labelText = @"idols";
     switch (self.filter.selectedSegmentIndex) {
         case 0:
             self.items = self.activeItems;
@@ -132,10 +134,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ArtistListCell"];
-    Artist *artist = [[self.items objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
-    cell.textLabel.text = artist.name;
-    cell.detailTextLabel.text = artist.kanji;
+    HPIdolListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"IdolListCell"];
+    Idol *idol = [[self.items objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    cell.idol = idol;
 
     return cell;
 }

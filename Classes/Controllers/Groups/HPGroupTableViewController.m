@@ -10,6 +10,7 @@
 
 #import "Group.h"
 #import "HPGroupDetailViewController.h"
+#import "HPGroupListCell.h"
 #import "PartitionObjectsHelper.h"
 #import "SVProgressHUD.h"
 
@@ -92,10 +93,10 @@
         self.activeItems = [PartitionObjectsHelper partitionObjects:[bucket filteredArrayUsingPredicate:filterActive] collationStringSelector:@selector(name)];
         self.inactiveItems = [PartitionObjectsHelper partitionObjects:[bucket filteredArrayUsingPredicate:filterInactive] collationStringSelector:@selector(name)];
 
-        // Set the initial item list to active artists.
+        // Set the initial item list to active idols.
         self.items = self.activeItems;
 
-        [self addFooterWithCount:[self count] withLabel:@"artists"];
+        [self addFooterWithCount:[self count] withLabel:@"idols"];
 
         dispatch_async(dispatch_get_main_queue(), ^(void) {
             [self.tableView reloadData];
@@ -132,13 +133,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GroupListCell"];
+    HPGroupListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GroupListCell"];
     Group *group = [[self.items objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
-    cell.textLabel.text = group.name;
-    cell.detailTextLabel.text = group.kanji;
-    if ([group.name isEqualToString:group.kanji]) {
-        cell.detailTextLabel.text = nil;
-    }
+    cell.group = group;
 
     return cell;
 }

@@ -1,5 +1,5 @@
 //
-//  Artist.h
+//  Idol.h
 //  Hello! Pocket
 //
 //  Created by Bryan Veloso on 10/23/11.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Artist : NSObject
+@interface Idol : NSObject
 
 @property (nonatomic, strong) NSNumber *pk;
 @property (nonatomic, strong) NSString *name;
@@ -30,6 +30,6 @@
 
 - (id)initWithAttributes:(NSDictionary *)attributes;
 + (void)fetchWithBlock:(void (^)(NSArray *records))block;
-+ (void)fetchWithString:(NSString *)urlString parameters:(NSDictionary *)parameters block:(void (^)(Artist *artist))block;
++ (void)fetchWithString:(NSString *)urlString parameters:(NSDictionary *)parameters block:(void (^)(Idol *idol))block;
 
 @end
