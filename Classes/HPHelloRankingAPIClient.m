@@ -9,6 +9,7 @@
 #import "HPHelloRankingAPIClient.h"
 
 #import "AFJSONRequestOperation.h"
+#import "UIDevice+IdentifierAddition.h"
 
 NSString * const kHPHelloRankingBaseURLString = @"http://gentle-dusk-3420.herokuapp.com/api/v1/";
 
@@ -36,7 +37,7 @@ NSString * const kHPHelloRankingBaseURLString = @"http://gentle-dusk-3420.heroku
     [self setDefaultHeader:@"Accept" value:@"application/json"];
     // [self setDefaultHeader:@"X-Hello-Ranking-API-Key" value:kHPHelloRankingClientID];
     // [self setDefaultHeader:@"X-Hello-Ranking-API-Version" value:@"1"];
-    [self setDefaultHeader:@"X-UDID" value:[[UIDevice currentDevice] uniqueIdentifier]];
+    [self setDefaultHeader:@"X-UDID" value:[[UIDevice currentDevice] uniqueDeviceIdentifier]];
 
     return self;
 }

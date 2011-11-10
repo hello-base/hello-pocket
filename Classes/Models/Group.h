@@ -8,24 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Group : NSObject {
-@private
-    NSNumber *_pk;
-    NSString *_name;
-    NSString *_kanji;
-
-    NSNumber *_active;
-    NSDate *_formation;
-    NSDate *_inactive;
-    NSNumber *_members;
-    NSNumber *_activMembers;
-    NSNumber *_inactivMembers;
-    NSString *_note;
-
-    NSNumber *_classification;
-    NSNumber *_scope;
-    NSNumber *_status;
-}
+@interface Group : NSObject
 
 @property (nonatomic, strong) NSNumber *pk;
 @property (nonatomic, strong) NSString *name;

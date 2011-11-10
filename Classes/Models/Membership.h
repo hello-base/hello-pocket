@@ -11,17 +11,7 @@
 @class Artist;
 @class Group;
 
-@interface Membership : NSObject {
-@private
-    NSNumber *_primaryGroup;
-    NSDate *_joined;
-    NSDate *_left;
-
-    NSNumber *_isLeader;
-    NSDate *_leadershipStart;
-    NSDate *_leadershipEnd;
-    NSNumber *_leadershipTeunure;
-}
+@interface Membership : NSObject
 
 @property (nonatomic, strong) Artist *artist;
 @property (nonatomic, strong) Group *group;
