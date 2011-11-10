@@ -1,5 +1,5 @@
 //
-//  HPArtistDetailViewController.h
+//  HPIdolDetailViewController.h
 //  Hello! Pocket
 //
 //  Created by Bryan Veloso on 10/24/11.
@@ -9,12 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "HPDetailTableViewController.h"
 
-@class Artist;
+@class Idol;
 
-@interface HPArtistDetailViewController : HPDetailTableViewController
+@interface HPIdolDetailViewController : HPDetailTableViewController
 
 @property (nonatomic, strong) id detailItem;
-@property (nonatomic, assign) Artist *artist;
+@property (nonatomic, assign) Idol *idol;
 @property (nonatomic, strong) NSArray *memberships;
 @property (nonatomic, strong) NSArray *photos;
 

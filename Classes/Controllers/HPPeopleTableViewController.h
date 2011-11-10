@@ -10,7 +10,7 @@
 
 @interface HPPeopleTableViewController : HPTableViewController
 
-@property (nonatomic, retain) UILabel *countLabel;
+@property (nonatomic, strong) UILabel *countLabel;
 
 - (void)createCountLabel;
 - (void)addFooterWithCount:(NSUInteger)count withLabel:(NSString *)string;

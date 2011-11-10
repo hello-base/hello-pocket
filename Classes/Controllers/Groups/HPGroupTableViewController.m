@@ -46,7 +46,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -94,13 +93,14 @@
         self.activeItems = [PartitionObjectsHelper partitionObjects:[bucket filteredArrayUsingPredicate:filterActive] collationStringSelector:@selector(name)];
         self.inactiveItems = [PartitionObjectsHelper partitionObjects:[bucket filteredArrayUsingPredicate:filterInactive] collationStringSelector:@selector(name)];
 
-        // Set the initial item list to active artists.
+        // Set the initial item list to active idols.
         self.items = self.activeItems;
 
-        [self addFooterWithCount:[self count] withLabel:@"artists"];
+        [self addFooterWithCount:[self count] withLabel:@"idols"];
 
         dispatch_async(dispatch_get_main_queue(), ^(void) {
             [self.tableView reloadData];
+            [self showTableView];
         });
     }];
 }

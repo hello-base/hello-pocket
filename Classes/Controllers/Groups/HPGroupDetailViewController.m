@@ -8,7 +8,7 @@
 
 #import "HPGroupDetailViewController.h"
 
-#import "Artist.h"
+#import "Idol.h"
 #import "Group.h"
 #import "Membership.h"
 
@@ -200,7 +200,7 @@ enum Sections {
 - (void)customizeCellForMembership:(UITableViewCell *)cell indexPath:(NSIndexPath *)indexPath
 {
     Membership *membership = [self.activeMembers objectAtIndex:indexPath.row];
-    cell.textLabel.text = membership.artist.name;
+    cell.textLabel.text = membership.idol.name;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", membership.joined];
 }
 

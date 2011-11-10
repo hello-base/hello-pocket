@@ -1,18 +1,18 @@
 //
-//  HPArtistListCell.m
+//  HPIdolListCell.m
 //  Hello! Pocket
 //
 //  Created by Bryan Veloso on 11/8/11.
 //  Copyright (c) 2011 Revyver, Inc. All rights reserved.
 //
 
-#import "HPArtistListCell.h"
+#import "HPIdolListCell.h"
 
-#import "Artist.h"
+#import "Idol.h"
 
-@implementation HPArtistListCell
+@implementation HPIdolListCell
 
-@synthesize artist = _artist;
+@synthesize idol = _idol;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -41,10 +41,10 @@
     [super setSelected:selected animated:animated];
 }
 
-- (void)setArtist:(Artist *)artist
+- (void)setIdol:(Idol *)idol
 {
-    self.textLabel.text = artist.name;
-    self.detailTextLabel.text = artist.kanji;
+    self.textLabel.text = idol.name;
+    self.detailTextLabel.text = idol.kanji;
 }
 
 - (void)prepareForReuse

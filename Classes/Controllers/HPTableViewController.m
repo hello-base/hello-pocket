@@ -13,6 +13,16 @@
 @synthesize tableView = _tableView;
 @synthesize items = _items;
 
+- (void)hideTableView
+{
+    self.tableView.hidden = YES;
+}
+
+- (void)showTableView
+{
+    self.tableView.hidden = NO;
+}
+
 - (void)loadItems
 {
     NSLog(@"Must be implemented in a subclass.");
@@ -24,11 +34,26 @@
 {
     [super viewDidLoad];
 
+    self.tableView.hidden = YES;
+
     if (_items && [_items count] > 0) {
         [self.tableView reloadData];
     } else {
         [self loadItems];
     }
+}
+
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+    self.tableView = nil;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
+    NSIndexPath *selection = [(UITableView *)_tableView indexPathForSelectedRow];
+    if (selection) [_tableView deselectRowAtIndexPath:selection animated:YES];
 }
 
 # pragma - Convenience Methods
