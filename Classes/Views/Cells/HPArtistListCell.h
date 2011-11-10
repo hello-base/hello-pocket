@@ -1,5 +1,5 @@
 //
-//  HPArtistListCell.h
+//  HPIdolListCell.h
 //  Hello! Pocket
 //
 //  Created by Bryan Veloso on 11/8/11.
@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@class Artist;
+@class Idol;
 
-@interface HPArtistListCell : UITableViewCell
+@interface HPIdolListCell : UITableViewCell
 
-@property (nonatomic, strong) Artist *artist;
+@property (nonatomic, strong) Idol *idol;
 
 @end

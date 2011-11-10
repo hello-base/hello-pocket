@@ -8,14 +8,14 @@
 
 #import "Membership.h"
 
-#import "Artist.h"
+#import "Idol.h"
 #import "Group.h"
 #import "HPHelloRankingAPIClient.h"
 #import "NSDate+RFC2822.h"
 
 @implementation Membership
 
-@synthesize artist;
+@synthesize idol;
 @synthesize group;
 @synthesize primaryGroup = _primaryGroup;
 @synthesize joined = _joined;
@@ -32,8 +32,8 @@
         return nil;
     }
 
-    if ([attributes valueForKeyPath:@"artist"]) {
-        self.artist = [[Artist alloc] initWithAttributes:[attributes valueForKeyPath:@"artist"]];
+    if ([attributes valueForKeyPath:@"idol"]) {
+        self.idol = [[Idol alloc] initWithAttributes:[attributes valueForKeyPath:@"idol"]];
     }
     if ([attributes valueForKeyPath:@"group"]) {
         self.group = [[Group alloc] initWithAttributes:[attributes valueForKeyPath:@"group"]];

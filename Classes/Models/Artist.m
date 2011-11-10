@@ -1,18 +1,18 @@
 //
-//  Artist.m
+//  Idol.m
 //  Hello! Pocket
 //
 //  Created by Bryan Veloso on 10/23/11.
 //  Copyright (c) 2011 Revyver, Inc. All rights reserved.
 //
 
-#import "Artist.h"
+#import "Idol.h"
 
 #import "HPHelloRankingAPIClient.h"
 #import "NSDate+RFC2822.h"
 #import "SVProgressHUD.h"
 
-@implementation Artist
+@implementation Idol
 
 @synthesize pk = _pk;
 @synthesize name = _name;
@@ -59,11 +59,11 @@
 + (void)fetchWithBlock:(void (^)(NSArray *))block
 {
     NSDictionary *limit = [NSDictionary dictionaryWithObject:@"0" forKey:@"limit"];
-    [[HPHelloRankingAPIClient sharedClient] getPath:@"/artists/" parameters:limit success:^(id object) {
+    [[HPHelloRankingAPIClient sharedClient] getPath:@"/idols/" parameters:limit success:^(id object) {
         NSMutableArray *mutableRecords = [NSMutableArray array];
         for (NSDictionary *attributes in [object valueForKeyPath:@"objects"]) {
-            Artist *artist = [[Artist alloc] initWithAttributes:attributes];
-            [mutableRecords addObject:artist];
+            Idol *idol = [[Idol alloc] initWithAttributes:attributes];
+            [mutableRecords addObject:idol];
         }
         if (block) {
             block([NSArray arrayWithArray:mutableRecords]);
@@ -77,16 +77,16 @@
     }];
 }
 
-+ (void)fetchWithString:(NSString *)urlString parameters:(NSDictionary *)parameters block:(void (^)(Artist *))block
++ (void)fetchWithString:(NSString *)urlString parameters:(NSDictionary *)parameters block:(void (^)(Idol *))block
 {
     NSDictionary *mutableParameters = [NSMutableDictionary dictionaryWithDictionary:parameters];
     [[HPHelloRankingAPIClient sharedClient] getPath:urlString parameters:mutableParameters success:^(id object) {
         if (block) {
-            block([[Artist alloc] initWithAttributes:object]);
+            block([[Idol alloc] initWithAttributes:object]);
         }
     } failure:^(NSHTTPURLResponse *response, NSError *error) {
         if (block) {
-            block([[Artist alloc] init]);
+            block([[Idol alloc] init]);
         }
     }];
 }

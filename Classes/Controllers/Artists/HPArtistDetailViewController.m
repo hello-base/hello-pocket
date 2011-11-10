@@ -1,26 +1,26 @@
 //
-//  HPArtistDetailViewController.m
+//  HPIdolDetailViewController.m
 //  Hello! Pocket
 //
 //  Created by Bryan Veloso on 10/24/11.
 //  Copyright (c) 2011 Revyver, Inc. All rights reserved.
 //
 
-#import "HPArtistDetailViewController.h"
+#import "HPIdolDetailViewController.h"
 
-#import "Artist.h"
+#import "Idol.h"
 #import "Group.h"
 #import "Membership.h"
 
-@interface HPArtistDetailViewController ()
+@interface HPIdolDetailViewController ()
 - (void)configureView;
 - (void)loadMemberships;
 @end
 
-@implementation HPArtistDetailViewController
+@implementation HPIdolDetailViewController
 
 @synthesize detailItem = _detailItem;
-@synthesize artist = _artist;
+@synthesize idol = _idol;
 @synthesize memberships = _memberships;
 @synthesize photos = _photos;
 
@@ -89,13 +89,13 @@ enum Sections {
 - (void)configureView
 {
     // Update the user interface for the detail item.
-    self.artist = self.detailItem;
+    self.idol = self.detailItem;
     [self loadMemberships];
 }
 
 - (void)loadMemberships
 {
-    NSString *urlString = [NSString stringWithFormat:@"/artists/%@/memberships/", self.artist.pk];
+    NSString *urlString = [NSString stringWithFormat:@"/idols/%@/memberships/", self.idol.pk];
     NSDictionary *limit = [NSDictionary dictionaryWithObject:@"0" forKey:@"limit"];
     [Membership fetchManyWithURLString:urlString parameters:limit block:^(NSArray *records) {
         self.memberships = records;

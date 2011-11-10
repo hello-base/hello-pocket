@@ -1,5 +1,5 @@
 //
-//  HPArtistTableViewController.h
+//  HPIdolTableViewController.h
 //  Hello! Pocket
 //
 //  Created by Bryan Veloso on 10/27/11.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HPPeopleTableViewController.h"
 
-@interface HPArtistTableViewController : HPPeopleTableViewController
+@interface HPIdolTableViewController : HPPeopleTableViewController
 
 @property (nonatomic, weak) IBOutlet UISegmentedControl *filter;
 @property (nonatomic, strong) UILabel *itemCount;
