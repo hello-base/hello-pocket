@@ -59,7 +59,7 @@
 + (void)fetchWithBlock:(void (^)(NSArray *))block
 {
     NSDictionary *limit = [NSDictionary dictionaryWithObject:@"0" forKey:@"limit"];
-    [[HPHelloRankingAPIClient sharedClient] getPath:@"/idols/" parameters:limit success:^(AFHTTPRequestOperation *operation, id JSON) {
+    [[HPHelloRankingAPIClient sharedClient] getPath:@"idols/" parameters:limit success:^(AFHTTPRequestOperation *operation, id JSON) {
         NSMutableArray *mutableRecords = [NSMutableArray array];
         for (NSDictionary *attributes in [JSON valueForKeyPath:@"objects"]) {
             Idol *idol = [[Idol alloc] initWithAttributes:attributes];
