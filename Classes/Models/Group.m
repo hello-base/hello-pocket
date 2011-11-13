@@ -59,9 +59,9 @@
 + (void)fetchWithBlock:(void (^)(NSArray *))block
 {
     NSDictionary *limit = [NSDictionary dictionaryWithObject:@"0" forKey:@"limit"];
-    [[HPHelloRankingAPIClient sharedClient] getPath:@"/groups/" parameters:limit success:^(id object) {
+    [[HPHelloRankingAPIClient sharedClient] getPath:@"/groups/" parameters:limit success:^(AFHTTPRequestOperation *operation, id JSON) {
         NSMutableArray *mutableRecords = [NSMutableArray array];
-        for (NSDictionary *attributes in [object valueForKeyPath:@"objects"]) {
+        for (NSDictionary *attributes in [JSON valueForKeyPath:@"objects"]) {
             Group *group = [[Group alloc] initWithAttributes:attributes];
             [mutableRecords addObject:group];
         }
@@ -69,7 +69,7 @@
             block([NSArray arrayWithArray:mutableRecords]);
             [SVProgressHUD dismissWithSuccess:@"Success!"];
         }
-    } failure:^(NSHTTPURLResponse *response, NSError *error) {
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (block) {
             block([NSArray array]);
             [SVProgressHUD dismissWithError:@"Whoops!"];

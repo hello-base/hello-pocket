@@ -59,9 +59,9 @@
 + (void)fetchWithBlock:(void (^)(NSArray *))block
 {
     NSDictionary *limit = [NSDictionary dictionaryWithObject:@"0" forKey:@"limit"];
-    [[HPHelloRankingAPIClient sharedClient] getPath:@"/idols/" parameters:limit success:^(id object) {
+    [[HPHelloRankingAPIClient sharedClient] getPath:@"/idols/" parameters:limit success:^(AFHTTPRequestOperation *operation, id JSON) {
         NSMutableArray *mutableRecords = [NSMutableArray array];
-        for (NSDictionary *attributes in [object valueForKeyPath:@"objects"]) {
+        for (NSDictionary *attributes in [JSON valueForKeyPath:@"objects"]) {
             Idol *idol = [[Idol alloc] initWithAttributes:attributes];
             [mutableRecords addObject:idol];
         }
@@ -69,7 +69,7 @@
             block([NSArray arrayWithArray:mutableRecords]);
             [SVProgressHUD dismissWithSuccess:@"Success!"];
         }
-    } failure:^(NSHTTPURLResponse *response, NSError *error) {
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (block) {
             block([NSArray array]);
             [SVProgressHUD dismissWithError:@"Whoops!"];
@@ -80,11 +80,11 @@
 + (void)fetchWithString:(NSString *)urlString parameters:(NSDictionary *)parameters block:(void (^)(Idol *))block
 {
     NSDictionary *mutableParameters = [NSMutableDictionary dictionaryWithDictionary:parameters];
-    [[HPHelloRankingAPIClient sharedClient] getPath:urlString parameters:mutableParameters success:^(id object) {
+    [[HPHelloRankingAPIClient sharedClient] getPath:urlString parameters:mutableParameters success:^(AFHTTPRequestOperation *operation, id JSON) {
         if (block) {
-            block([[Idol alloc] initWithAttributes:object]);
+            block([[Idol alloc] initWithAttributes:JSON]);
         }
-    } failure:^(NSHTTPURLResponse *response, NSError *error) {
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (block) {
             block([[Idol alloc] init]);
         }

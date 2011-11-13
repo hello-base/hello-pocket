@@ -61,16 +61,16 @@
 + (void)fetchManyWithURLString:(NSString *)urlString parameters:(NSDictionary *)parameters block:(void (^)(NSArray *))block
 {
     NSDictionary *mutableParameters = [NSMutableDictionary dictionaryWithDictionary:parameters];
-    [[HPHelloRankingAPIClient sharedClient] getPath:urlString parameters:mutableParameters success:^(id object) {
+    [[HPHelloRankingAPIClient sharedClient] getPath:urlString parameters:mutableParameters success:^(AFHTTPRequestOperation *operation, id JSON) {
         NSMutableArray *mutableRecords = [NSMutableArray array];
-        for (NSDictionary *attributes in [object valueForKeyPath:@"objects"]) {
+        for (NSDictionary *attributes in [JSON valueForKeyPath:@"objects"]) {
             Membership *membership = [[Membership alloc] initWithAttributes:attributes];
             [mutableRecords addObject:membership];
         }
         if (block) {
             block([NSArray arrayWithArray:mutableRecords]);
         }
-    } failure:^(NSHTTPURLResponse *response, NSError *error) {
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (block) {
             block([NSArray array]);
         }
