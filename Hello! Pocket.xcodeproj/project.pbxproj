@@ -98,6 +98,7 @@
 		933E50D814594FA8004467AC /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		933E50D914594FA8004467AC /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		933E50DA14594FA8004467AC /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		93417F43146F6D8F0022BE72 /* AFJSONUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFJSONUtilities.h; sourceTree = "<group>"; };
 		93612B46145EBFAA00832D60 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
 		93612B47145EBFAA00832D60 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		9388894B145FCA8B005E871C /* HPHelloRankingAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HPHelloRankingAPIClient.m; path = "hello-pocket/Classes/HPHelloRankingAPIClient.m"; sourceTree = "<group>"; };
@@ -290,6 +291,7 @@
 				933E50B4145879C6004467AC /* AFImageRequestOperation.m */,
 				933E50B5145879C6004467AC /* AFJSONRequestOperation.h */,
 				933E50B6145879C6004467AC /* AFJSONRequestOperation.m */,
+				93417F43146F6D8F0022BE72 /* AFJSONUtilities.h */,
 				933E50B7145879C6004467AC /* AFNetworkActivityIndicatorManager.h */,
 				933E50B8145879C6004467AC /* AFNetworkActivityIndicatorManager.m */,
 				933E50B9145879C6004467AC /* AFNetworking.h */,
