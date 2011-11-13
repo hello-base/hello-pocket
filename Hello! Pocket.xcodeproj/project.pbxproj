@@ -28,7 +28,6 @@
 		933E50CC145879C6004467AC /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E50BD145879C6004467AC /* AFURLConnectionOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		933E50CD145879C6004467AC /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E50BF145879C6004467AC /* AFXMLRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		933E50CE145879C6004467AC /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E50C1145879C6004467AC /* UIImageView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		933E50CF145879C6004467AC /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E50C4145879C6004467AC /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		933E50D614594F59004467AC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 933E50D514594F58004467AC /* QuartzCore.framework */; };
 		933E50DB14594FA8004467AC /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 933E50D814594FA8004467AC /* SVProgressHUD.bundle */; };
 		933E50DC14594FA8004467AC /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 933E50DA14594FA8004467AC /* SVProgressHUD.m */; };
@@ -92,8 +91,6 @@
 		933E50BF145879C6004467AC /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		933E50C0145879C6004467AC /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		933E50C1145879C6004467AC /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
-		933E50C3145879C6004467AC /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
-		933E50C4145879C6004467AC /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		933E50D514594F58004467AC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		933E50D814594FA8004467AC /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		933E50D914594FA8004467AC /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
@@ -269,7 +266,6 @@
 			children = (
 				933E50AC145879C6004467AC /* AFNetworking */,
 				930A61C9145FAE0900CA787A /* iOSBoilerplate */,
-				933E50C2145879C6004467AC /* JSONKit */,
 				933E50D714594FA8004467AC /* SVProgressHUD */,
 				93612B44145EBF9600832D60 /* TestFlight */,
 				9388896214619426005E871C /* LRIndexedCollationWithSearch.h */,
@@ -305,15 +301,6 @@
 				933E50C1145879C6004467AC /* UIImageView+AFNetworking.m */,
 			);
 			path = AFNetworking;
-			sourceTree = "<group>";
-		};
-		933E50C2145879C6004467AC /* JSONKit */ = {
-			isa = PBXGroup;
-			children = (
-				933E50C3145879C6004467AC /* JSONKit.h */,
-				933E50C4145879C6004467AC /* JSONKit.m */,
-			);
-			path = JSONKit;
 			sourceTree = "<group>";
 		};
 		933E50D014587D94004467AC /* Networking Extensions */ = {
@@ -495,7 +482,6 @@
 				933E50CC145879C6004467AC /* AFURLConnectionOperation.m in Sources */,
 				933E50CD145879C6004467AC /* AFXMLRequestOperation.m in Sources */,
 				933E50CE145879C6004467AC /* UIImageView+AFNetworking.m in Sources */,
-				933E50CF145879C6004467AC /* JSONKit.m in Sources */,
 				933E50DC14594FA8004467AC /* SVProgressHUD.m in Sources */,
 				93FCCF2A145C22200074CEE3 /* HPGroupTableViewController.m in Sources */,
 				93FCCF2E145C22350074CEE3 /* Group.m in Sources */,
