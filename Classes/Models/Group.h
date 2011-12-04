@@ -15,8 +15,8 @@
 @property (nonatomic, strong) NSString *kanji;
 
 @property (nonatomic, strong) NSNumber *active;
-@property (nonatomic, strong) NSDate *formation;
-@property (nonatomic, strong) NSDate *inactive;
+@property (nonatomic, strong) NSDate *started;
+@property (nonatomic, strong) NSDate *ended;
 @property (nonatomic, strong) NSNumber *members;
 @property (nonatomic, strong) NSNumber *activeMembers;
 @property (nonatomic, strong) NSNumber *inactiveMembers;

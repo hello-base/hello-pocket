@@ -18,8 +18,8 @@
 @synthesize name = _name;
 @synthesize kanji = _kanji;
 @synthesize active = _active;
-@synthesize formation = _formation;
-@synthesize inactive = _inactive;
+@synthesize started = _started;
+@synthesize ended = _ended;
 @synthesize members = _members;
 @synthesize activeMembers = _activeMembers;
 @synthesize inactiveMembers = _inactiveMembers;
@@ -39,7 +39,7 @@
     self.name = [attributes valueForKeyPath:@"name"];
     self.kanji = [attributes valueForKeyPath:@"kanji"];
     self.active = [attributes valueForKeyPath:@"active"];
-    self.formation = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"formation"]];
+    self.started = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"started"]];
     self.members = [attributes valueForKeyPath:@"members"];
     self.activeMembers = [attributes valueForKeyPath:@"active_members"];
     self.inactiveMembers = [attributes valueForKeyPath:@"inactive_members"];
@@ -49,8 +49,8 @@
     self.status = [attributes valueForKeyPath:@"status"];
 
     // The following dates can be null, so we must test for it.
-    if (![[attributes valueForKeyPath:@"inactive"] isKindOfClass:[NSNull class]]) {
-        self.inactive = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"inactive"]];
+    if (![[attributes valueForKeyPath:@"ended"] isKindOfClass:[NSNull class]]) {
+        self.ended = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"ended"]];
     }
 
     return self;

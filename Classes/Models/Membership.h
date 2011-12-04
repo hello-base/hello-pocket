@@ -17,12 +17,12 @@
 @property (nonatomic, strong) Group *group;
 
 @property (nonatomic, strong) NSNumber *primaryGroup;
-@property (nonatomic, strong) NSDate *joined;
-@property (nonatomic, strong) NSDate *left;
+@property (nonatomic, strong) NSDate *started;
+@property (nonatomic, strong) NSDate *ended;
 
 @property (nonatomic, strong) NSNumber *isLeader;
-@property (nonatomic, strong) NSDate *leadershipStart;
-@property (nonatomic, strong) NSDate *leadershipEnd;
+@property (nonatomic, strong) NSDate *leadershipStarted;
+@property (nonatomic, strong) NSDate *leadershipEnded;
 @property (nonatomic, strong) NSNumber *leadershipTenure;
 
 - (id)initWithAttributes:(NSDictionary *)attributes;

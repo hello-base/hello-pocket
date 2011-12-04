@@ -18,11 +18,11 @@
 @synthesize idol;
 @synthesize group;
 @synthesize primaryGroup = _primaryGroup;
-@synthesize joined = _joined;
-@synthesize left = _left;
+@synthesize started = _started;
+@synthesize ended = _ended;
 @synthesize isLeader = _isLeader;
-@synthesize leadershipStart = _leadershipStart;
-@synthesize leadershipEnd = _leadershipEnd;
+@synthesize leadershipStarted = _leadershipStarted;
+@synthesize leadershipEnded = _leadershipEnded;
 @synthesize leadershipTenure = _leadershipTenure;
 
 - (id)initWithAttributes:(NSDictionary *)attributes
@@ -40,19 +40,19 @@
     }
 
     self.primaryGroup = [attributes valueForKeyPath:@"primary_group"];
-    self.joined = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"joined"]];
+    self.started = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"started"]];
     self.isLeader = [attributes valueForKeyPath:@"leader"];
     self.leadershipTenure = [attributes valueForKeyPath:@"leadership.tenure"];
 
     // The following dates can be null, so we must test for it.
-    if (![[attributes valueForKeyPath:@"left"] isKindOfClass:[NSNull class]]) {
-        self.left = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"left"]];
+    if (![[attributes valueForKeyPath:@"ended"] isKindOfClass:[NSNull class]]) {
+        self.ended = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"ended"]];
     }
-    if (![[attributes valueForKeyPath:@"leadership.start"] isKindOfClass:[NSNull class]]) {
-        self.leadershipStart = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"leadership.start"]];
+    if (![[attributes valueForKeyPath:@"leadership.started"] isKindOfClass:[NSNull class]]) {
+        self.leadershipStart = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"leadership.started"]];
     }
-    if (![[attributes valueForKeyPath:@"leadership.end"] isKindOfClass:[NSNull class]]) {
-        self.leadershipEnd = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"leadership.end"]];
+    if (![[attributes valueForKeyPath:@"leadership.ended"] isKindOfClass:[NSNull class]]) {
+        self.leadershipEnd = [NSDate dateFromRFC2822:[attributes valueForKeyPath:@"leadership.ended"]];
     }
 
     return self;
